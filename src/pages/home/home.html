@@ -1,18 +1,36 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar [color]="toolBarColor" >
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Home</ion-title>
+    <ion-title style="color:beige">Home</ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <h3>Ionic Menu Starter</h3>
 
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.
-  </p>
+  <ion-content class="cards-bg separated-cards">
 
-  <button ion-button secondary menuToggle>Toggle Menu</button>
-</ion-content>
+    <ion-card *ngFor="let post of posts">
+
+
+      <ion-item>
+        <h2 style="text-align:left;color:black;">
+          <strong>{{post.title}}</strong>
+        </h2>
+
+      </ion-item>
+
+      <img *ngIf="post.img!=null" width="100%" height="auto" [attr.src]="post.img" class="embed-responsive-item"
+        allowfullscreen>
+
+      <ion-card-content padding>
+
+        <p>
+          {{post.description}}
+        </p>
+      </ion-card-content>
+    </ion-card>
+  </ion-content>
+
+
+

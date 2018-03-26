@@ -21,8 +21,12 @@ export class MyApp {
 
     // used for an example of ngFor and navigation
     this.pages = [
-      { title: 'Home', component: HomePage },
-      { title: 'List', component: ListPage }
+      { title: 'What is IGCSE', component: HomePage },
+      { title: 'Chat With Us', component: ListPage },
+      { title: 'Academic Programs', component: HomePage },
+      { title: 'Activities', component: ListPage },
+      { title: 'BookStore', component: HomePage },
+      { title: 'StudentResorses', component: ListPage }
     ];
 
   }
