@@ -1,3 +1,63 @@
-page-login {
+@import '../../theme/placeholders.scss';
 
+page-login {
+    .login-wrapper {
+    padding-top: 46px;
+    height: 100%;
+    ion-list {
+        &.form {
+            ion-item {
+                background: transparent;
+            }
+        }
+    }
+    .logo {
+        padding-bottom: 33px;
+        img {
+            height: 110px;
+        }
+    }
+
+    h6.forget-pass {
+        text-transform: capitalize;
+        font-size: 14px;
+        margin-top: 38px;
+        margin-bottom: 38px;
+        a { 
+            color: #648aff;
+            text-decoration: none;
+        }
+    }
+
+    .buttons {
+        button {
+            text-transform: capitalize;
+            height: 44px;
+            width: 228px;
+        }
+        .button-outline-md-danger:hover:not(.disable-hover) {
+            &:hover {
+                background-color: #fff;
+            }
+        }    
+        h6 {
+            text-transform: uppercase;
+            color: #888;
+            position: relative;
+            &::before {
+                @extend %horizontal-border;
+            }
+            &::after {
+                @extend %horizontal-border;
+                right: 0;
+            }
+        }
+    }
+}
+
+/* =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+   =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= IOS CUSTOM OVERWRITE =-=-=-=-=-=-=-=-=*/
+   .list-ios > .item-block:first-child {
+       border-top: none;
+   }
 }
