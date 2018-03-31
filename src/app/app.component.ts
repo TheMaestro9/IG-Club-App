@@ -14,20 +14,20 @@ export class MyApp {
 
   rootPage: any = HomePage;
 
-  pages: Array<{title: string, component: any}>;
+  pages: Array<{title: string, component: any , icon:string}>;
 
   constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
     this.initializeApp();
 
     // used for an example of ngFor and navigation
     this.pages = [
-      { title: 'What is IGCSE', component: HomePage },
-      { title: 'Chat With Us', component: ListPage },
-      { title: 'Academic Programs', component: HomePage },
-      { title: 'Activities', component: ListPage },
-      { title: 'BookStore', component: HomePage },
-      { title: 'StudentResorses', component: ListPage }
-    ];
+      { title: 'What is IGCSE', component: HomePage , icon:'menu'},
+      { title: 'Chat With Us', component: "ListPage" , icon:'menu' }, ]
+    //   { title: 'Academic Programs', component: HomePage },
+    //   { title: 'Activities', component: ListPage },
+    //   { title: 'BookStore', component: HomePage },
+    //   { title: 'StudentResorses', component: ListPage }
+    // ];
 
   }
 
