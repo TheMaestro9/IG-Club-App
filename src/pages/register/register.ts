@@ -15,11 +15,22 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class RegisterPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  Selection; 
+  Increase;
+  children:any=[];
+  
+  constructor(public navCtrl: NavController) {
+    this.children.push({ 'value': ''  , 'age':''});
+
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad RegisterPage');
+  indexToWord (index) {
+    var Word = ["First" , "Sencond" , "Third" ,"Forth", "Fifth"]
+    return Word[index] ;  
   }
+  addInputs() {
+    this.children.push({ 'value': ''  , 'age':''});
+  }
+
 
 }

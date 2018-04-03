@@ -1,3 +1,40 @@
 page-register {
+    .body{
 
+    //     background: url("https://images.unsplash.com/photo-1465101162946-4377e57745c3?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=0ae83373fe7bf60aaf6ceb8daa337fc9&w=1000&q=80") !important; 
+    //     background-color: red!important;
+    //     background-repeat: no-repeat!important;
+    //     background-position: center!important;
+    //     background-size: cover!important;
+    // }    
+    }
+    .item-leave-height{
+        background:none;
+        color: #606060;  
+        font-size: 1.5rem;
+        //font-weight: bold;
+    }
+    
+    .SignUpAs{
+        color: rgb(0, 0, 0);
+    
+    }
+    
+    .logo{
+        background-position: center!important;
+        background-repeat: no-repeat!important;
+    }
+
+    .children-labels{ 
+        padding-left: 1rem ; 
+        color: #606060;  
+
+    }
+    .sub-header{
+        text-align: center; 
+        color: #404040; 
+        padding-top: 3rem ;
+        padding-bottom: 1rem; 
+        font-weight: bold 
+    }
 }
