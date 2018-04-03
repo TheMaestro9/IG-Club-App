@@ -19,6 +19,10 @@
       </button>
 
 
+      <button menuClose ion-item (click)="openPage('ProfilePage')">
+          Profile
+        </button>
+
       <ion-item (click)="menuItemHandler(0)">Main Menu</ion-item>
       <ion-item-group submenu [class.visible]="showSubmenu[0]">
         <ion-item submenu-item menuClose class="hello" (click)="openPage('ListPage')">Home</ion-item>

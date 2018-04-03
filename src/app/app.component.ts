@@ -12,7 +12,7 @@ import { ListPage } from '../pages/list/list';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = "RegisterPage";
+  rootPage: any = "HomePage";
   showSubmenu = [false , false , false] ; 
   
   pages: Array<{title: string, component: any }>;
@@ -20,12 +20,8 @@ export class MyApp {
 
   constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
     this.initializeApp();
-
-
-
   }
   menuItemHandler(index): void {
-    console.log("ya naaas ", this.showSubmenu)
     this.showSubmenu[index] = !this.showSubmenu[index];
   }
   initializeApp() {
