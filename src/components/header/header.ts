@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component , Input } from '@angular/core';
 
 /**
  * Generated class for the HeaderComponent component.
@@ -7,11 +7,15 @@ import { Component } from '@angular/core';
  * Components.
  */
 @Component({
-  selector: 'mm-header',
+  selector: 'main-header',
   templateUrl: 'header.html'
 })
 export class HeaderComponent {
+
+  toolBarColor; 
+  @Input('title') pageTitle ; 
   constructor() {
+    this.toolBarColor='dark'
   }
 
 }

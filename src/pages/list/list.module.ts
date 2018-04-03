@@ -5,6 +5,7 @@ import { ComponentsModule } from '../../components/components.module';
 
 @NgModule({
   declarations: [ListPage],
-  imports: [ComponentsModule,IonicPageModule.forChild(ListPage)],
+  imports: [IonicPageModule.forChild(ListPage) ,
+  ComponentsModule],
 })
 export class ListPageModule { }

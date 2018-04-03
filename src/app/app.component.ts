@@ -14,7 +14,6 @@ export class MyApp {
 
   rootPage: any = "HomePage";
   showSubmenu = [false , false , false] ; 
-  firstSubMenu = false ; 
   
   pages: Array<{title: string, component: any }>;
 
@@ -24,21 +23,10 @@ export class MyApp {
 
 
 
-    // used for an example of ngFor and navigation
-    this.pages = [
-      { title: 'What is IGCSE', component: "HomePage" } ,
-      { title: 'Chat With Us', component: "LoginPage" } ] 
-    //   { title: 'Academic Programs', component: HomePage },
-    //   { title: 'Activities', component: ListPage },
-    //   { title: 'BookStore', component: HomePage },
-    //   { title: 'StudentResorses', component: ListPage }
-    // ];
-
   }
   menuItemHandler(index): void {
     console.log("ya naaas ", this.showSubmenu)
     this.showSubmenu[index] = !this.showSubmenu[index];
-    this.firstSubMenu= !this.firstSubMenu; 
   }
   initializeApp() {
     this.platform.ready().then(() => {
