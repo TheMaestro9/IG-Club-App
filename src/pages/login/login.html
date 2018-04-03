@@ -1,6 +1,3 @@
-<ion-header>
-    <mm-header></mm-header>
-</ion-header>
 
 <ion-content text-center>
   <section class="login-wrapper">
@@ -11,19 +8,19 @@
   
     <ion-list class="form">
       <ion-item>
-          <ion-input type="text" placeholder="Email" text-center></ion-input>
+          <ion-input  [(ngModel)]="email" type="text" placeholder="Email" text-center></ion-input>
       </ion-item>
         <ion-item>
-            <ion-input type="password" placeholder="Password" text-center></ion-input>
+            <ion-input [(ngModel)]="password" type="password" placeholder="Password" text-center></ion-input>
         </ion-item>
     </ion-list>
   
     <h6 class="forget-pass">forget password? <a href="#">tap here</a></h6>
   
     <ion-list class="buttons">
-          <button ion-button color="primary">login</button>
+          <button ion-button color="dark" (click)="loginButtonClicked()">login</button>
           <h6>or</h6>
-          <button ion-button color="danger" outline>sign up</button>
+          <button ion-button color="dark" outline>sign up</button>
     </ion-list>
 
     </section>
