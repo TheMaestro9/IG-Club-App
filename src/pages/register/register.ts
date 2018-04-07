@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 
 /**
  * Generated class for the RegisterPage page.
@@ -17,10 +18,13 @@ export class RegisterPage {
 
   Selection; 
   Increase;
+  userName ; 
+  password ; 
+  emael
   children:any=[];
   
   constructor(public navCtrl: NavController) {
-    this.children.push({ 'value': ''  , 'age':''});
+    this.children.push({ 'name': ''  , 'age':''});
 
   }
 
@@ -29,7 +33,15 @@ export class RegisterPage {
     return Word[index] ;  
   }
   addInputs() {
-    this.children.push({ 'value': ''  , 'age':''});
+    this.children.push({ 'name': ''  , 'age':''});
+  }
+
+  register() { 
+    var user_info = { 
+      'username':this.userName  
+    }
+
+    console.log(user_info)
   }
 
 
