@@ -17,49 +17,55 @@
     <div class="sub-header">
       Personal Data
     </div>
-    <form class="form">
-      <ion-item>
-        <ion-input placeholder="Name" type="text" required></ion-input>
+    <ion-item>
+      <ion-input [(ngModel)]="userName" placeholder="Name" type="text" required></ion-input>
+    </ion-item>
+    <br/>
+    <ion-item>
+      <ion-input [(ngModel)]="password" placeholder="Password" type="text" required></ion-input>
+    </ion-item>
+    <br/>
+    <ion-item>
+        <ion-input [(ngModel)]="email" placeholder="Email" type="text" required></ion-input>
       </ion-item>
       <br/>
-      <ion-item>
-        <ion-input placeholder="Mobile" type="text" required></ion-input>
-      </ion-item>
-      <br/>
-      <ion-item>
-        <ion-input placeholder="school" type="text" required></ion-input>
-      </ion-item>
-      <br/>
-    </form>
+    <ion-item>
+      <ion-input [(ngModel)]="mobile" placeholder="Mobile" type="text" required></ion-input>
+    </ion-item>
+    <br/>
+    <ion-item>
+      <ion-input [(ngModel)]="school" placeholder="School" type="text" required></ion-input>
+    </ion-item>
+    <br/>
   </div>
 
   <div *ngIf="Selection=='Student'">
     <ion-item>
-      <ion-input placeholder="grade" type="text" required></ion-input>
+      <ion-input [(ngModel)]="grade" placeholder="Grade" type="text" required></ion-input>
     </ion-item>
   </div>
 
-  <form *ngIf="Selection=='Parent'">
+  <div *ngIf="Selection=='Parent'">
     <div class="sub-header">
       Children Data
     </div>
     <div *ngFor="let child of children; let idx = index">
       <p class="children-labels">{{indexToWord(idx)}} child </p>
       <ion-item>
-        <ion-input placeholder="name" type="text" [(ngModel)]="children[idx].name" [ngModelOptions]='{standalone:true}' name="idx"></ion-input>
+        <ion-input placeholder="Name" type="text" [(ngModel)]="children[idx].name" [ngModelOptions]='{standalone:true}' name="idx"></ion-input>
 
       </ion-item>
       <br/>
       <ion-item>
-        <ion-input placeholder="age." type="text" [(ngModel)]="children[idx].age" [ngModelOptions]='{standalone:true}' name="idx"></ion-input>
+        <ion-input placeholder="Age." type="text" [(ngModel)]="children[idx].age" [ngModelOptions]='{standalone:true}' name="idx"></ion-input>
       </ion-item>
       <br>
     </div>
     <br>
     <button ion-button (click)="addInputs()">add anther child</button>
     <br/>
-  </form>
-  <div *ngIf="Selection=='Student' || Selection=='Parent' ">
-    <button ion-button block>Sign UP</button>
+  </div>
+  <div class="sign-up-button" *ngIf="Selection=='Student' || Selection=='Parent' ">
+    <button ion-button block (click)="register()">Sign UP</button>
   </div>
 </ion-content>
