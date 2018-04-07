@@ -1,0 +1,11 @@
+<ion-header>
+  <main-header title="Manage Posts"> </main-header>
+</ion-header>
+
+<ion-content class="cards-bg separated-cards">
+
+  <ion-searchbar (ionInput)="getPosts($event)">
+  </ion-searchbar>
+  <posts [posts]="posts" [showButton]='false'></posts>
+
+</ion-content>
