@@ -2,10 +2,18 @@
   <main-header title="Manage Posts"> </main-header>
 </ion-header>
 
-<ion-content class="cards-bg separated-cards">
+<ion-content>
 
-  <ion-searchbar (ionInput)="getPosts($event)">
-  </ion-searchbar>
-  <posts [posts]="posts" [showButton]='false'></posts>
+  <ion-card-content padding>
+
+    <ion-searchbar (ionInput)="getPosts($event)">
+    </ion-searchbar>
+    <div class="manage-btn">
+      <button ion-button color="primary" outline (click)="openPage()">Add New Post</button>
+      <button ion-button color="danger" outline>Delete Posts</button>
+    </div>
+    <posts [posts]="posts" [adminBtn]='true'></posts>
+
+  </ion-card-content>
 
 </ion-content>

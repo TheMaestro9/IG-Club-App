@@ -11,9 +11,12 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { ComponentsModule } from '../components/components.module';
 import { DataServiceProvider } from '../providers/data-service/data-service';
 
+import { AddPostPage } from '../pages/add-post/add-post';
+
 @NgModule({
   declarations: [
     MyApp,
+    AddPostPage
    // ListPage
   ],
   imports: [
@@ -26,6 +29,7 @@ import { DataServiceProvider } from '../providers/data-service/data-service';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
+    AddPostPage
    // ListPage
   ],
   providers: [

@@ -15,15 +15,27 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class ActivitiesPage {
 
-  pageTitle 
+  pageTitle
+  posts
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-    
-    this.pageTitle = navParams.get('title') ; 
-    console.log("in activities page " , this.pageTitle)
+
+    this.pageTitle = navParams.get('title');
+    this.posts = [{
+      "title": "Paris Visit",
+      "text": "visiting paris for 5 days, the trip includes lots of activities such as "+
+              " visiting the eviel tower. it will cost around 230$ per person all inclusive ",
+    },
+    {
+      "title": "Second Activity",
+      "text": "the unicorn",
+      "img": "https://vyrez.com/wp-content/uploads/2012/12/unicorn-wallpaper.jpg"
+    }
+    ]
+
+
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad ActivitiesPage');
   }
 
 }

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { AddPostPage } from '../add-post/add-post';
 
 /**
  * Generated class for the ManagePostsPage page.
@@ -48,6 +49,7 @@ export class ManagePostsPage {
     
   ]
   }
+
   getPosts(ev: any) {
     // Reset items back to all of the items
     this.initializeItems();
@@ -65,6 +67,10 @@ export class ManagePostsPage {
         return false;
       })
     }
+  }
+
+  openPage() {
+    this.navCtrl.push(AddPostPage);
   }
 
 }

@@ -14,6 +14,7 @@ export class PostsComponent {
 
   @Input('posts') posts ; 
   @Input('showButton') showButton ; 
+  @Input('adminBtn') adminBtn ;
   constructor() {
     console.log("iam in the posts component")
     }
