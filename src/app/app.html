@@ -47,9 +47,12 @@
 
       <ion-item (click)="menuItemHandler(2)">Activities</ion-item>
       <ion-item-group submenu [class.visible]="showSubmenu[2]">
-        <ion-item submenu-item class="hello">International Trips</ion-item>
-        <ion-item submenu-item class="hello">Domistic Trips</ion-item>
-        <ion-item submenu-item class="hello">Events</ion-item>
+        <ion-item submenu-item menuClose class="hello" 
+        (click)="openPage('ActivitiesPage',{title:'International Trips'})">International Trips</ion-item>
+        <ion-item submenu-item menuClose class="hello"
+        (click)="openPage('ActivitiesPage',{title:'Domestic Trips'})"> Domistic Trips</ion-item>
+        <ion-item submenu-item menuClose class="hello"
+        (click)="openPage('ActivitiesPage',{title:'Events'})"> Events</ion-item>
       </ion-item-group>
       <!--
     <ion-list nolines id="sidenav">
