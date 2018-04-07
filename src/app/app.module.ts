@@ -4,8 +4,6 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { HttpModule} from '@angular/http';
 import {IonicStorageModule} from '@ionic/storage';
 
-
-
 import { MyApp } from './app.component';
 
 import { StatusBar } from '@ionic-native/status-bar';

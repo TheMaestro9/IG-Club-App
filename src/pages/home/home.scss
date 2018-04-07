@@ -1,6 +1,11 @@
 page-home {
-
-    .separated-cards{
-        background: #eff0f1 
+  .separated-cards {
+    background: #eff0f1
+  }
+  ion-searchbar {
+    input {
+      background-color: #222;
+      color: #fff;
     }
+  }
 }

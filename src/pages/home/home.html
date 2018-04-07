@@ -1,29 +1,26 @@
 <ion-header>
-<main-header title="Home"> </main-header>    
+  <main-header title="Home"> </main-header>
 </ion-header>
-  <ion-content class="cards-bg separated-cards">
 
-    <ion-card *ngFor="let post of posts">
+<ion-content class="cards-bg separated-cards">
 
+  <ion-searchbar (ionInput)="getPosts($event)">
+  </ion-searchbar>
 
-      <ion-item>
-        <h2 style="text-align:left;color:black;">
-          <strong>{{post.title}}</strong>
-        </h2>
+  <ion-card *ngFor="let post of posts">
+    <ion-item>
+      <h2 style="text-align:left;color:black;">
+        <strong>{{post.title}}</strong>
+      </h2>
+    </ion-item>
 
-      </ion-item>
+    <img *ngIf="post.img!=null" width="100%" height="auto" [attr.src]="post.img" class="embed-responsive-item" allowfullscreen>
 
-      <img *ngIf="post.img!=null" width="100%" height="auto" [attr.src]="post.img" class="embed-responsive-item"
-        allowfullscreen>
+    <ion-card-content padding>
+      <p>
+        {{post.description}}
+      </p>
+    </ion-card-content>
+  </ion-card>
 
-      <ion-card-content padding>
-
-        <p>
-          {{post.description}}
-        </p>
-      </ion-card-content>
-    </ion-card>
-  </ion-content>
-
-
-
+</ion-content>
