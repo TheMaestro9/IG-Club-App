@@ -25,8 +25,12 @@ export class LoginPage {
 
   loginButtonClicked(){ 
     console.log('welcome') ; 
-    var url = "https://ffserver.eu-gb.mybluemix.net/login?user_email=" + this.email + "&password=" +this.password
-    this.ds.get(url).subscribe((data)=>{
+    var user_info = {
+      'email':this.email,
+      'password':this.password
+    }
+    var url = 'http://ig-club.eu-gb.mybluemix.net/login'
+    this.ds.post(url , user_info).subscribe((data)=>{
         console.log(data); 
     })
   }
