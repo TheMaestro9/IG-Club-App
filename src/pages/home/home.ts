@@ -18,12 +18,11 @@ export class HomePage {
     this.toolBartextColor='light'
     this.posts=[ {
       "title":"First Post",
-      "description":"Ig club is the best in the area", 
-      "img" : null 
+      "text":"Ig club is the best in the area", 
     }, 
     {
       "title":"Second Post",
-      "description":"this is how posts with images will look like.", 
+      "text":"this is how posts with images will look like.", 
       "img" : "https://vyrez.com/wp-content/uploads/2012/12/unicorn-wallpaper.jpg" 
     }
     
