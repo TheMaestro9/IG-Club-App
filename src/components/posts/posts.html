@@ -1,0 +1,28 @@
+<!-- Generated template for the PostsComponent component -->
+<ion-card *ngFor="let post of posts">
+
+
+  <ion-item>
+    <h2 class="post-title">
+      <strong>{{post.title}}</strong>
+    </h2>
+
+  </ion-item>
+
+  <img *ngIf="post.img!=null" width="100%" height="auto" [attr.src]="post.img" class="embed-responsive-item" allowfullscreen>
+
+  <ion-card-content padding>
+
+    <p class="post-text">
+      {{post.text}}
+    </p>
+
+    <div *ngIf='showButton'>
+      <br>
+
+      <button  ion-button block color="dark">
+        <strong>Show Interest</strong>
+      </button>
+    </div>
+  </ion-card-content>
+</ion-card>
