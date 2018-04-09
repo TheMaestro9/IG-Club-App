@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { DataServiceProvider } from '../../providers/data-service/data-service';
-
+import {Storage} from '@ionic/storage'
 /**
  * Generated class for the LoginPage page.
  *
@@ -19,7 +19,7 @@ export class LoginPage {
   email:string ; 
   password :string ; 
   constructor(public navCtrl: NavController, public navParams: NavParams,
-              public ds:DataServiceProvider) {
+              public ds:DataServiceProvider , public store:Storage) {
   }
 
 
@@ -30,9 +30,20 @@ export class LoginPage {
       'password':this.password
     }
     var url = 'http://ig-club.eu-gb.mybluemix.net/login'
-    this.ds.post(url , user_info).subscribe((data)=>{
-        console.log(data); 
+    this.ds.post(url , user_info).subscribe((res)=>{
+        console.log(res);
+        if(res.success)
+          {
+              this.store.set('token', res.token)
+          } 
+        else  
+          alert(res.err)
+
     })
+  }
+  signUpButtonClicked(){
+    console.log("wow ")
+    this.navCtrl.push('RegisterPage')
   }
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoginPage');
