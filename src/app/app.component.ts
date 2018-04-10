@@ -2,7 +2,7 @@ import { Component, ViewChild } from '@angular/core';
 import { Nav, Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-
+import {Storage} from '@ionic/storage'; 
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 
@@ -18,8 +18,18 @@ export class MyApp {
   pages: Array<{title: string, component: any }>;
 
 
-  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
+  constructor(public platform: Platform, public statusBar: StatusBar,
+     public splashScreen: SplashScreen , public store:Storage) {
     this.initializeApp();
+    this.routeUser() ; 
+  }
+
+  routeUser(){
+    this.store.get('token').then(token=>{
+      console.log(token)
+      if(token=="" || token == null)
+        this.rootPage='LoginPage';
+    })
   }
   menuItemHandler(index): void {
     this.showSubmenu[index] = !this.showSubmenu[index];

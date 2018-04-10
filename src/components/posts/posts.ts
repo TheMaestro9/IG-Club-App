@@ -16,7 +16,6 @@ export class PostsComponent {
   @Input('showButton') showButton ; 
   @Input('adminBtn') adminBtn ;
   constructor() {
-    console.log("iam in the posts component")
     }
     
     ngOnInit(){
@@ -24,7 +23,6 @@ export class PostsComponent {
         if(typeof(post.img)  == 'undefined') 
           post['img'] == null      
       });  
-      console.log("hahahahah" , typeof(this.showButton))
     }
 
 }

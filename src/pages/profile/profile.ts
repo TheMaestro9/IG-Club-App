@@ -29,7 +29,7 @@ export class ProfilePage {
 
   
 	logout() {
-		this.store.set('user_id', "");
+		this.store.set('token', "");
     this.navCtrl.setRoot("LoginPage");
 	}
 
