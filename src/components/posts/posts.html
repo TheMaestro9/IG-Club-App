@@ -26,10 +26,16 @@
     -->
     </div>
 
+    <!-- Displayed Icons in Manage Posts Page -->
     <div *ngIf='adminBtn'>
       <div class="icon-wrapper" text-right>
-        <ion-icon class="edit-icon" name="create"></ion-icon>
-        <ion-icon class="delete-icon" name="trash"></ion-icon>
+        <button ion-button clear class="icon-btn">
+          <ion-icon class="edit-icon" name="create"></ion-icon>
+        </button>
+        <button ion-button clear class="icon-btn" (click)="deletePost()">
+          <ion-icon class="delete-icon" name="trash"></ion-icon>
+        </button>
+
       </div>
     </div>
 
