@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams , AlertController } from 'ionic-angular';
 import { DataServiceProvider } from '../../providers/data-service/data-service';
 import {Storage} from '@ionic/storage'
 /**
@@ -18,11 +18,39 @@ export class LoginPage {
 
   email:string ; 
   password :string ; 
+  cameFromRegPage
   constructor(public navCtrl: NavController, public navParams: NavParams,
-              public ds:DataServiceProvider , public store:Storage) {
+              public ds:DataServiceProvider , public store:Storage, 
+              public alertController: AlertController) {
+              
+                this.showRegistrationAlert() ;
+                
   }
 
 
+  showRegistrationAlert(){ 
+    this.cameFromRegPage =  this.navParams.get('cameFromRegPage')
+    if(typeof(this.cameFromRegPage) == 'undefined')
+     this.cameFromRegPage  = false ;
+    
+     if(this.cameFromRegPage){
+      let confirm = this.alertController.create({
+        title: 'Email Verifications',
+        message:
+          '<p>An email was sent to you to verify your email</p>' , 
+        buttons: [
+          {
+            text: 'Send Again',
+            handler: () => {
+              this.showRegistrationAlert() 
+            }
+          }, 
+          { text: 'Done', role: 'cancel', },
+
+        ]
+      });
+      confirm.present();     }
+  }
   loginButtonClicked(){ 
     console.log('welcome') ; 
     var user_info = {
