@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 import { DataServiceProvider } from '../../providers/data-service/data-service';
-
+import { Storage } from '@ionic/storage'
 /**
  * Generated class for the RegisterPage page.
  *
@@ -27,7 +27,8 @@ export class RegisterPage {
   grade =null;  
   children:any=[];
   
-  constructor(public navCtrl: NavController ,public ds:DataServiceProvider) {
+  constructor(public navCtrl: NavController ,public ds:DataServiceProvider ,
+              public storage: Storage) {
     this.children.push({ 'name': ''  , 'age':''});
 
   }
@@ -59,6 +60,10 @@ export class RegisterPage {
     var url = 'http://ig-club.eu-gb.mybluemix.net/signup' ; 
     this.ds.post(url, user_info).subscribe((res)=>{
       console.log(res);
+      this.navCtrl.push('LoginPage' , {cameFromRegPage:true})
+      if(res.success){ 
+        this.navCtrl.push('LoginPage' , {cameFromRegPage:true})
+      }
     } , (error)=>{console.log(error)})
 
     
