@@ -1,3 +1,19 @@
-page-home {
-   
+page-esl {
+    padding: 70px;
+
+    .main-address{
+
+        font-size: 20px;
+        font-weight: bold;
+    }
+    .other{
+        border-top: transparent !important;
+        border-left: transparent !important;
+        border-right: transparent !important;
+        border-bottom: 1px solid !important;
+
+    }
+    .info{
+        font-weight: bold;
+    }
 }
