@@ -35,11 +35,12 @@ export class LoginPage {
         if(res.success)
           {
               this.store.set('token', res.token)
+              this.navCtrl.setRoot('HomePage')
           } 
         else  
           alert(res.err)
 
-    })
+    }, err=>{ console.log(err)})
   }
   signUpButtonClicked(){
     console.log("wow ")
