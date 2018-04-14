@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, IonicPage } from 'ionic-angular';
-
-
+import {Storage} from '@ionic/storage'
+import {DataServiceProvider} from '../../providers/data-service/data-service'
 @IonicPage()
 @Component({
   selector: 'page-home',
@@ -15,11 +15,13 @@ export class HomePage {
 
   searchQuery: string = '';
 
-  constructor(public navCtrl: NavController) {
+  constructor(public navCtrl: NavController , public storage: Storage,
+              public ds :DataServiceProvider) {
 
     this.toolBarColor = 'dark';
     this.toolBartextColor='light';
     this.initializeItems();
+    this.getPosts()
   }
     initializeItems () {
     this.posts=[ {
@@ -44,8 +46,20 @@ export class HomePage {
     
   ]
   }
+  getPosts(){ 
+    this.storage.get('token').then(token=>{
 
-  getPosts(ev: any) {
+      var url = 'http://ig-club.eu-gb.mybluemix.net/home/posts?token='+token ;
+      console.log(url);  
+      this.ds.get(url).subscribe(res=>{
+        console.log(res)
+        this.posts=res.posts ;
+      })
+
+    })
+  }
+
+  serach(ev: any) {
     // Reset items back to all of the items
     this.initializeItems();
     // set val to the value of the searchbar
