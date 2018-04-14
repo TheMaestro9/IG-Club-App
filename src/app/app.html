@@ -45,7 +45,7 @@
 
       <ion-item (click)="menuItemHandler(1)">Academic Programs</ion-item>
       <ion-item-group submenu [class.visible]="showSubmenu[1]">
-        <ion-item submenu-item class="hello">ESL Course</ion-item>
+        <ion-item submenu-item menuClose class="hello"  (click)="openPage('EslPage',{title:'ESL Course'})">ESL Course</ion-item>
         <ion-item submenu-item class="hello">IELTS</ion-item>
         <ion-item submenu-item class="hello">Admission Course</ion-item>
       </ion-item-group>
