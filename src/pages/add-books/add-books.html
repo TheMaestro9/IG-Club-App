@@ -1,0 +1,39 @@
+<ion-header>
+  <main-header title="Sell Books"> </main-header>
+</ion-header>
+
+<ion-content>
+
+  <ion-card-content>
+
+    <ion-list>
+
+      <ion-item>
+        <ion-label floating>Book Title</ion-label>
+        <ion-input type="text" [(ngModel)]="title" clearInput></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>ISBN</ion-label>
+        <ion-input type="text" [(ngModel)]="url"></ion-input>
+      </ion-item>
+
+      <ion-item>
+          <ion-label>Book Condition</ion-label>
+          <ion-select [(ngModel)]="condition">
+            <ion-option value="n">As New</ion-option>
+            <ion-option value="f">Fine</ion-option>
+            <ion-option value="v">Very Good</ion-option>
+            <ion-option value="g">Good</ion-option>
+            <ion-option value="fa">Fair</ion-option>
+          </ion-select>
+      </ion-item>
+
+      <button ion-button color="primary" outline (click)="addPost()">Sell Now</button>
+      <button ion-button color="danger" outline (click)="clearFields()">Clear Fields</button>
+
+    </ion-list>
+
+  </ion-card-content>
+
+</ion-content>

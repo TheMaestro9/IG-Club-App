@@ -37,6 +37,7 @@ post(url, data){
 }
 
   put(url, data) {
+    data['token'] = this.token ; 
     return this.http.put(url, data)
       .map(res=>res.json());
   }

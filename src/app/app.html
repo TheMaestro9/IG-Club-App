@@ -28,6 +28,14 @@
         Profile
       </button>
 
+      <button menuClose ion-item (click)="openPage('AddBooksPage')">
+          Sell Books
+        </button>
+
+      <button menuClose ion-item (click)="openPage('ExploreBooksPage')">
+          Explore Books
+        </button>
+
       <ion-item (click)="menuItemHandler(0)">Student Resourses</ion-item>
       <ion-item-group submenu [class.visible]="showSubmenu[0]">
         <ion-item submenu-item menuClose class="hello" (click)="openPage('ListPage')">Universities</ion-item>

@@ -41,4 +41,9 @@ export class PostsComponent {
       });
     }
 
+    deletePost(id) {
+      console.log(id);
+      this.posts.remove(id);
+    }
+
 }

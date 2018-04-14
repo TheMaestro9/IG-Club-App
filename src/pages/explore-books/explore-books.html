@@ -1,0 +1,73 @@
+<ion-header>
+  <main-header title="Explore Books"> </main-header>
+  <ion-icon ios="ios-cart" md="md-cart" class="cart"></ion-icon>
+  <span class="quantity">0</span>
+</ion-header>
+
+<ion-content class="cards-bg separated-cards">
+
+  <ion-item class="filter">
+    <ion-label>Filter</ion-label>
+    <ion-select [(ngModel)]="toppings" multiple="true">
+      <ion-option>IGCSEs</ion-option>
+      <ion-option>AS or ALs</ion-option>
+      <ion-option>Edexcel</ion-option>
+      <ion-option>Cambridge</ion-option>
+      <ion-option>Checkpoint</ion-option>
+    </ion-select>
+  </ion-item>
+
+
+  <!-- <ion-card>
+      <ion-card-content>
+        <ion-row>
+          <ion-col col-6>
+            <ion-img src="assets/imgs/The-IG-club-logo.png" class="book-img"></ion-img>
+          </ion-col>
+          <ion-col col-6>
+            <h2>Book Title</h2>
+            <h3><strong>By:</strong> Abdullah</h3>
+            <p><strong>Desc:</strong> some text that hold the description of the book</p>
+            <h3><strong>Owner:</strong>  Mohsen</h3>
+            <button ion-button clear>Add to cart</button>
+          </ion-col>
+        </ion-row>
+      </ion-card-content>
+    </ion-card> -->
+
+  <ion-card>
+    <ion-card-content>
+      <ion-img src="assets/imgs/The-IG-club-logo.png" class="book-img"></ion-img>
+      <ion-grid>
+        <ion-row>
+          <ion-col col-6 class="book-info">
+            <h2>
+              <strong>book info</strong>
+            </h2>
+            <h3>ionic in a glimps</h3>
+            <h3>robert danniro</h3>
+            <p>
+              some text that hold the description of the book</p>
+          </ion-col>
+          <ion-col col-6>
+            <h2>
+              <strong>owner info</strong>
+            </h2>
+            <h3>Mohsen Ahmed</h3>
+            <h3>0111 416 0675</h3>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+      <h3 class="price">
+        <strong>Price: 13$</strong>
+        <ion-icon ios="ios-help" md="md-help" class="price-icon"></ion-icon>
+      </h3>
+      <span class="payment-method">cash on delivery</span>
+      <button ion-button clear tooltip="down">Add to cart</button>
+
+    </ion-card-content>
+  </ion-card>
+
+
+</ion-content>
