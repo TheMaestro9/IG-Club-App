@@ -47,16 +47,14 @@ export class HomePage {
   ]
   }
   getPosts(){ 
-    this.storage.get('token').then(token=>{
 
-      var url = 'http://ig-club.eu-gb.mybluemix.net/home/posts?token='+token ;
+      var url = 'http://ig-club.eu-gb.mybluemix.net/home/posts' ;
       console.log(url);  
       this.ds.get(url).subscribe(res=>{
         console.log(res)
         this.posts=res.posts ;
-      })
+      },err=>(console.log(err)))
 
-    })
   }
 
   serach(ev: any) {
