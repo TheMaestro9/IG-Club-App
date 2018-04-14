@@ -29,7 +29,7 @@
     <!-- Displayed Icons in Manage Posts Page -->
     <div *ngIf='adminBtn'>
       <div class="icon-wrapper" text-right>
-        <button ion-button clear class="icon-btn">
+        <button ion-button clear class="icon-btn" (click)="editPost(post.id, post.title, post.content, post.url)">
           <ion-icon class="edit-icon" name="create"></ion-icon>
         </button>
         <button ion-button clear class="icon-btn" (click)="deletePost()">

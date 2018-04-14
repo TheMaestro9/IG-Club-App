@@ -25,4 +25,9 @@ export class DataServiceProvider {
       .map(res => res.json());
   }
 
+  put(url, data) {
+    return this.http.put(url, data)
+      .map(res=>res.json());
+  }
+
 }

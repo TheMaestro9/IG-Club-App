@@ -12,11 +12,13 @@ import { ComponentsModule } from '../components/components.module';
 import { DataServiceProvider } from '../providers/data-service/data-service';
 
 import { AddPostPage } from '../pages/add-post/add-post';
+import { EditPostsPage } from '../pages/edit-posts/edit-posts';
 
 @NgModule({
   declarations: [
     MyApp,
-    AddPostPage
+    AddPostPage,
+    EditPostsPage
    // ListPage
   ],
   imports: [
@@ -29,7 +31,8 @@ import { AddPostPage } from '../pages/add-post/add-post';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    AddPostPage
+    AddPostPage,
+    EditPostsPage
    // ListPage
   ],
   providers: [

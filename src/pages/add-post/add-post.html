@@ -11,17 +11,17 @@
       
       <ion-item>
         <ion-label floating>Title</ion-label>
-        <ion-input type="text" [(ngModel)]="postTitle" clearInput></ion-input>
+        <ion-input type="text" [(ngModel)]="title" clearInput></ion-input>
       </ion-item>
 
       <ion-item>
         <ion-label floating>Image Link</ion-label>
-        <ion-input type="text" [(ngModel)]="imageLink"></ion-input>
+        <ion-input type="text" [(ngModel)]="url"></ion-input>
       </ion-item>
 
       <ion-item>
-        <ion-label floating>Description</ion-label>
-        <ion-textarea type="text" [(ngModel)]="postDescription"></ion-textarea>
+        <ion-label floating>Content</ion-label>
+        <ion-textarea type="text" [(ngModel)]="content"></ion-textarea>
       </ion-item>
 
       <button ion-button color="primary" outline (click)="addPost()">Post</button>

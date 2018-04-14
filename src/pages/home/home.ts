@@ -26,21 +26,21 @@ export class HomePage {
     initializeItems () {
     this.posts=[ {
       "title":"First Post",
-      "text":"Ig club is the best in the area", 
+      "contnet":"Ig club is the best in the area", 
     }, 
     {
       "title":"Second Post",
-      "text":"this is how posts with images will look like.", 
+      "contnet":"this is how posts with images will look like.", 
       "img" : "https://vyrez.com/wp-content/uploads/2012/12/unicorn-wallpaper.jpg" 
     },
     {
       "title":"Third Post",
-      "text":"this is how posts with images will look like.", 
+      "contnet":"this is how posts with images will look like.", 
       "img" : null 
     },
     {
       "title":"Fourth Post",
-      "text":"this is how posts with images will look like.", 
+      "contnet":"this is how posts with images will look like.", 
       "img" : "https://vyrez.com/wp-content/uploads/2012/12/unicorn-wallpaper.jpg" 
     }
     
