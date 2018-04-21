@@ -37,8 +37,10 @@ export class AddPostPage {
     var url = 'http://ig-club.eu-gb.mybluemix.net/home/posts'; 
     this.ds.post(url, post_info).subscribe((res)=>{
       console.log(res);
+      if(res) {
+        this.navCtrl.pop(); 
+      }
     } , (error)=>{console.log(error)});
-    this.navCtrl.pop(); 
   }
 
-}
+} 

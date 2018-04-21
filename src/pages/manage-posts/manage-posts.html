@@ -9,8 +9,14 @@
     <ion-searchbar (ionInput)="search($event)">
     </ion-searchbar>
     <div class="manage-btn">
-      <button ion-button color="primary" outline (click)="openPage()">Add New Post</button>
-      <button ion-button color="danger" outline (click)="deleteAllPosts(posts)">Delete Posts</button>
+      <ion-row>
+        <ion-col col-6>
+          <button ion-button color="primary" outline (click)="openPage()" class="addBtn">Add New Post</button>
+        </ion-col>
+        <ion-col col-6> 
+          <button ion-button color="danger" outline (click)="deleteAllPosts(posts)" class="deleteBtn">Delete Posts</button>
+        </ion-col>
+      </ion-row>
     </div>
     <posts [posts]="posts" [adminBtn]='true'></posts>
 

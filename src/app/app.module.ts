@@ -13,6 +13,7 @@ import { DataServiceProvider } from '../providers/data-service/data-service';
 
 import { AddPostPage } from '../pages/add-post/add-post';
 import { EditPostsPage } from '../pages/edit-posts/edit-posts';
+import { SearchProvider } from '../providers/search/search';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { EditPostsPage } from '../pages/edit-posts/edit-posts';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    DataServiceProvider
+    DataServiceProvider,
+    SearchProvider
   ]
 })
 export class AppModule {}
