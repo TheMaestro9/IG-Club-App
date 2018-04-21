@@ -1,11 +1,24 @@
 page-gallery {
-.col{
-
-   
-}
-    .img{
-        height: 40px;
-        width: 40px;
+    padding: 20%;
+    .content{
+        
 
     }
+    .row{
+        margin: auto;
+        margin-top: 9px;
+    }
+    .col{
+        margin: auto;
+        display: block;
+
+    }
+    .img{
+        height: 150px;
+        width: 200px;
+        display: block;
+        margin: auto;
+        
+    }
+    
 }
