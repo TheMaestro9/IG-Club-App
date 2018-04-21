@@ -4,12 +4,12 @@
 
 <ion-content padding>
   <div>
-    <p>this course is
-      <span class="info">{{currentRound}}</span>
-      the next round in
-      <span class="info">{{nextRoundTime}}</span>
-      course's cost is
-      <span class="info">{{cost}}</span> EGP </p>
+    <p>This course will start on
+      <span class="info">{{courseData.currentPeriod}}</span>
+      . The next round will be on
+      <span class="info">{{courseData.nextRound}}</span>
+      . Course's cost is
+      <span class="info">{{courseData.cost}}</span> EGP </p>
   </div>
 
   <p class="main-address">Course area preferred</p>
@@ -58,5 +58,5 @@
   </ion-item>
   <br>
   <br>
-  <button ion-button block (click)='makeObj()'>submit </button>
+  <button ion-button block (click)='addEslRequest()'>submit </button>
 </ion-content>
