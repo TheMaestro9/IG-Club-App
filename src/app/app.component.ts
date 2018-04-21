@@ -5,6 +5,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import {Storage} from '@ionic/storage'; 
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
+import { DataServiceProvider } from '../providers/data-service/data-service';
 
 @Component({
   templateUrl: 'app.html'
@@ -19,15 +20,17 @@ export class MyApp {
 
 
   constructor(public platform: Platform, public statusBar: StatusBar,
-     public splashScreen: SplashScreen , public store:Storage) {
+     public splashScreen: SplashScreen , public store:Storage , public DS :DataServiceProvider) {
+       // we are making object form DataServiceProvider to initialize the token in it 
     this.initializeApp();
     this.routeUser() ; 
+    splashScreen.show() 
   }
 
   routeUser(){
     this.store.get('token').then(token=>{
-      console.log(token)
-      if(token=="" || token == null)
+      console.log('welcome' , token)
+      if(token=="" || token == null || typeof(token)=='undefined')
         this.rootPage='LoginPage';
     })
   }

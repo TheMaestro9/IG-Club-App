@@ -10,7 +10,7 @@
     </ion-searchbar>
     <div class="manage-btn">
       <button ion-button color="primary" outline (click)="openPage()">Add New Post</button>
-      <button ion-button color="danger" outline>Delete Posts</button>
+      <button ion-button color="danger" outline (click)="deleteAllPosts(posts)">Delete Posts</button>
     </div>
     <posts [posts]="posts" [adminBtn]='true'></posts>
 

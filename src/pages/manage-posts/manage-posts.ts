@@ -20,7 +20,7 @@ export class ManagePostsPage {
 
   toolBarColor;
   toolBartextColor;
-  posts;
+  posts=[];
   searchQuery: string = '';
 
   constructor(public navCtrl: NavController, public navParams: NavParams,public storage: Storage, public ds :DataServiceProvider) {
@@ -30,7 +30,7 @@ export class ManagePostsPage {
     this.getPosts();
   }
   initializeItems () {
-    this.posts=[ {
+    /* this.posts=[ {
       "title":"First Post",
       "content":"Ig club is the best in the area", 
     }, 
@@ -50,7 +50,7 @@ export class ManagePostsPage {
       "img" : "https://vyrez.com/wp-content/uploads/2012/12/unicorn-wallpaper.jpg" 
     }
     
-  ]
+  ] */
   }
 
   search(ev: any) {
@@ -83,6 +83,16 @@ export class ManagePostsPage {
 
   openPage() {
     this.navCtrl.push(AddPostPage);
+  }
+
+  deleteAllPosts () {
+    var post = this.posts.forEach(post => {
+         console.log(post.id);
+         var url = 'http://ig-club.eu-gb.mybluemix.net/home/posts/'+post.id ;
+         this.ds.deletePosts(url, post).subscribe(res=>{
+          console.log(res)
+        },err=>(console.log(err)));
+      });
   }
 
 }

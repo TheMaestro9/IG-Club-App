@@ -26,18 +26,19 @@ export class AddPostPage {
   constructor(public navCtrl: NavController, public navParams: NavParams, public storage: Storage, public ds:DataServiceProvider) {
   }
 
+
   addPost () {
     var post_info = {
-      'title': this.title,
+      'title': this.title, 
       'url': this.url,
       'content': this.content
     }
-
-    this.storage.get('token').then(token=>{
-    var url = 'http://ig-club.eu-gb.mybluemix.net/home/posts?token='+token; 
+    console.log(post_info);
+    var url = 'http://ig-club.eu-gb.mybluemix.net/home/posts'; 
     this.ds.post(url, post_info).subscribe((res)=>{
       console.log(res);
-    } , (error)=>{console.log(error)})
-  })
-}
+    } , (error)=>{console.log(error)});
+    this.navCtrl.pop(); 
+  }
+
 }

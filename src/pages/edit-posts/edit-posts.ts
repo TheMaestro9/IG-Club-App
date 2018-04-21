@@ -24,11 +24,12 @@ export class EditPostsPage {
     this.post.content = this.navParams.get('content');
   }
 
-  updatePost(id, title, img, content) {
-    var url = 'http://ig-club.eu-gb.mybluemix.net/home/posts/'+id; 
+  updatePost(post, id) {
+    var url = 'http://ig-club.eu-gb.mybluemix.net/home/posts/'+this.post.id; 
     this.ds.put(url, this.post).subscribe((res)=>{
       console.log(res);
-    } , (error)=>{console.log(error)})
+    } , (error)=>{console.log(error)});
+    this.navCtrl.pop();
 }
 
 }
