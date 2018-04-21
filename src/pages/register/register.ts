@@ -57,7 +57,7 @@ export class RegisterPage {
     }
 
     console.log(user_info);
-    var url = 'http://ig-club.eu-gb.mybluemix.net/signup' ; 
+    var url = '/signup' ; 
     this.ds.post(url, user_info).subscribe((res)=>{
       console.log(res);
       this.navCtrl.push('LoginPage' , {cameFromRegPage:true})

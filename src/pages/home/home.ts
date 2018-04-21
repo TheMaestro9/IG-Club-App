@@ -48,7 +48,7 @@ export class HomePage {
   }
   getPosts(){ 
 
-      var url = 'http://ig-club.eu-gb.mybluemix.net/home/posts' ;
+      var url = '/home/posts' ;
       console.log(url);  
       this.ds.get(url).subscribe(res=>{
         console.log(res)

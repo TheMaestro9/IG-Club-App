@@ -56,7 +56,7 @@ export class LoginPage {
       'email':this.email,
       'password':this.password
     }
-    var url = 'http://ig-club.eu-gb.mybluemix.net/login'
+    var url = '/login'
     this.ds.post(url , user_info).subscribe((res)=>{
         console.log(res);
         if(res.success)
