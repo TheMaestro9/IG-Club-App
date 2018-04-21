@@ -9,7 +9,7 @@ import {DataServiceProvider} from '../../providers/data-service/data-service'
 })
 export class HomePage {
 
-  posts; 
+  posts=[]; 
   toolBarColor;
   toolBartextColor;
 
@@ -24,7 +24,7 @@ export class HomePage {
     this.getPosts()
   }
     initializeItems () {
-    this.posts=[ {
+    /* this.posts=[ {
       "title":"First Post",
       "contnet":"Ig club is the best in the area", 
     }, 
@@ -44,7 +44,7 @@ export class HomePage {
       "img" : "https://vyrez.com/wp-content/uploads/2012/12/unicorn-wallpaper.jpg" 
     }
     
-  ]
+  ] */
   }
   getPosts(){ 
 
