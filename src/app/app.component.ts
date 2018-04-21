@@ -14,7 +14,7 @@ export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
   rootPage: any = "HomePage";
-  showSubmenu = [false , false , false] ; 
+  showSubmenu = [false , false , false , false , false] ; 
   
   pages: Array<{title: string, component: any }>;
 

@@ -7,3 +7,7 @@
     position: absolute;
     top: 10px;
 }
+
+@mixin setHeight ($height) {
+    height: $height;
+}

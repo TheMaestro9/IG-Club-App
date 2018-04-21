@@ -25,7 +25,7 @@ export class EditPostsPage {
   }
 
   updatePost(post, id) {
-    var url = 'http://ig-club.eu-gb.mybluemix.net/home/posts/'+this.post.id; 
+    var url = '/home/posts/'+this.post.id; 
     this.ds.put(url, this.post).subscribe((res)=>{
       console.log(res);
     } , (error)=>{console.log(error)});

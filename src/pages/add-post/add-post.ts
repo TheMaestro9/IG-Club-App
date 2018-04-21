@@ -34,7 +34,7 @@ export class AddPostPage {
       'content': this.content
     }
     console.log(post_info);
-    var url = 'http://ig-club.eu-gb.mybluemix.net/home/posts'; 
+    var url = '/home/posts'; 
     this.ds.post(url, post_info).subscribe((res)=>{
       console.log(res);
       if(res) {

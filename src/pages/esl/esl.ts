@@ -66,7 +66,7 @@ export class EslPage{
       courseRequest.courseArea = courseRequest.courseArea.slice(0, courseRequest.courseArea.length-1)
 
       console.log(courseRequest)
-      var url = "http://localhost:6001/courses/esl-request"
+      var url = "/esl-request"
       this.ds.post(url , courseRequest).subscribe(res=>{
         console.log(res)
       })

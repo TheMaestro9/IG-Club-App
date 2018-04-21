@@ -53,7 +53,7 @@ export class ManagePostsPage {
   }
 
   getPosts(){ 
-    var url = 'http://ig-club.eu-gb.mybluemix.net/home/posts' ;
+    var url = '/home/posts' ;
       console.log(url);  
       this.ds.get(url).subscribe(res=>{
         console.log(res)
@@ -68,7 +68,7 @@ export class ManagePostsPage {
   deleteAllPosts () {
     var post = this.posts.forEach(post => {
          console.log(post.id);
-         var url = 'http://ig-club.eu-gb.mybluemix.net/home/posts/'+post.id ;
+         var url = '/home/posts/'+post.id ;
          this.ds.deletePosts(url, post).subscribe(res=>{
           console.log(res);
           if(res) {
