@@ -52,7 +52,6 @@ export class LoginPage {
       confirm.present();     }
   }
   loginButtonClicked(){ 
-    console.log('welcome') ; 
     var user_info = {
       'email':this.email,
       'password':this.password
@@ -62,8 +61,10 @@ export class LoginPage {
         console.log(res);
         if(res.success)
           {
-              this.store.set('token', res.token)
-              this.navCtrl.setRoot('HomePage')
+              this.store.set('token', res.token).then(res=>{
+                this.ds.getToken() ; 
+                this.navCtrl.setRoot('HomePage')
+              })
           } 
         else  
           alert(res.err)

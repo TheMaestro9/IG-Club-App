@@ -9,7 +9,7 @@ import {DataServiceProvider} from '../../providers/data-service/data-service'
 })
 export class HomePage {
 
-  posts; 
+  posts = []  ; 
   toolBarColor;
   toolBartextColor;
 
@@ -20,7 +20,7 @@ export class HomePage {
 
     this.toolBarColor = 'dark';
     this.toolBartextColor='light';
-    this.initializeItems();
+    //this.initializeItems();
     this.getPosts()
   }
     initializeItems () {

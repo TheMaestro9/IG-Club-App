@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, IonicPage,NavParams } from 'ionic-angular';
+import { NavController, IonicPage,NavParams, Checkbox } from 'ionic-angular';
 
 
 @IonicPage() 
@@ -17,15 +17,13 @@ export class EslPage{
   cost = '2000';
   zayed;
   newcairo;
-  boolArr = [false , false , false , false] 
-  Names = ['zayed', 'new' , 'helo' , 'man']
+  checked = [false , false , false , false , false] 
+  checkBoxes = ['Mohandeseen', 'Naser City' , 'New Cairo' ,'Zayed' ,'Maadi']
   otherCheckBox ; 
   otherText ; 
   constructor(public navCtrl: NavController,public navParams: NavParams)
    {
-   
-
-
+  
   }
 
   makeObj ( ){ 
@@ -34,25 +32,19 @@ export class EslPage{
       'area':''
 
     };
-    console.log(obj)
 
-    console.log('len' , this.boolArr.length)
-    for ( var i = 0  ; i < this.boolArr.length ; i++ ){
-      if(this.boolArr[i])
-        obj.area+=this.Names[i] + ','
-      console.log('ohhh')
+    console.log('len' , this.checked.length)
+    for ( var i = 0  ; i < this.checked.length ; i++ ){
+      if(this.checked[i])
+        obj.area+=this.checkBoxes[i] + ','
     }
 
-    console.log(obj)
     if(this.otherCheckBox)
         obj.area+=this.otherText 
       else 
         obj.area = obj.area.slice(0, obj.area.length-1)
 
     console.log(obj)
-
-
-    console.log('ya kber' , this.boolArr)
   }
 
 

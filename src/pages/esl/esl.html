@@ -1,45 +1,62 @@
 <ion-header>
-    <main-header title="ESL Course"> </main-header>
-  </ion-header>
-   
-  <ion-content padding>
-<div>
-   <p>this course is  <span class="info">{{currentRound}}</span> 
-   the next round in  <span class="info">{{nextRoundTime}}</span> 
-  course's cost is<span class="info">{{cost}}</span> EGP </p>
-</div>
-    
-      <p class="main-address">Course area preferred</p>
+  <main-header title="ESL Course"> </main-header>
+</ion-header>
 
-      <label class = "checkbox">
-          <input type = "checkbox" [(ngModel)]="boolArr[1]"> Zayed
-       </label>
-       <br>
-       <br>
-       <label class = "checkbox">
-          <input type = "checkbox" [(ngModel)]="boolArr[0]"> New Cairo
-       </label>
-       <br>
-       <br>
-       <label class = "checkbox">
-          <input [(ngModel)]="otherCheckBox" type = "checkbox">other : 
-          <input class="other" [(ngModel)]="otherText"  type="text" >
-       </label>
-       <br>
-       <br>
-       <br>
-      
-      <p class="main-address">Time to communicate </p>
-      <ion-item>
-          <ion-label>Times</ion-label>
-          <ion-select [(ngModel)]="time" multiple="false">
-            <ion-option value="Time 1">Time 1</ion-option>
-            <ion-option value="Time 2">Time 2</ion-option>
-            <ion-option value="Time 3">Time 3</ion-option>
-            <ion-option value="Time 4">Time 4</ion-option>           
-          </ion-select>
+<ion-content padding>
+  <div>
+    <p>this course is
+      <span class="info">{{currentRound}}</span>
+      the next round in
+      <span class="info">{{nextRoundTime}}</span>
+      course's cost is
+      <span class="info">{{cost}}</span> EGP </p>
+  </div>
 
-        </ion-item>
-<br><br>
-        <button ion-button block (click)='makeObj()' >submit </button>
-  </ion-content>
+  <p class="main-address">Course area preferred</p>
+
+  <div *ngFor="let checkBox of checkBoxes;index as i">
+    <label class="checkbox">
+      <input type="checkbox" [(ngModel)]="checked[i]"> {{checkBox}}
+    </label>
+    <br>
+    <br> 
+  </div>
+
+  <label class="checkbox">
+    <input [(ngModel)]="otherCheckBox" type="checkbox">other :
+    <input class="other" [(ngModel)]="otherText" type="text">
+  </label>
+ 
+  <!--
+  <label class="checkbox">
+    <input type="checkbox" [(ngModel)]="boolArr[0]"> Zayed
+  </label>
+  <br>
+  <br> 
+  <label class="checkbox">
+    <input type="checkbox" [(ngModel)]="boolArr[0]"> Zayed
+  </label>
+  <br>
+  <br>
+  <label class="checkbox">
+    <input type="checkbox" [(ngModel)]="boolArr[1]"> New Cairo
+  </label>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+-->
+  <p class="main-address">Time to communicate </p>
+  <ion-item>
+    <ion-label>Times</ion-label>
+    <ion-select [(ngModel)]="time" multiple="false">
+      <ion-option value="9 AM - 4 PM">9 AM - 4 PM </ion-option>
+      <ion-option value="4 PM - 8 PM">4 PM - 8 PM </ion-option>
+    </ion-select>
+
+  </ion-item>
+  <br>
+  <br>
+  <button ion-button block (click)='makeObj()'>submit </button>
+</ion-content>
