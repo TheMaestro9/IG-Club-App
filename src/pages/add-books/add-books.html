@@ -14,11 +14,27 @@
       </ion-item>
 
       <ion-item>
-        <ion-label floating>ISBN</ion-label>
+        <ion-label floating>Photo Link</ion-label>
         <ion-input type="text" [(ngModel)]="url"></ion-input>
       </ion-item>
 
       <ion-item>
+        <ion-label floating>ISBN</ion-label>
+        <ion-input type="text" [(ngModel)]="number"></ion-input>
+      </ion-item>
+
+      <ion-item class="filter">
+        <ion-label>Type</ion-label>
+        <ion-select [(ngModel)]="toppings" multiple="true">
+          <ion-option>IGCSEs</ion-option>
+          <ion-option>AS or ALs</ion-option>
+          <ion-option>Edexcel</ion-option>
+          <ion-option>Cambridge</ion-option>
+          <ion-option>Checkpoint</ion-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item class="condition">
           <ion-label>Book Condition</ion-label>
           <ion-select [(ngModel)]="condition">
             <ion-option value="n">As New</ion-option>
