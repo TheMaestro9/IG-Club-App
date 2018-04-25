@@ -62,8 +62,9 @@ export class LoginPage {
         if(res.success)
           {
               this.store.set('token', res.token).then(res=>{
-                this.ds.getToken() ; 
-                this.navCtrl.setRoot('HomePage')
+                this.ds.getToken().then(data=>{
+                  this.navCtrl.setRoot('HomePage')
+                }) ; 
               })
           } 
         else  

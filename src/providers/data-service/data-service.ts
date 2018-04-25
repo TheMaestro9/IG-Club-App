@@ -12,7 +12,8 @@ import { Storage } from '@ionic/storage'
 export class DataServiceProvider {
 
   token: string;
-  host="http://ig-club.eu-gb.mybluemix.net"
+  // host="http://ig-club.eu-gb.mybluemix.net";
+  host="http://localhost:6001" ; 
   constructor(public http: Http, public storage: Storage) {
 
     console.log('constructor DS')
@@ -20,7 +21,7 @@ export class DataServiceProvider {
   }
 
    getToken(){
-    this.storage.get('token').then(token => {
+    return this.storage.get('token').then(token => {
       console.log('token in DS', token)
       if (typeof (token) == 'undefined')
         token = '';

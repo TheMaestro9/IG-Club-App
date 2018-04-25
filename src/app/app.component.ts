@@ -29,9 +29,16 @@ export class MyApp {
 
   routeUser(){
     this.store.get('token').then(token=>{
-      console.log('welcome' , token)
+      console.log('welcome in app.component, the token:' , token)
       if(token=="" || token == null || typeof(token)=='undefined')
         this.rootPage='LoginPage';
+      else {
+        var url = "/check-token"; 
+        this.DS.get(url).subscribe(res=>{
+          if(!res.success)
+            this.rootPage='LoginPage' ; 
+        })
+      }
     })
   }
   menuItemHandler(index): void {
