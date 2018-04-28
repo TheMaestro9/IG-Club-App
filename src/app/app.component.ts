@@ -13,7 +13,7 @@ import { DataServiceProvider } from '../providers/data-service/data-service';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = "HomePage";
+  rootPage: any = "LoginPage";
   showSubmenu = [false , false , false , false , false] ; 
   
   pages: Array<{title: string, component: any }>;
@@ -37,6 +37,8 @@ export class MyApp {
         this.DS.get(url).subscribe(res=>{
           if(!res.success)
             this.rootPage='LoginPage' ; 
+          else 
+            this.rootPage="HomePage"
         })
       }
     })
