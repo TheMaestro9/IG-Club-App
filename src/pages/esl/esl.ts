@@ -32,7 +32,7 @@ export class EslPage{
   }
 
   getCourseData() { 
-    var url = "http://localhost:6001/courses/esl"; 
+    var url = "/courses/esl"; 
     this.ds.get(url).subscribe(res=>{
       if(res.success){
         res = res.courseData
@@ -66,7 +66,7 @@ export class EslPage{
       courseRequest.courseArea = courseRequest.courseArea.slice(0, courseRequest.courseArea.length-1)
 
       console.log(courseRequest)
-      var url = "/esl-request"
+      var url = "/courses/esl-request"
       this.ds.post(url , courseRequest).subscribe(res=>{
         console.log(res)
       })

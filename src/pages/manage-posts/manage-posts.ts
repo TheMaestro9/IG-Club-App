@@ -32,13 +32,13 @@ export class ManagePostsPage {
   }
 
   ionViewDidEnter () {
-    //this.getPosts();
-    this.posts=[
-      {
-        title:"hello",
-        content:"man where are you"
-      }
-    ]
+    this.getPosts();
+    // this.posts=[
+    //   {
+    //     title:"hello",
+    //     content:"man where are you"
+    //   }
+    // ]
   }
 
   ionViewDidLeave(){

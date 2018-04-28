@@ -15,11 +15,14 @@ import {Storage} from '@ionic/storage';
 })
 export class PostsComponent {
 
+  likeIconColor;
   @Input('posts') posts ; 
   @Input('showButton') showButton ; 
   @Input('adminBtn') adminBtn ;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public storage: Storage, public ds: DataServiceProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public storage: Storage,
+     public ds: DataServiceProvider) {
+       this.likeIconColor="danger";
     }
     
     ngOnInit(){
@@ -27,6 +30,9 @@ export class PostsComponent {
         if(typeof(post.img)  == 'undefined') 
           post['img'] == null      
       });  
+    }
+    showInterest(post){
+      post.interested = !post.interested
     }
 
     openPage() {

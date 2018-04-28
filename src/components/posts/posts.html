@@ -1,4 +1,6 @@
 <!-- Generated template for the PostsComponent component -->
+
+<p *ngIf="posts.length == 0" class="empty-list"> Nothing to show here </p> 
 <ion-card *ngFor="let post of posts">
 
 
@@ -9,7 +11,7 @@
 
   </ion-item>
 
-  <img *ngIf="post.img!=null" width="100%" height="auto" [attr.src]="post.img" class="embed-responsive-item" allowfullscreen>
+  <img *ngIf="post.url!=null" width="100%" height="auto" [attr.src]="post.url" class="embed-responsive-item" allowfullscreen>
 
   <ion-card-content padding>
 
@@ -18,7 +20,8 @@
     </p>
 
     <div *ngIf='showButton' text-right>
-      <ion-icon class='love-icon' name="heart-outline"></ion-icon>
+      <ion-icon class='love-icon' [color]="post.interested?'danger':'text'" 
+      name="heart-outline" (click)="showInterest(post)"></ion-icon>
       <!--
       <button  ion-button block color="dark">
         <strong>Show Interest</strong>

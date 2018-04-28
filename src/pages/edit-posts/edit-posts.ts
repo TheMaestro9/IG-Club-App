@@ -13,14 +13,14 @@ export class EditPostsPage {
   post = {
     id: '',
     title: '',
-    img: '',
+    url: '',
     content: ''
   }
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public ds: DataServiceProvider, public storage: Storage) {
     this.post.id = this.navParams.get('id');
     this.post.title = this.navParams.get('title');
-    this.post.img = this.navParams.get('img');
+    this.post.url = this.navParams.get('url');
     this.post.content = this.navParams.get('content');
   }
 
