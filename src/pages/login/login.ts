@@ -70,7 +70,12 @@ export class LoginPage {
         else  
           alert(res.err)
 
-    }, err=>{ console.log(err)})
+    }, err=>{ 
+      if(err.status == 401)
+        alert ('please verify your email first')
+      else 
+        alert("couldn't connect to server") ; 
+              console.log(err) })
   }
   signUpButtonClicked(){
     console.log("wow ")
