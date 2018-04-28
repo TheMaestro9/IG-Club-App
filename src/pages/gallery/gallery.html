@@ -5,14 +5,18 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-    <main-header title="Gallery"> </main-header>
+    <main-header title="Universities"> </main-header>
 </ion-header>
 
 
 <ion-content padding class="content">
-<ion-row  *ngFor="let row of array2d" class="row">
-    <ion-col class="col" *ngFor="let image of row"> <img  class="img" src="{{image}}"/> </ion-col>      
-</ion-row>
+    <ion-row *ngFor="let row of array2d" class="row">
+        <ion-col class="col" *ngFor="let image of row">
+            <ion-card class="img">
+                <img  src="{{image}}" />
+            </ion-card>
+        </ion-col>
+    </ion-row>
 
 
 

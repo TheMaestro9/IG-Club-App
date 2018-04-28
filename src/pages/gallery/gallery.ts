@@ -22,7 +22,12 @@ export class GalleryPage {
   count=0;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
    
-    this.array1d=['assets/imgs/11.jpg','assets/imgs/33.jpg','assets/imgs/22.jpg', 'assets/imgs/33.jpg','assets/imgs/44.jpg','assets/imgs/11.jpg'];
+    this.array1d=['https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSUgBLPUoHSJik_qvMMyLbNRciAADDwk_3pvyWp7P9lGEE6bqB',
+                'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVzXRmyDHyjAahOjkWdmOybQjJntmUYpjPEW9goRDtEgL7XRmi',
+                'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPoMaUL5jNxaoB6IbFa3jVOf2P9vVsK8tfm9hesFlcDTi09-mh', 
+                'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTCNEo13b_7O18ptCKvjX7iOLUdmJq7xnzQ6VGOFgeHpUMqxW_',
+                'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSz_ruvvmPT-TikARpkAnIM4Ra2FQOBGlaKCYfGfEMV0luSEjnlZA',
+                'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvEE2YF9UYX83oN8YRE_eANlSDF_lvMUFyt16HtcLYSvX4r_kQaQ'];
 
     for(let i=0;i<this.array1d.length;i+=2){
       this.array2d[i] = [];
