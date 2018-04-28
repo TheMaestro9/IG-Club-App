@@ -9,7 +9,10 @@
 <main-header [title]='pageTitle'></main-header>
 </ion-header>
 
-
 <ion-content class="separated-cards">
+
+  
+<ion-searchbar (ionInput)="search($event)">
+  </ion-searchbar>
 <posts [posts]='posts' [showButton]='true'></posts>
 </ion-content>
