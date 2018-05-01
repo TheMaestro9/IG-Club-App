@@ -1,0 +1,55 @@
+<p *ngIf="books.length == 0" class="empty-list"> Nothing to show here </p>
+
+<ion-card class="book-card" *ngFor="let book of books">
+
+  <ion-card-content>
+
+    <ion-row> 
+      <ion-col col-6 class="img-col">
+        <ion-img *ngIf="book.url!=null" width="100%" height="auto" [src]="book.url" class="book-img"></ion-img>
+      </ion-col>
+
+      <ion-col col-6 class="details">
+        <div class="book-info">
+          <h3>{{book.title}}</h3>
+          <p>{{book.category}}</p>
+        </div>
+
+        <div class="owner-info">
+          <h3>owner</h3>
+          <p>{{user_info.user_email}}</p>
+          <p>{{user_info.phone_no}}</p>
+        </div>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="cash-footer">
+      <ion-col col-9>
+        <p>{{book.price}} - {{book.payMethod}}</p>
+      </ion-col>
+
+      <ion-col col-3 class="btn-col" *ngIf="cartBtn">
+        <button ion-button clear (click)="addToCart()" [class.highlighted]="isSelected">
+          <ion-icon [name]="(iconName) ? 'remove' : 'add'"></ion-icon>
+        </button>
+      </ion-col>
+
+      <ion-col col-3 class="btn-col" *ngIf="adminBtn">
+        <button ion-button clear class="icon-btn" (click)="editPost(post.id, post.title, post.content, post.url)">
+          <ion-icon class="edit-icon" name="create"></ion-icon>
+        </button>
+        <button ion-button clear class="icon-btn" (click)="deletePost(post.id)">
+          <ion-icon class="delete-icon" name="trash"></ion-icon>
+        </button>
+      </ion-col>
+
+      <!-- <ion-col col-3 class="btn-col" *ngIf="adminBtn">
+        <button ion-button clear class="icon-btn" (click)="deletePost(post.id)">
+          <ion-icon class="delete-icon" name="trash"></ion-icon>
+        </button>
+      </ion-col> -->
+    </ion-row>
+
+  </ion-card-content>
+
+</ion-card>

@@ -23,8 +23,18 @@
         <ion-input type="text" [(ngModel)]="number"></ion-input>
       </ion-item>
 
+      <ion-item>
+        <ion-label floating>Price</ion-label>
+        <ion-input type="text" [(ngModel)]="number"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Payment Method</ion-label>
+        <ion-input type="text" [(ngModel)]="text"></ion-input>
+      </ion-item>
+
       <ion-item class="filter">
-        <ion-label>Type</ion-label>
+        <ion-label>Category</ion-label>
         <ion-select [(ngModel)]="toppings" multiple="true">
           <ion-option>IGCSEs</ion-option>
           <ion-option>AS or ALs</ion-option>
@@ -45,7 +55,7 @@
           </ion-select>
       </ion-item>
 
-      <button ion-button color="primary" outline (click)="addPost()">Sell Now</button>
+      <button ion-button color="primary" outline (click)="sellBook()">Sell Now</button>
       <button ion-button color="danger" outline (click)="clearFields()">Clear Fields</button>
 
     </ion-list>

@@ -16,13 +16,15 @@ import { EditPostsPage } from '../pages/edit-posts/edit-posts';
 import { SearchProvider } from '../providers/search/search';
 
 import { BooksCartPage } from '../pages/books-cart/books-cart';
+import { AddBooksPage } from '../pages/add-books/add-books';
 
 @NgModule({
   declarations: [
     MyApp,
     AddPostPage,
     EditPostsPage,
-    BooksCartPage
+    BooksCartPage,
+    AddBooksPage
    // ListPage
   ],
   imports: [
@@ -37,7 +39,8 @@ import { BooksCartPage } from '../pages/books-cart/books-cart';
     MyApp,
     AddPostPage,
     EditPostsPage,
-    BooksCartPage
+    BooksCartPage,
+    AddBooksPage
    // ListPage
   ],
   providers: [

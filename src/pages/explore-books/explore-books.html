@@ -19,43 +19,6 @@
     </ion-select>
   </ion-item>
 
-  <ion-card class="book-card">
-    <ion-card-content> 
-
-      <ion-row>
-
-        <ion-col col-6 class="img-col">
-          <ion-img src="assets/imgs/book.jpg" class="book-img"></ion-img>
-        </ion-col>
-
-        <ion-col col-6 class="details">
-          <div class="book-info">
-            <h3>path of the dead</h3>
-            <p>edexcel | fine</p>
-          </div>
-
-          <div class="owner-info">
-            <h3>owner</h3>
-            <p>mohamed ashraf</p>
-            <p>01113233856</p>
-          </div>
-        </ion-col>
-
-      </ion-row>
-
-      <ion-row class="cash-footer">
-        <ion-col col-9>
-          <p>$ 13 - cash on delivery</p>
-        </ion-col>
-
-        <ion-col col-3 class="btn-col">
-          <button ion-button clear (click)="addToCart()" [class.highlighted]="isSelected">
-            <ion-icon [name]="(iconName) ? 'remove' : 'add'"></ion-icon>
-          </button>
-        </ion-col>
-      </ion-row>
-
-    </ion-card-content>
-  </ion-card>
+  <books [books]="books" [cartBtn]='true'></books>
   
 </ion-content>

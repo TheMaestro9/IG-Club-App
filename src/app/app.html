@@ -62,6 +62,7 @@
       <ion-item (click)="menuItemHandler(3)">Admin Panel</ion-item>
       <ion-item-group submenu [class.visible]="showSubmenu[3]">
         <ion-item submenu-item menuClose class="sub-menu-item" (click)="openPage('ManagePostsPage',{title:'Manage Posts'})">Manage Posts</ion-item>
+        <ion-item submenu-item menuClose class="sub-menu-item" (click)="openPage('ManageBooksPage',{title:'Manage Books'})">Manage Books</ion-item>
         <ion-item submenu-item menuClose class="sub-menu-item" (click)="openPage('ManageActivitiesPage',{title:'Manage Activities'})"> Manage Activities</ion-item>
         <ion-item submenu-item menuClose class="sub-menu-item" (click)="openPage('ActivitiesPage',{title:'bla'})"> blabla</ion-item>
       </ion-item-group>
@@ -75,7 +76,7 @@
           <ion-item submenu-item class="hello">Sub menu item</ion-item>
           <ion-item submenu-item class="hello">Sub menu item</ion-item>
         </ion-item-group>
-      <!-- other menu items will go here -->
+      other menu items will go here -->
     </ion-list>
   </ion-content>
 

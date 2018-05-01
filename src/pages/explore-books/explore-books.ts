@@ -1,5 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Storage } from '@ionic/storage'
+import { DataServiceProvider } from '../../providers/data-service/data-service';
 import { BooksCartPage } from '../books-cart/books-cart';
 
 /**
@@ -20,14 +22,32 @@ export class ExploreBooksPage {
   itemCount = 0;
   @Input ('highlighted') isSelected: boolean = false;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  books = [
+    {
+      //'url': 'assets/imgs/default-book.jpg',
+      'title': 'sea monsters',
+      'category': 'edexcel | cambridge',
+      'price': '16$',
+      'payMethod': 'cash on delivery'
+    },
+    {
+      'url': 'assets/imgs/book.jpg',
+      'title': 'path of the dead',
+      'category': 'IGCSEs | cambridge',
+      'price': '24$',
+      'payMethod': 'via vodafone cash'
+    }
+  ];
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, public storage: Storage,
+    public ds :DataServiceProvider) {
   }
 
   openCart () {
     this.navCtrl.push(BooksCartPage);
   }
 
-  addToCart () {
+  /* addToCart () {
     this.iconName = !this.iconName;
     this.isSelected = !this.isSelected;
     this.itemCount += (this.isSelected) ? 1 : -1;
@@ -37,7 +57,7 @@ export class ExploreBooksPage {
     } else {
       console.log('book removed');
       this.itemCount--;   
-    } */
-  }
+    } 
+  } */
 
 }
