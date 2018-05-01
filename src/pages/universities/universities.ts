@@ -10,10 +10,10 @@ import { IonicPage, NavController, NavParams ,Checkbox} from 'ionic-angular';
 
 @IonicPage()
 @Component({
-  selector: 'page-gallery',
-  templateUrl: 'gallery.html',
+  selector: 'page-universities',
+  templateUrl: 'universities.html',
 })
-export class GalleryPage {
+export class UniversitiesPage {
   
   path="assets/imgs/";
   array1d:string[];
