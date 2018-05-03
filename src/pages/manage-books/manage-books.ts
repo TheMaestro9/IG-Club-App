@@ -27,7 +27,7 @@ export class ManageBooksPage {
       'payMethod': 'cash on delivery'
     },
     {
-      'url': 'assets/imgs/book.jpg',
+      //'url': 'assets/imgs/book.jpg',
       'title': 'path of the dead',
       'category': 'IGCSEs | cambridge',
       'price': '24$',

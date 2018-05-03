@@ -6,13 +6,25 @@
 -->
 <ion-header>
 
-<main-header [title]='pageTitle'></main-header>
+  <main-header [title]='pageTitle'></main-header>
 </ion-header>
 
 <ion-content class="separated-cards">
 
-  
-<ion-searchbar (ionInput)="search($event)">
+
+  <ion-searchbar (ionInput)="search($event)">
   </ion-searchbar>
-<posts [posts]='posts' [showButton]='true'></posts>
+
+  <div class="manage-btn">
+    <ion-row>
+      <ion-col col-6>
+        <button ion-button color="primary" outline (click)="openAddPage(pageTitle)" class="addBtn" *ngIf='manageBtn'>Add New</button>
+      </ion-col>
+      <ion-col col-6>
+        <button ion-button color="danger" outline (click)="deleteAll(posts)" class="deleteBtn"  *ngIf='manageBtn'>Delete All</button>
+      </ion-col>
+    </ion-row>
+  </div>
+
+  <posts [posts]='posts' [showButton]='true' [adminBtn]='adminBtn'></posts>
 </ion-content>

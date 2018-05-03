@@ -1,0 +1,42 @@
+<ion-header>
+  <main-header title="Add Activities"> </main-header>
+</ion-header>
+
+<ion-content>
+
+  <ion-card-content>
+
+    <ion-list>
+
+      <ion-item>
+        <ion-label floating>Activity Title</ion-label>
+        <ion-input type="text" [(ngModel)]="title" clearInput></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Photo Link</ion-label>
+        <ion-input type="text" [(ngModel)]="url"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Content</ion-label>
+        <ion-textarea type="text" [(ngModel)]="content"></ion-textarea>
+      </ion-item>
+
+      <!-- <ion-item class="condition">
+          <ion-label>Type</ion-label>
+          <ion-select [(ngModel)]="type">
+            <ion-option>International Trips</ion-option>
+            <ion-option>Domistic Trips</ion-option>
+            <ion-option>Events</ion-option>
+          </ion-select>
+      </ion-item> -->
+
+      <button ion-button color="primary" outline (click)="addTrip()">Add Trip</button>
+      <button ion-button color="danger" outline (click)="clearFields()">Clear Fields</button>
+
+    </ion-list>
+
+  </ion-card-content>
+
+</ion-content>

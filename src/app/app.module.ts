@@ -17,6 +17,7 @@ import { SearchProvider } from '../providers/search/search';
 
 import { BooksCartPage } from '../pages/books-cart/books-cart';
 import { AddBooksPage } from '../pages/add-books/add-books';
+import { AddActivitiesPage } from '../pages/add-activities/add-activities';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { AddBooksPage } from '../pages/add-books/add-books';
     AddPostPage,
     EditPostsPage,
     BooksCartPage,
-    AddBooksPage
+    AddBooksPage,
+    AddActivitiesPage
    // ListPage
   ],
   imports: [
@@ -40,7 +42,8 @@ import { AddBooksPage } from '../pages/add-books/add-books';
     AddPostPage,
     EditPostsPage,
     BooksCartPage,
-    AddBooksPage
+    AddBooksPage,
+    AddActivitiesPage
    // ListPage
   ],
   providers: [

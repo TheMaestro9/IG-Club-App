@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { SearchProvider } from '../../providers/search/search';
+import { AddActivitiesPage } from '../add-activities/add-activities';
 
 /**
  * Generated class for the ActivitiesPage page.
@@ -18,10 +19,14 @@ export class ActivitiesPage {
 
   pageTitle
   posts
+  adminBtn
+  manageBtn;
   constructor(public navCtrl: NavController, public navParams: NavParams,
   public sp:SearchProvider) {
 
     this.pageTitle = navParams.get('title');
+    this.adminBtn = navParams.get('adminBtn');
+    this.manageBtn = navParams.get('manageBtn');
     this.getActivities();
 
   }
@@ -69,6 +74,13 @@ export class ActivitiesPage {
   search (event) {
     this.posts= this.sp.search(event , this.posts);
    }
-   
+
+   openAddPage (pageTitle) {
+     this.navCtrl.push(AddActivitiesPage, {pageTitle});
+   }
+
+   deleteAll (posts) {
+     console.log(posts);
+   }
 
 }
