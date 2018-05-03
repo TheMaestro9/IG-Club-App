@@ -24,7 +24,6 @@ export class ExploreBooksPage {
 
   books = [
     {
-      //'url': 'assets/imgs/default-book.jpg',
       'title': 'sea monsters',
       'category': 'edexcel | cambridge',
       'price': '16$',

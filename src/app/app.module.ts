@@ -16,8 +16,10 @@ import { EditPostsPage } from '../pages/edit-posts/edit-posts';
 import { SearchProvider } from '../providers/search/search';
 
 import { BooksCartPage } from '../pages/books-cart/books-cart';
-import { AddBooksPage } from '../pages/add-books/add-books';
+//import { AddBooksPage } from '../pages/add-books/add-books';
 import { AddActivitiesPage } from '../pages/add-activities/add-activities';
+import { IonicImageLoader } from 'ionic-image-loader';
+import { EditBooksPage } from '../pages/edit-books/edit-books';
 
 @NgModule({
   declarations: [
@@ -25,8 +27,8 @@ import { AddActivitiesPage } from '../pages/add-activities/add-activities';
     AddPostPage,
     EditPostsPage,
     BooksCartPage,
-    AddBooksPage,
-    AddActivitiesPage
+    AddActivitiesPage,
+    EditBooksPage
    // ListPage
   ],
   imports: [
@@ -34,7 +36,8 @@ import { AddActivitiesPage } from '../pages/add-activities/add-activities';
     IonicModule.forRoot(MyApp),
     IonicStorageModule.forRoot(),
     HttpModule,
-    ComponentsModule
+    ComponentsModule,
+    IonicImageLoader.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -42,8 +45,8 @@ import { AddActivitiesPage } from '../pages/add-activities/add-activities';
     AddPostPage,
     EditPostsPage,
     BooksCartPage,
-    AddBooksPage,
-    AddActivitiesPage
+    AddActivitiesPage,
+    EditBooksPage
    // ListPage
   ],
   providers: [

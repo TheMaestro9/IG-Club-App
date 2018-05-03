@@ -17,15 +17,15 @@
 
         <div class="owner-info">
           <h3>owner</h3>
-          <p>{{user_info.user_email}}</p>
-          <p>{{user_info.phone_no}}</p>
+          <p>John Doe</p>
+          <p>0111 416 0654</p>
         </div>
       </ion-col>
     </ion-row>
 
     <ion-row class="cash-footer">
       <ion-col col-9>
-        <p>{{book.price}} - {{book.payMethod}}</p>
+        <p>{{book.price}}$ - {{book.payMethod}}</p>
       </ion-col>
 
       <ion-col col-3 class="btn-col" *ngIf="cartBtn">
@@ -35,19 +35,14 @@
       </ion-col>
 
       <ion-col col-3 class="btn-col" *ngIf="adminBtn">
-        <button ion-button clear class="icon-btn" (click)="editPost(post.id, post.title, post.content, post.url)">
+        <button ion-button clear class="icon-btn" (click)="editBook(book.id, book.url, book.title, book.category, book.price, book.payMethod)">
           <ion-icon class="edit-icon" name="create"></ion-icon>
         </button>
-        <button ion-button clear class="icon-btn" (click)="deletePost(post.id)">
+        <button ion-button clear class="icon-btn" (click)="deleteBook(post.id)">
           <ion-icon class="delete-icon" name="trash"></ion-icon>
         </button>
       </ion-col>
 
-      <!-- <ion-col col-3 class="btn-col" *ngIf="adminBtn">
-        <button ion-button clear class="icon-btn" (click)="deletePost(post.id)">
-          <ion-icon class="delete-icon" name="trash"></ion-icon>
-        </button>
-      </ion-col> -->
     </ion-row>
 
   </ion-card-content>

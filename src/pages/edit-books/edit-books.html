@@ -1,0 +1,57 @@
+<ion-header>
+  <main-header title="Edit Book"> </main-header>
+</ion-header>
+
+
+<ion-content>
+
+  <ion-card-content>
+
+    <ion-list>
+
+      <ion-item>
+        <ion-label floating>Book Title</ion-label>
+        <ion-input type="text" [(ngModel)]="book.title" clearInput></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Photo Link</ion-label>
+        <ion-input type="text" [(ngModel)]="book.url"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Price</ion-label>
+        <ion-input type="number" [(ngModel)]="book.price"></ion-input>
+      </ion-item>
+
+      <!-- <ion-item>
+        <ion-label floating>Payment Method</ion-label>
+        <ion-input type="text" [(ngModel)]="paymentMethod"></ion-input>
+      </ion-item> -->
+
+      <ion-item class="filter">
+        <ion-label>Payment Method</ion-label>
+        <ion-select [(ngModel)]="book.payMethod">
+          <ion-option>cash on delivery</ion-option>
+          <ion-option>via vodafone cash</ion-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item class="filter">
+        <ion-label>Category</ion-label>
+        <ion-select [(ngModel)]="book.category" multiple="true">
+          <ion-option>IGCSEs</ion-option>
+          <ion-option>AS or ALs</ion-option>
+          <ion-option>Edexcel</ion-option>
+          <ion-option>Cambridge</ion-option>
+          <ion-option>Checkpoint</ion-option>
+        </ion-select>
+      </ion-item>
+
+      <button ion-button color="primary" outline (click)="updatePost(book.title, book.img, book.category, book.payMethod, book.price)">Update</button>
+
+    </ion-list>
+
+  </ion-card-content>
+
+</ion-content>

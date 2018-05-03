@@ -20,17 +20,15 @@ export class ManageBooksPage {
 
   books = [
     {
-      //'url': 'assets/imgs/default-book.jpg',
       'title': 'sea monsters',
       'category': 'edexcel | cambridge',
-      'price': '16$',
+      'price': '16',
       'payMethod': 'cash on delivery'
     },
     {
-      //'url': 'assets/imgs/book.jpg',
       'title': 'path of the dead',
       'category': 'IGCSEs | cambridge',
-      'price': '24$',
+      'price': '24',
       'payMethod': 'via vodafone cash'
     }
   ];

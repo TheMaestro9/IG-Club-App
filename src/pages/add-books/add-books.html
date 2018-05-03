@@ -20,22 +20,30 @@
 
       <ion-item>
         <ion-label floating>ISBN</ion-label>
-        <ion-input type="text" [(ngModel)]="number"></ion-input>
+        <ion-input type="number" [(ngModel)]="isbn"></ion-input>
       </ion-item>
 
       <ion-item>
         <ion-label floating>Price</ion-label>
-        <ion-input type="text" [(ngModel)]="number"></ion-input>
+        <ion-input type="number" [(ngModel)]="price"></ion-input>
       </ion-item>
 
-      <ion-item>
+      <!-- <ion-item>
         <ion-label floating>Payment Method</ion-label>
-        <ion-input type="text" [(ngModel)]="text"></ion-input>
+        <ion-input type="text" [(ngModel)]="paymentMethod"></ion-input>
+      </ion-item> -->
+
+      <ion-item class="filter">
+        <ion-label>Payment Method</ion-label>
+        <ion-select [(ngModel)]="payMethod">
+          <ion-option>Cash upon Delivery</ion-option>
+          <ion-option>Vodafone cash</ion-option>
+        </ion-select>
       </ion-item>
 
       <ion-item class="filter">
         <ion-label>Category</ion-label>
-        <ion-select [(ngModel)]="toppings" multiple="true">
+        <ion-select [(ngModel)]="category" multiple="true">
           <ion-option>IGCSEs</ion-option>
           <ion-option>AS or ALs</ion-option>
           <ion-option>Edexcel</ion-option>
@@ -47,11 +55,11 @@
       <ion-item class="condition">
           <ion-label>Book Condition</ion-label>
           <ion-select [(ngModel)]="condition">
-            <ion-option value="n">As New</ion-option>
-            <ion-option value="f">Fine</ion-option>
-            <ion-option value="v">Very Good</ion-option>
-            <ion-option value="g">Good</ion-option>
-            <ion-option value="fa">Fair</ion-option>
+            <ion-option>As New</ion-option>
+            <ion-option>Fine</ion-option>
+            <ion-option>Very Good</ion-option>
+            <ion-option>Good</ion-option>
+            <ion-option>Fair</ion-option>
           </ion-select>
       </ion-item>
 
