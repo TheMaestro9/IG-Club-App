@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { DataServiceProvider } from '../../providers/data-service/data-service';
 
 /**
  * Generated class for the AddActivitiesPage page.
@@ -15,23 +16,38 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class AddActivitiesPage {
 
-  title;
-  url= null;
-  content;
-  type;
+  post;
+  btnTitle;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.type = navParams.get('pageTitle');
+  constructor(public navCtrl: NavController, public navParams: NavParams, public ds: DataServiceProvider) {
+    this.post = this.navParams.get('post');
+    this.post.type = this.navParams.get('pageTitle');
+
+    if (this.post.type != null) {
+      this.btnTitle = "Add";
+      console.log('I know its empty');        
+    } else {
+      this.btnTitle = "Update";
+      console.log(this.post);
+      }
   }
 
-  addTrip () {
+ /*  submit () {
+    if (this.post.type != null) {
+      console.log('I know its empty');        
+    } else {
+      console.log(this.post);
+      }
+    } */
+
+  /* addTrip () {
     var trip_info = {
       'title': this.title, 
       'url': this.url,
       'content': this.content,
       'type': this.type
     }
-    console.log(trip_info);
-  }
+    console.log(this.post);
+  } */
 
 }

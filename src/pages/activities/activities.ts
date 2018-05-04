@@ -2,6 +2,7 @@ import { Component, Input } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { SearchProvider } from '../../providers/search/search';
 import { AddActivitiesPage } from '../add-activities/add-activities';
+import { Storage } from '@ionic/storage';
 
 /**
  * Generated class for the ActivitiesPage page.
@@ -19,16 +20,20 @@ export class ActivitiesPage {
 
   pageTitle
   posts
-  adminBtn
-  manageBtn;
+  admin :boolean = true; 
+  editPageName ='AddActivitiesPage';
+  // deleteUrl = '/home/posts/'; 
+  /* adminBtn
+  manageBtn; */
+
   constructor(public navCtrl: NavController, public navParams: NavParams,
-  public sp:SearchProvider) {
+  public sp:SearchProvider, public store: Storage) {
 
     this.pageTitle = navParams.get('title');
-    this.adminBtn = navParams.get('adminBtn');
-    this.manageBtn = navParams.get('manageBtn');
+    /* this.adminBtn = navParams.get('adminBtn');
+    this.manageBtn = navParams.get('manageBtn'); */
     this.getActivities();
-
+    this.checkAdmin();
   }
 
   ionViewDidLoad() {
@@ -38,7 +43,13 @@ export class ActivitiesPage {
   ionViewDidLeave(){
     this.sp.posts=[];
    }
-  
+
+   checkAdmin () {
+     this.store.get("admin").then(admin => {
+       this.admin = true;
+       console.log('the admin is', admin)
+     })
+   }
  
   getActivities() {
     if (this.pageTitle == 'International Trips') {
@@ -75,8 +86,8 @@ export class ActivitiesPage {
     this.posts= this.sp.search(event , this.posts);
    }
 
-   openAddPage (pageTitle) {
-     this.navCtrl.push("AddActivitiesPage", {pageTitle});
+   addActivitiesPage (pageTitle) {
+     this.navCtrl.push("AddActivitiesPage", {pageTitle:pageTitle , post:{}});
    }
 
    deleteAll (posts) {

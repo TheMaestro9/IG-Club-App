@@ -15,16 +15,16 @@
   <ion-searchbar (ionInput)="search($event)">
   </ion-searchbar>
 
-  <div class="manage-btn">
+  <div *ngIf="admin" class="manage-btn">
     <ion-row>
       <ion-col col-6>
-        <button ion-button color="primary" outline (click)="openAddPage(pageTitle)" class="addBtn" *ngIf='manageBtn'>Add New</button>
+        <button ion-button color="primary" outline (click)="addActivitiesPage(pageTitle)" class="addBtn">Add New</button>
       </ion-col>
       <ion-col col-6>
-        <button ion-button color="danger" outline (click)="deleteAll(posts)" class="deleteBtn"  *ngIf='manageBtn'>Delete All</button>
+        <button ion-button color="danger" outline (click)="deleteAll(posts)" class="deleteBtn">Delete All</button>
       </ion-col>
     </ion-row>
   </div>
 
-  <posts [posts]='posts' [showButton]='true' [adminBtn]='adminBtn'></posts>
+  <posts [posts]='posts' [showButton]='true' [adminBtn]='admin' [editPageName]='editPageName' [deleteUrl]='deleteUrl'></posts>
 </ion-content>
