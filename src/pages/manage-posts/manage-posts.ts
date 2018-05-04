@@ -61,21 +61,6 @@ export class ManagePostsPage {
       },err=>(console.log(err)))
   }
 
-  openPage() {
-    this.navCtrl.push(AddPostPage);
-  }
-
-  deleteAllPosts () {
-    var post = this.posts.forEach(post => {
-         console.log(post.id);
-         var url = '/home/posts/'+post.id ;
-         this.ds.deletePosts(url, post).subscribe(res=>{
-          console.log(res);
-          if(res) {
-            this.navCtrl.push(ManagePostsPage);
-          }
-        },err=>(console.log(err)));
-      });
-  }
+  
 
 }

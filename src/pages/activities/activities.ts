@@ -76,7 +76,7 @@ export class ActivitiesPage {
    }
 
    openAddPage (pageTitle) {
-     this.navCtrl.push(AddActivitiesPage, {pageTitle});
+     this.navCtrl.push("AddActivitiesPage", {pageTitle});
    }
 
    deleteAll (posts) {

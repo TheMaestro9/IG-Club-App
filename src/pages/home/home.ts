@@ -14,28 +14,53 @@ export class HomePage {
   posts = [];
   toolBarColor;
   toolBartextColor;
-
-  constructor(public navCtrl: NavController , public storage: Storage,
+  admin :boolean = false; 
+  editPageName ='EditPostsPage';
+  deleteUrl = '/home/posts/'; 
+  constructor(public navCtrl: NavController , public store: Storage,
               public ds :DataServiceProvider, public sp: SearchProvider) {
 
     this.toolBarColor = 'dark';
     this.toolBartextColor='light';
-    this.getPosts();
+    this.checkAdmin() ; 
   }
 
+  ionViewDidEnter(){
+    this.getPosts();
+
+  }
+
+  checkAdmin(){ 
+    this.store.get("admin").then(admin=>{
+      this.admin = admin ; 
+      console.log('the admin is ',admin)
+    })
+  } 
   ionViewDidLeave(){
     this.sp.posts=[];
    }
   
   getPosts(){ 
       var url = '/home/posts' ;
-      console.log(url);  
       this.ds.get(url).subscribe(res=>{
-        console.log(res)
         this.posts=res.posts ;
       },err=>(console.log(err)))
   }
 
+  deleteAllPosts () {
+    var post = this.posts.forEach(post => {
+         console.log(post.id);
+         var url = '/home/posts/'+post.id ;
+         this.ds.delete(url).subscribe(res=>{
+          console.log(res) 
+        },err=>(console.log(err)));
+      });
+    this.posts=[] 
+  }
+
+  openAddPage (){
+    this.navCtrl.push('AddPostPage') ; 
+  }
   search (event) {
    this.posts= this.sp.search(event , this.posts);
   }

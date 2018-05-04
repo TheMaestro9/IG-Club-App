@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
-import { EslPage } from './esl';
+import { CoursesPage } from './courses';
 import { ComponentsModule } from '../../components/components.module';
 
 @NgModule({
-  declarations: [EslPage],
-  imports: [IonicPageModule.forChild(EslPage) ,
+  declarations: [CoursesPage],
+  imports: [IonicPageModule.forChild(CoursesPage) ,
   ComponentsModule],
 })
 export class EslPageModule { }

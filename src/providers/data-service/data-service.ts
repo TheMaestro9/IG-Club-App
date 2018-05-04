@@ -12,8 +12,8 @@ import { Storage } from '@ionic/storage'
 export class DataServiceProvider {
 
   token: string;
-  host="http://ig-club.eu-gb.mybluemix.net";
-  //host="http://localhost:6001" ; 
+  //host="http://ig-club.eu-gb.mybluemix.net";
+  host="http://localhost:6001" ; 
   constructor(public http: Http, public storage: Storage) {
 
     console.log('constructor DS')
@@ -22,10 +22,8 @@ export class DataServiceProvider {
 
    getToken(){
     return this.storage.get('token').then(token => {
-      console.log('token in DS', token)
       if (typeof (token) == 'undefined')
         token = '';
-      console.log('will change the token now')
       this.token = token;
     })
   }
@@ -33,7 +31,11 @@ export class DataServiceProvider {
    get(url) {
     
     url = this.host + url ; 
-    url += "?token=" + this.token ; 
+    if(url.includes('?'))
+      url+="&"
+    else 
+      url+="?"
+    url += "token=" + this.token ; 
     console.log('sending get Request with url' , url )
 
     return this.http.get(url)
@@ -43,6 +45,8 @@ export class DataServiceProvider {
 
 post(url, data){
   url = this.host + url ; 
+  console.log('sending post Request with url' , url )
+
   data['token'] = this.token ; 
   return this.http.post(url, data)
     .map(res => res.json());
@@ -55,17 +59,10 @@ post(url, data){
       .map(res=>res.json());
   }
 
-  delete(url, id) {
+  delete(url) {
     url = this.host + url ; 
-    return this.http.delete(url, id)
+    url += "?token=" + this.token ; 
+    return this.http.delete(url)
     .map(res=>res.json());
   }
-  
-  deletePosts(url, data) {
-    url = this.host + url ; 
-    data['token'] = this.token ; 
-    return this.http.delete(url, data)
-    .map(res=>res.json());
-  }
-
 }

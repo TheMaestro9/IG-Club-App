@@ -6,16 +6,16 @@ import { DataServiceProvider } from '../../providers/data-service/data-service';
 @IonicPage() 
 
 @Component({
-  selector: 'page-esl',
-  templateUrl: 'esl.html'
+  selector: 'page-courses',
+  templateUrl: 'courses.html'
 })
-export class EslPage{
+export class CoursesPage{
+  courseName ; 
+  pageTitle ; 
   Selection; 
   Increase;
   time ;
   courseData; 
-  zayed;
-  newcairo;
   checked = [false , false , false , false , false] 
   checkBoxes = ['Mohandeseen', 'Naser City' , 'New Cairo' ,'Zayed' ,'Maadi']
   otherCheckBox ; 
@@ -28,11 +28,13 @@ export class EslPage{
       nextRoundTime:'2/5/2018',
       cost : '2000'
       }
+      this.courseName= this.navParams.get('courseName') ;
+      this.pageTitle = this.courseName + " Course"
       this.getCourseData()
   }
 
   getCourseData() { 
-    var url = "/courses/esl"; 
+    var url = "/courses/course-info?courseName="+this.courseName; 
     this.ds.get(url).subscribe(res=>{
       if(res.success){
         res = res.courseData

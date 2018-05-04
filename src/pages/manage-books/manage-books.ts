@@ -42,7 +42,7 @@ export class ManageBooksPage {
   }
 
   openPage() {
-    this.navCtrl.push(AddBooksPage);
+    this.navCtrl.push("AddBooksPage");
   }
 
 }

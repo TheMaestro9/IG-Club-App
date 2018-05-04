@@ -1,8 +1,9 @@
 <ion-header>
-  <main-header title="ESL Course"> </main-header>
+  <main-header [title]="pageTitle"> </main-header>
 </ion-header>
 
 <ion-content padding>
+  <p> {{courseData.description}}</p>
   <div>
     <p>This course will start on
       <span class="info">{{courseData.currentPeriod}}</span>

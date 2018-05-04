@@ -16,6 +16,8 @@ import {Storage} from '@ionic/storage';
 export class PostsComponent {
 
   likeIconColor;
+  @Input('deleteUrl') deleteUrl ; 
+  @Input('editPageName') editPageName ; 
   @Input('posts') posts ; 
   @Input('showButton') showButton ; 
   @Input('adminBtn') adminBtn ;
@@ -35,31 +37,19 @@ export class PostsComponent {
       post.interested = !post.interested
     }
 
-    openPage() {
-      this.navCtrl.push(EditPostsPage);
-    }
-
-    editPost(id, title, content, url) {
-      var post = {
-        id: id,
-        title: title,
-        content: content,
-        url: url
-      }
+    editPost(post) {
       console.log(post);
-      this.navCtrl.push(EditPostsPage, post);
+      this.navCtrl.push(this.editPageName,{ post: post});
     }
 
-    deletePost(id) {
-      var post = {
-        id: id }
+    deletePost(post) {
+      var id = post.id ; 
       console.log(id);
-      this.storage.get('token').then(token=>{
-        var url = 'http://ig-club.eu-gb.mybluemix.net/home/posts/'+post.id; 
-        this.ds.delete(url, post.id).subscribe((res)=>{
+      this.posts.splice(this.posts.indexOf(post) , 1)
+        var url = this.deleteUrl +id; 
+        this.ds.delete(url).subscribe((res)=>{
           console.log(res);
         } , (error)=>{console.log(error)})
-      })
       
     }
 

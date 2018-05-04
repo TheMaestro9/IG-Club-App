@@ -24,8 +24,6 @@ import { EditBooksPage } from '../pages/edit-books/edit-books';
 @NgModule({
   declarations: [
     MyApp,
-    AddPostPage,
-    EditPostsPage,
     BooksCartPage,
     AddActivitiesPage,
     EditBooksPage
@@ -42,8 +40,6 @@ import { EditBooksPage } from '../pages/edit-books/edit-books';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    AddPostPage,
-    EditPostsPage,
     BooksCartPage,
     AddActivitiesPage,
     EditBooksPage

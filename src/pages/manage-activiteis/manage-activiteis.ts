@@ -22,24 +22,10 @@ export class ManageActiviteisPage {
     
   }
 
-  openInternational (title, adminBtn, manageBtn) {
-    title = 'International Trips';
-    adminBtn = true;
-    manageBtn = true;
-    this.navCtrl.push(ActivitiesPage, {title, adminBtn, manageBtn});
+  openActivities (title) {
+    var adminBtn = true;
+    var manageBtn = true;
+    this.navCtrl.push("ActivitiesPage", {title, adminBtn, manageBtn});
     }
 
-    openDomistic (title, adminBtn, manageBtn) {
-      title = 'Domestic Trips';
-      adminBtn = true;
-      manageBtn = true;
-      this.navCtrl.push(ActivitiesPage, {title, adminBtn, manageBtn});
-    }
-
-    openEvents (title, adminBtn, manageBtn) {
-      title = 'Events';
-      adminBtn = true;
-      manageBtn = true;
-      this.navCtrl.push(ActivitiesPage, {title, adminBtn, manageBtn});
-    }
   }

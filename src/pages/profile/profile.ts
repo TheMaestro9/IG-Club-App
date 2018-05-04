@@ -43,7 +43,8 @@ export class ProfilePage {
   }
   
 	logout() {
-		this.store.set('token', "");
+    this.store.set('token', "");
+    this.store.set('admin', false) ;
     this.navCtrl.setRoot("LoginPage");
 	}
 

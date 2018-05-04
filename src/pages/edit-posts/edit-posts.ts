@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import {DataServiceProvider} from '../../providers/data-service/data-service';
-import {Storage} from '@ionic/storage';
+import { DataServiceProvider } from '../../providers/data-service/data-service';
+import { Storage } from '@ionic/storage';
 
 @IonicPage()
 @Component({
@@ -18,18 +18,15 @@ export class EditPostsPage {
   }
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public ds: DataServiceProvider, public storage: Storage) {
-    this.post.id = this.navParams.get('id');
-    this.post.title = this.navParams.get('title');
-    this.post.url = this.navParams.get('url');
-    this.post.content = this.navParams.get('content');
+    this.post = this.navParams.get('post')
   }
 
   updatePost(post, id) {
-    var url = '/home/posts/'+this.post.id; 
-    this.ds.put(url, this.post).subscribe((res)=>{
+    var url = '/home/posts/' + this.post.id;
+    this.ds.put(url, this.post).subscribe((res) => {
       console.log(res);
-    } , (error)=>{console.log(error)});
+    }, (error) => { console.log(error) });
     this.navCtrl.pop();
-}
+  }
 
 }

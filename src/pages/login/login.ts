@@ -61,6 +61,7 @@ export class LoginPage {
         console.log(res);
         if(res.success)
           {
+              this.store.set('admin', res.admin) ; 
               this.store.set('token', res.token).then(res=>{
                 this.ds.getToken().then(data=>{
                   this.navCtrl.setRoot('HomePage')
