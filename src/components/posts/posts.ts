@@ -21,7 +21,7 @@ export class PostsComponent {
   @Input('posts') posts ; 
   @Input('showButton') showButton ; 
   @Input('adminBtn') adminBtn ;
-
+  
   constructor(public navCtrl: NavController, public navParams: NavParams, public storage: Storage,
      public ds: DataServiceProvider) {
        this.likeIconColor="danger";

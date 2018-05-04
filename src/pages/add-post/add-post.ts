@@ -19,15 +19,47 @@ import {Storage} from '@ionic/storage';
 })
 export class AddPostPage {
 
-  title;
-  url= null;
-  content;
+  post;
+  btnTitle;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public storage: Storage, public ds:DataServiceProvider) {
+    this.post = this.navParams.get('post');
+
+    if (this.post.id == '') {
+      this.btnTitle = "Add Post";
+      console.log(this.post);
+    } else {
+      this.btnTitle = "Update";
+      console.log(this.post);
+    }
+  }
+
+  submit () {
+    if (this.post.id == '') {
+      var post_info = {
+        'title': this.post.title, 
+        'url': this.post.url,
+        'content': this.post.content
+      }
+      console.log(post_info);
+      var url = '/home/posts'; 
+      this.ds.post(url, post_info).subscribe((res)=>{
+        console.log(res);
+        if(res) {
+          this.navCtrl.pop(); 
+        }
+      } , (error)=>{console.log(error)});
+    } else {
+    url = '/home/posts/' + this.post.id;
+    this.ds.put(url, this.post).subscribe((res) => {
+      console.log(res);
+    }, (error) => { console.log(error) });
+    this.navCtrl.pop();
+      }
   }
 
 
-  addPost () {
+  /* addPost () {
     var post_info = {
       'title': this.title, 
       'url': this.url,
@@ -41,6 +73,6 @@ export class AddPostPage {
         this.navCtrl.pop(); 
       }
     } , (error)=>{console.log(error)});
-  }
+  } */
 
 } 

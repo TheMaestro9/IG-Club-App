@@ -14,8 +14,8 @@ export class HomePage {
   posts = [];
   toolBarColor;
   toolBartextColor;
-  admin :boolean = false; 
-  editPageName ='EditPostsPage';
+  admin :boolean = true; 
+  editPageName ='AddPostPage';
   deleteUrl = '/home/posts/'; 
   constructor(public navCtrl: NavController , public store: Storage,
               public ds :DataServiceProvider, public sp: SearchProvider) {
@@ -32,7 +32,7 @@ export class HomePage {
 
   checkAdmin(){ 
     this.store.get("admin").then(admin=>{
-      this.admin = admin ; 
+      this.admin = true ; 
       console.log('the admin is ',admin)
     })
   } 
@@ -59,7 +59,7 @@ export class HomePage {
   }
 
   openAddPage (){
-    this.navCtrl.push('AddPostPage') ; 
+    this.navCtrl.push('AddPostPage', {post: {'id': ''}}) ; 
   }
   search (event) {
    this.posts= this.sp.search(event , this.posts);
