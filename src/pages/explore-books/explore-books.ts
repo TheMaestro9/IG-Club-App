@@ -22,21 +22,22 @@ export class ExploreBooksPage {
   itemCount = 0;
   @Input ('highlighted') isSelected: boolean = false;
 
-  books = [
-    {
-      'bookTitle': 'sea monsters',
-      'category': 'edexcel | cambridge',
-      'price': '16$',
-      'paymentMethod': 'cash on delivery'
-    },
-    {
-      'imgUrl': 'assets/imgs/book.jpg',
-      'bookTitle': 'path of the dead',
-      'category': 'IGCSEs | cambridge',
-      'price': '24$',
-      'paymentMethod': 'via vodafone cash'
-    }
-  ];
+  books = [] ; 
+  // books = [
+  //   {
+  //     'bookTitle': 'sea monsters',
+  //     'category': 'edexcel | cambridge',
+  //     'price': '16$',
+  //     'paymentMethod': 'cash on delivery'
+  //   },
+  //   {
+  //     'imgUrl': 'assets/imgs/book.jpg',
+  //     'bookTitle': 'path of the dead',
+  //     'category': 'IGCSEs | cambridge',
+  //     'price': '24$',
+  //     'paymentMethod': 'via vodafone cash'
+  //   }
+  // ];
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public storage: Storage,
     public ds :DataServiceProvider) {

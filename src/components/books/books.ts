@@ -16,58 +16,61 @@ import { EditBooksPage } from '../../pages/edit-books/edit-books';
 })
 export class BooksComponent {
 
-  @Input ('books') books;
-  @Input ('cartBtn') cartBtn;
-  @Input ('adminBtn') adminBtn;
+  @Input('books') books;
+  @Input('cartBtn') cartBtn;
+  @Input('adminBtn') adminBtn;
 
   user_info;
   items;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public storage: Storage,
     public ds: DataServiceProvider) {
-      this.user_info= {
-        user_email: "", 
-        phone_no : ""
-      }
-      //this.getUserInfo();
+    this.user_info = {
+      user_email: "",
+      phone_no: "",
     }
+    //console.log("hello iam here ")
+    //this.getUserInfo();
+  }
 
-     /* getUserInfo() {
-      var url = '/user/user-info'
-      this.ds.get(url).subscribe(res=>{
-        console.log(res)
-        if(res.success) {
-          this.user_info = res.userInfo
-        }
-      })
-    } */
+  /* getUserInfo() {
+   var url = '/user/user-info'
+   this.ds.get(url).subscribe(res=>{
+     console.log(res)
+     if(res.success) {
+       this.user_info = res.userInfo
+     }
+   })
+ } */
 
-    ionViewDidEnter() { 
-      this.books.forEach(book => {
-        console.log(book.imgUrl)
-        if(book.imgUrl == null)
-          book.imgUrl = 'assets/imgs/default-book.jpg'; 
-      });
+  ngOnInit() {
+    // var bookModule = this ; 
+    // setTimeout(function() {
+    //   bookModule.handleImgUrl() ; 
+    // }, 1000);
+  }
+
+  // handleImgUrl() {
+  //   console.log(this.books)
+  //   console.log("iam listening")
+  //   for (var i ; i < this.books.length ; i++){ 
+ 
+  //     if (this.books[i].imgUrl == null || this.books[i].imgUrl =='null'){ 
+  //       console.log("found a funcken bug")
+  //       this.books[i].imgUrl = 'assets/imgs/default-book.jpg';
+  //     }
+  //   }
+  // }
+
+  editBook(book) {
+    console.log(book);
+    this.navCtrl.push(EditBooksPage, book);
+  }
+
+  deleteBook(id) {
+    var book = {
+      id: id
     }
-   
-
-    editBook(id, url, title, category, price, payMethod) {
-      var book = {
-        id: id,
-        url: url,
-        title: title,
-        category: category,
-        price: price,
-        payMethod: payMethod
-      }
-      console.log(book);
-      this.navCtrl.push(EditBooksPage, book);
-    }
-
-    deleteBook(id) {
-      var book = {
-        id: id 
-      }
-      console.log(id);
-    }
+    console.log(id);
+  }
 }
