@@ -6,7 +6,7 @@
 
     <ion-row> 
       <ion-col col-6 class="img-col">
-        <ion-img *ngIf="book.imgUrl!=null" width="100%" height="auto" [src]="book.imgUrl" class="book-img"></ion-img>
+        <ion-img  width="100%" height="auto" [src]="book.imgUrl" class="book-img"></ion-img>
       </ion-col>
 
       <ion-col col-6 class="details">
@@ -35,7 +35,7 @@
       </ion-col>
 
       <ion-col col-3 class="btn-col" *ngIf="adminBtn">
-        <button ion-button clear class="icon-btn" (click)="editBook(book.id, book.url, book.title, book.category, book.price, book.payMethod)">
+        <button ion-button clear class="icon-btn" (click)="editBook(book)">
           <ion-icon class="edit-icon" name="create"></ion-icon>
         </button>
         <button ion-button clear class="icon-btn" (click)="deleteBook(post.id)">

@@ -39,8 +39,20 @@ export class ManageBooksPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ManageBooksPage');
+    this.getUserBooks() ;  
   }
 
+  getUserBooks(){
+    var url = '/books/books-for-user' 
+    this.ds.get(url).subscribe(res=>{
+      if(res.success){
+        this.books = res.books; 
+        console.log(res.books)
+      }
+      else 
+        console.log(res.error)
+    })
+  }
   openPage() {
     this.navCtrl.push("AddBooksPage");
   }
