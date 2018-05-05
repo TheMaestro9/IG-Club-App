@@ -1,12 +1,9 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams ,Checkbox} from 'ionic-angular';
-
-/**
- * Generated class for the GalleryPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { UniversityProfilePage } from '../university-profile/university-profile';
+import { Storage } from '@ionic/storage';
+import { ManageUniversitiesPage } from '../manage-universities/manage-universities';
+import { DataServiceProvider } from '../../providers/data-service/data-service';
 
 @IonicPage()
 @Component({
@@ -15,44 +12,55 @@ import { IonicPage, NavController, NavParams ,Checkbox} from 'ionic-angular';
 })
 export class UniversitiesPage {
   
-  path="assets/imgs/";
-  array1d:string[];
-  grid: any; 
-  array2d=[]; 
-  count=0;
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-   
-    this.array1d=['https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSUgBLPUoHSJik_qvMMyLbNRciAADDwk_3pvyWp7P9lGEE6bqB',
-                'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVzXRmyDHyjAahOjkWdmOybQjJntmUYpjPEW9goRDtEgL7XRmi',
-                'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPoMaUL5jNxaoB6IbFa3jVOf2P9vVsK8tfm9hesFlcDTi09-mh', 
-                'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTCNEo13b_7O18ptCKvjX7iOLUdmJq7xnzQ6VGOFgeHpUMqxW_',
-                'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSz_ruvvmPT-TikARpkAnIM4Ra2FQOBGlaKCYfGfEMV0luSEjnlZA',
-                'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvEE2YF9UYX83oN8YRE_eANlSDF_lvMUFyt16HtcLYSvX4r_kQaQ'];
+  admin = true;
+  universities = [];
 
-    for(let i=0;i<this.array1d.length;i+=2){
-      this.array2d[i] = [];
-
-      for(let j=0;j<2;j++){
-        if (this.count<this.array1d.length)
-       { this.array2d[i][j] = this.array1d[this.count]; 
-        this.count++;
-        
-      }
-    }
+  constructor(public navCtrl: NavController, public navParams: NavParams, public store: Storage, public ds: DataServiceProvider) {
+    this.checkAdmin() ;     
   }
 
-//   for(let i=0;i<this.array2d.length;i++){
-//     for(let j=0;j<2;j++){
-//       //console.log(this.array2d[i][j])
+  ionViewDidEnter(){
+    this.getUniversities();
 
-//   }
-// }
-    // this.grid= [[this.path+'11.jpg', this.path+'22.jpg'], [this.path+'33.jpg',this.path+'44.jpg']];
+  }
+
+  checkAdmin(){ 
+    this.store.get("admin").then(admin=>{
+      this.admin = true ; 
+      console.log('the admin is ',admin)
+    })
+  } 
+
+  getUniversities(){ 
+    var url = '/universities/get-universities' ;
+    this.ds.get(url).subscribe(res=>{
+      this.universities=res.universities ;
+    },err=>(console.log(err)))
+}
+
+  openPage(university) {
+    console.log(university);
+    this.navCtrl.push('UniversityProfilePage', {university});
+  }
+
+  openManagePage (){
+    this.navCtrl.push('ManageUniversitiesPage', {university: {'id': ''}}) ; 
+  }
+
+  editUniversity(university) {
+    console.log(university);
+    this.navCtrl.push('ManageUniversitiesPage',{university});
+  }
+
+  deleteUniversity(university) {
+    var id = university.id ; 
+    console.log(id);
+    this.universities.splice(this.universities.indexOf(university) , 1)
+      var url = '/universities/delete-university/' +id; 
+      this.ds.delete(url).subscribe((res)=>{
+        console.log(res);
+      } , (error)=>{console.log(error)})
     
-  }
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad GalleryPage');
   }
 
 }

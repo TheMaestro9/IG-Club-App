@@ -1,0 +1,21 @@
+<ion-header>
+
+  <main-header title='University Profile'></main-header>
+</ion-header>
+
+
+<ion-content class="card-background-page">
+
+  <ion-card>
+    <div class="layer">
+        <img [src]="university.imgUrl" alt="university image">
+        <div class="card-title">{{university.name}}</div>
+    </div>
+  </ion-card>
+
+  <div class="caption-wrapper">
+    <h3>{{university.name}}</h3>
+    <p>{{university.description}}</p>
+  </div>
+
+</ion-content>
