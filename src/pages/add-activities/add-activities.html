@@ -23,15 +23,6 @@
         <ion-textarea type="text" [(ngModel)]="post.content"></ion-textarea>
       </ion-item>
 
-      <!-- <ion-item class="condition">
-          <ion-label>Type</ion-label>
-          <ion-select [(ngModel)]="type">
-            <ion-option>International Trips</ion-option>
-            <ion-option>Domistic Trips</ion-option>
-            <ion-option>Events</ion-option>
-          </ion-select>
-      </ion-item> -->
-
       <button ion-button color="primary" outline (click)="submit()"> {{btnTitle}} </button>
       <button ion-button color="danger" outline (click)="clearFields()">Clear Fields</button>
 
