@@ -1,5 +1,5 @@
 <ion-header>
-  <main-header title="Add New Post"> </main-header>
+  <main-header title="Manage Post"> </main-header>
 </ion-header>
 
 
@@ -11,20 +11,20 @@
       
       <ion-item>
         <ion-label floating>Title</ion-label>
-        <ion-input type="text" [(ngModel)]="title" clearInput></ion-input>
+        <ion-input type="text" [(ngModel)]="post.title" clearInput></ion-input>
       </ion-item>
 
       <ion-item>
         <ion-label floating>Image Link</ion-label>
-        <ion-input type="text" [(ngModel)]="url"></ion-input>
+        <ion-input type="text" [(ngModel)]="post.url"></ion-input>
       </ion-item>
 
       <ion-item>
         <ion-label floating>Content</ion-label>
-        <ion-textarea type="text" [(ngModel)]="content"></ion-textarea>
+        <ion-textarea type="text" [(ngModel)]="post.content"></ion-textarea>
       </ion-item>
 
-      <button ion-button color="primary" outline (click)="addPost()">Post</button>
+      <button ion-button color="primary" outline (click)="submit()">{{btnTitle}}</button>
       <button ion-button color="danger" outline (click)="clearFields()">Clear Fields</button>
 
     </ion-list>
