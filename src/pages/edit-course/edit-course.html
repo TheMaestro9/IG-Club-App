@@ -1,0 +1,38 @@
+<ion-header>
+  <main-header title="Edit Course"> </main-header>
+</ion-header>
+
+
+<ion-content>
+
+  <ion-card-content>
+
+    <ion-list>
+
+      <ion-item>
+        <ion-label floating>Description</ion-label>
+        <ion-textarea type="text" [(ngModel)]="courseData.description"></ion-textarea>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Current Period</ion-label>
+        <ion-input type="text" [(ngModel)]="courseData.currentPeriod"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Next Round</ion-label>
+        <ion-input type="text" [(ngModel)]="courseData.nextRound"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Cost</ion-label>
+        <ion-input type="text" [(ngModel)]="courseData.cost"></ion-input>
+      </ion-item>
+
+      <button ion-button color="primary" outline (click)="updateCourse(courseData)">Update</button>
+
+    </ion-list>
+
+  </ion-card-content>
+
+</ion-content>

@@ -21,12 +21,12 @@ export class EditPostsPage {
     this.post = this.navParams.get('post')
   }
 
-  updatePost(post, id) {
+  /* updatePost(post, id) {
     var url = '/home/posts/' + this.post.id;
     this.ds.put(url, this.post).subscribe((res) => {
       console.log(res);
     }, (error) => { console.log(error) });
     this.navCtrl.pop();
-  }
+  } */
 
 }
