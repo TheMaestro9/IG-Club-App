@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Storage } from '@ionic/storage'
+import { DataServiceProvider } from '../../providers/data-service/data-service';
 
 @IonicPage()
 @Component({
@@ -15,21 +17,34 @@ export class AddBooksPage {
   payMethod;
   category;
   condition;
+  admin ; 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,
+              public store :Storage , public Ds: DataServiceProvider) {
+    this.checkAdmin(); 
   }
 
+  checkAdmin(){
+    this.store.get('admin').then(admin=>{
+      this.admin =  admin 
+    })
+  }
   sellBook () {
     var book_info = {
-      'title': this.title,
-      'url': this.url,
-      'isbn': this.isbn,
+      'bookTitle': this.title,
+      'imgUrl': this.url,
+      'ISBN': this.isbn,
       'price': this.price,
       'paymentMethod': this.payMethod,
       'category': this.category,
-      'condition': this.condition
+      'bookCondition': this.condition,
+      'byAdmin': this.admin
     }
     console.log(book_info);
+    var url = "/books/add-book"
+    this.Ds.post(url , book_info).subscribe(res=>{
+      console.log(res)
+    }, (error=>{console.log(error)}))
   }
 
 }

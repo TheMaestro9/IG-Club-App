@@ -24,26 +24,39 @@ export class ExploreBooksPage {
 
   books = [
     {
-      'title': 'sea monsters',
+      'bookTitle': 'sea monsters',
       'category': 'edexcel | cambridge',
       'price': '16$',
-      'payMethod': 'cash on delivery'
+      'paymentMethod': 'cash on delivery'
     },
     {
-      'url': 'assets/imgs/book.jpg',
-      'title': 'path of the dead',
+      'imgUrl': 'assets/imgs/book.jpg',
+      'bookTitle': 'path of the dead',
       'category': 'IGCSEs | cambridge',
       'price': '24$',
-      'payMethod': 'via vodafone cash'
+      'paymentMethod': 'via vodafone cash'
     }
   ];
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public storage: Storage,
     public ds :DataServiceProvider) {
+      this.getUserBooks() ; 
   }
 
   openCart () {
     this.navCtrl.push(BooksCartPage);
+  }
+
+  getUserBooks(){
+    var url = '/books/books-for-user' 
+    this.ds.get(url).subscribe(res=>{
+      if(res.success){
+        this.books = res.books; 
+        console.log(res.books)
+      }
+      else 
+        console.log(res.error)
+    })
   }
 
   /* addToCart () {

@@ -42,12 +42,14 @@ export class BooksComponent {
       })
     } */
 
-    ngOnInit () {
+    ionViewDidEnter() { 
       this.books.forEach(book => {
-        if(book.url == null)
-          book.url = 'assets/imgs/default-book.jpg'; 
+        console.log(book.imgUrl)
+        if(book.imgUrl == null)
+          book.imgUrl = 'assets/imgs/default-book.jpg'; 
       });
     }
+   
 
     editBook(id, url, title, category, price, payMethod) {
       var book = {
