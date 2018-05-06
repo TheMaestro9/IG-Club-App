@@ -38,7 +38,7 @@ export class AddPostPage {
     if (this.post.id == '') {
       var post_info = {
         'title': this.post.title, 
-        'url': this.post.url,
+        'imgaeUrl': this.post.imageUrl,
         'content': this.post.content
       }
       console.log(post_info);

@@ -21,24 +21,44 @@ export class AddActivitiesPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public ds: DataServiceProvider) {
     this.post = this.navParams.get('post');
-    this.post.type = this.navParams.get('pageTitle');
+    if(this.navParams.get('pageTitle')  != null)
+      this.post['type'] = this.navParams.get('pageTitle');
+    console.log(this.post)
 
     if (this.post.type != null) {
       this.btnTitle = "Add";
-      console.log('I know its empty');        
+      console.log('I know its empty');
     } else {
       this.btnTitle = "Update";
       console.log(this.post);
-      }
+    }
   }
 
- /*  submit () {
-    if (this.post.type != null) {
-      console.log('I know its empty');        
+
+  submit() {
+    console.log("here")
+    if (this.post.id == null) {
+      console.log('there')
+      var post_info = this.post
+      console.log(post_info);
+      var url = '/activeties';
+      this.ds.post(url, post_info).subscribe((res) => {
+        console.log(res);
+        if (res) {
+          this.navCtrl.pop();
+        }
+      }, (error) => { console.log(error) });
     } else {
-      console.log(this.post);
-      }
-    } */
+      url = '/activeties/' + this.post.id;
+      this.ds.put(url, this.post).subscribe((res) => {
+        console.log(res);
+      }, (error) => { console.log(error) });
+      this.navCtrl.pop();
+    }
+  }
+
+
+
 
   /* addTrip () {
     var trip_info = {
