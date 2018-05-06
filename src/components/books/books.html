@@ -6,7 +6,7 @@
 
     <ion-row> 
       <ion-col col-6 class="img-col">
-        <ion-img  width="100%" height="auto" [src]="book.imgUrl" class="book-img"></ion-img>
+        <img  width="100%" height="auto" [src]="book.imgUrl" class="book-img">
       </ion-col>
 
       <ion-col col-6 class="details">
@@ -15,10 +15,10 @@
           <p>{{book.category}}</p>
         </div>
 
-        <div class="owner-info">
+        <div *ngIf="adminBtn" class="owner-info">
           <h3>owner</h3>
-          <p>John Doe</p>
-          <p>0111 416 0654</p>
+          <p>{{book.User.username}}</p>
+          <p>{{book.User.mobile}}</p>
         </div>
       </ion-col>
     </ion-row>

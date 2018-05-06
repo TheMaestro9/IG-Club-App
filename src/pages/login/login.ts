@@ -72,7 +72,7 @@ export class LoginPage {
           alert(res.err)
 
     }, err=>{ 
-      if(err.status == 401)
+      if(err._body.message == "Verify your email")
         alert ('please verify your email first')
       else 
         alert("couldn't connect to server") ; 

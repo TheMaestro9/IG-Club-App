@@ -43,6 +43,7 @@ export class AddBooksPage {
     console.log(book_info);
     var url = "/books/add-book"
     this.Ds.post(url , book_info).subscribe(res=>{
+      this.navCtrl.setRoot('HomePage') ;  
       console.log(res)
     }, (error=>{console.log(error)}))
   }
