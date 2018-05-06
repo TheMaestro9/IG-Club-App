@@ -48,3 +48,8 @@
   .separated-cards{
     background: #eff0f1 
   }
+
+  $font-family-base: "lato", sans-serif !default;
+h1, h2, h3, h4, h5, h6, p, label, input, textarea, button, span, a, .alert-title, .card-content, .button, .title, .label{
+font-family: "lato" !important;
+}
