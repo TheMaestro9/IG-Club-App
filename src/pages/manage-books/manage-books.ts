@@ -23,13 +23,21 @@ export class ManageBooksPage {
       'title': 'sea monsters',
       'category': 'edexcel | cambridge',
       'price': '16',
-      'payMethod': 'cash on delivery'
+      'payMethod': 'cash on delivery',
+      'User':{
+        "username":"",
+        "moblie":""
+      }
     },
     {
       'title': 'path of the dead',
       'category': 'IGCSEs | cambridge',
       'price': '24',
-      'payMethod': 'via vodafone cash'
+      'payMethod': 'via vodafone cash',
+      'User':{
+        "username":"",
+        "moblie":""
+      }
     }
   ];
 
@@ -43,7 +51,7 @@ export class ManageBooksPage {
   }
 
   getUserBooks(){
-    var url = '/books/books-for-user' 
+    var url = '/books/books-for-admin' 
     this.ds.get(url).subscribe(res=>{
       if(res.success){
         this.books = res.books; 
