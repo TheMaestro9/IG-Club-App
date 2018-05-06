@@ -25,6 +25,7 @@ import { EditBooksPage } from '../pages/edit-books/edit-books';
   declarations: [
     MyApp,
     BooksCartPage,
+    AddActivitiesPage,
     EditBooksPage
    // ListPage
   ],
@@ -40,6 +41,7 @@ import { EditBooksPage } from '../pages/edit-books/edit-books';
   entryComponents: [
     MyApp,
     BooksCartPage,
+    AddActivitiesPage,
     EditBooksPage
    // ListPage
   ],

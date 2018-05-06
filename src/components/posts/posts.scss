@@ -2,12 +2,11 @@ posts {
   $textColor: #404040;
   .post-title {
     text-align: left;
-    color: $textColor;
-    text-transform: capitalize;
+    color: $textColor
   }
   .post-text {
     text-align: left;
-    color: $textColor;
+    color: $textColor
   }
   .interest-button {
     height: 3rem;

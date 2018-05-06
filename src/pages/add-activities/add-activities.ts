@@ -23,7 +23,7 @@ export class AddActivitiesPage {
     this.post = this.navParams.get('post');
     this.post.type = this.navParams.get('pageTitle');
 
-    if (this.post.id == '') {
+    if (this.post.type != null) {
       this.btnTitle = "Add";
       console.log('I know its empty');        
     } else {
@@ -32,23 +32,22 @@ export class AddActivitiesPage {
       }
   }
 
-  submit () {
-    if (this.post.id == '') {
-      console.log(this.post);
-      var url = '/activities'; 
-      this.ds.post(url, this.post).subscribe((res)=>{
-        console.log(res);
-        if(res) {
-          this.navCtrl.pop(); 
-        }
-      } , (error)=>{console.log(error)});
+ /*  submit () {
+    if (this.post.type != null) {
+      console.log('I know its empty');        
     } else {
-    url = '/activities/' + this.post.id;
-    this.ds.put(url, this.post).subscribe((res) => {
-      console.log(res);
-    }, (error) => { console.log(error) });
-    this.navCtrl.pop();
+      console.log(this.post);
       }
-  }
+    } */
+
+  /* addTrip () {
+    var trip_info = {
+      'title': this.title, 
+      'url': this.url,
+      'content': this.content,
+      'type': this.type
+    }
+    console.log(this.post);
+  } */
 
 }
