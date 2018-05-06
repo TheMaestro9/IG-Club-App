@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController, IonicPage,NavParams, Checkbox } from 'ionic-angular';
 import { DataServiceProvider } from '../../providers/data-service/data-service';
+import { Storage } from '@ionic/storage';
+import { EditCoursePage } from '../edit-course/edit-course';
 
 
 @IonicPage() 
@@ -20,8 +22,11 @@ export class CoursesPage{
   checkBoxes = ['Mohandeseen', 'Naser City' , 'New Cairo' ,'Zayed' ,'Maadi']
   otherCheckBox ; 
   otherText ; 
+
+  admin: boolean = true;
+
   constructor(public navCtrl: NavController,public navParams: NavParams,
-              public ds:DataServiceProvider)
+              public ds:DataServiceProvider, public store: Storage)
    {
      this.courseData={ 
       currentRound:'current Round',
@@ -31,6 +36,13 @@ export class CoursesPage{
       this.courseName= this.navParams.get('courseName') ;
       this.pageTitle = this.courseName + " Course"
       this.getCourseData()
+  }
+
+  checkAdmin () {
+    this.store.get("admin").then(admin => {
+      this.admin = true;
+      console.log('the admin is', admin)
+    })
   }
 
   getCourseData() { 
@@ -72,6 +84,11 @@ export class CoursesPage{
       this.ds.post(url , courseRequest).subscribe(res=>{
         console.log(res)
       })
+    }
+
+
+    openEditCourse (courseData) {
+      this.navCtrl.push('EditCoursePage', {courseData})
     }
 
 

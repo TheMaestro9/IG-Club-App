@@ -3,6 +3,9 @@
 </ion-header>
 
 <ion-content padding>
+
+    <button ion-button color="secondry" outline *ngIf="admin" (click)="openEditCourse(courseData)" class="addBtn">Edit Course</button>
+
   <p> {{courseData.description}}</p>
   <div>
     <p>This course will start on
