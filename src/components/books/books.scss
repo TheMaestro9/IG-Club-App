@@ -7,6 +7,7 @@ books {
   }
   .card-content {
     padding: 4px 7px;
+    height: 227px;
   }
   .book-card {
     margin-top: 42px;
@@ -50,6 +51,10 @@ books {
       }
     }
     .cash-footer {
+      position: absolute;
+      right: 0;
+      left: 0;
+      bottom: 10px;
       p {
         margin-top: 17px;
         color: #488aff;
