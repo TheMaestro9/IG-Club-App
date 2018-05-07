@@ -35,7 +35,8 @@ export class CoursesPage{
       }
       this.courseName= this.navParams.get('courseName') ;
       this.pageTitle = this.courseName + " Course"
-      this.getCourseData()
+      this.getCourseData(); 
+      this.checkAdmin() 
   }
 
   checkAdmin () {
