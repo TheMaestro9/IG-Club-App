@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, AlertController, Events } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController, Events, MenuController} from 'ionic-angular';
 import { DataServiceProvider } from '../../providers/data-service/data-service';
 import { Storage } from '@ionic/storage'
 /**
@@ -21,7 +21,8 @@ export class LoginPage {
   cameFromRegPage
   constructor(public navCtrl: NavController, public navParams: NavParams,
     public ds: DataServiceProvider, public store: Storage,
-    public alertController: AlertController, public events: Events) {
+    public alertController: AlertController, public events: Events , 
+    public menuCtrl :MenuController ) {
 
     this.showRegistrationAlert();
 
@@ -93,6 +94,11 @@ export class LoginPage {
   }
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoginPage');
+    this.menuCtrl.enable(false); 
   }
+  ionViewWillLeave() {
+    // enable the root left menu when leaving this page
+    this.menuCtrl.enable(true);
+    }
 
 }

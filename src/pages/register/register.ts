@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, MenuController } from 'ionic-angular';
 import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 import { DataServiceProvider } from '../../providers/data-service/data-service';
 import { Storage } from '@ionic/storage'
@@ -28,7 +28,7 @@ export class RegisterPage {
   children:any=[];
   
   constructor(public navCtrl: NavController ,public ds:DataServiceProvider ,
-              public storage: Storage) {
+              public storage: Storage , public menuCtrl :MenuController ) {
     this.children.push({ 'name': ''  , 'age':''});
 
   }
@@ -69,5 +69,12 @@ export class RegisterPage {
     
   }
 
-
+  ionViewDidLoad() {
+    console.log('ionViewDidLoad LoginPage');
+    this.menuCtrl.enable(false); 
+  }
+  ionViewWillLeave() {
+    // enable the root left menu when leaving this page
+    this.menuCtrl.enable(true);
+    }
 }
