@@ -26,7 +26,7 @@ export class UniversitiesPage {
 
   checkAdmin(){ 
     this.store.get("admin").then(admin=>{
-      this.admin = true ; 
+      this.admin = admin ; 
       console.log('the admin is ',admin)
     })
   } 

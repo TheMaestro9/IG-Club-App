@@ -20,10 +20,10 @@ import { DataServiceProvider } from '../../providers/data-service/data-service';
 export class ActivitiesPage {
 
   pageTitle
-  posts
+  posts = []
   admin :boolean = true; 
   editPageName ='AddActivitiesPage';
-  deleteUrl = '/activeties/'; 
+  deleteUrl = '/activities/'; 
   /* adminBtn
   manageBtn; */
 
@@ -33,11 +33,12 @@ export class ActivitiesPage {
     this.pageTitle = navParams.get('title');
     /* this.adminBtn = navParams.get('adminBtn');
     this.manageBtn = navParams.get('manageBtn'); */
-    this.getActivities();
     this.checkAdmin();
   }
 
-  ionViewDidLoad() {
+  ionViewWillEnter() {
+    this.getActivities();
+
   }
 
   
@@ -47,14 +48,14 @@ export class ActivitiesPage {
 
    checkAdmin () {
      this.store.get("admin").then(admin => {
-       this.admin = true;
+       this.admin = admin;
        console.log('the admin is', admin)
      })
    }
  
   getActivities() {
     this.posts=[] 
-    var url = '/activeties?type='+ this.pageTitle 
+    var url = '/activities?type='+ this.pageTitle 
     this.Ds.get(url).subscribe(res=>{
       console.log(res)
       this.posts=res.activeties ; 

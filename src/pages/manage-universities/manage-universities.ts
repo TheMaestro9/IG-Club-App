@@ -47,7 +47,7 @@ export class ManageUniversitiesPage {
         }
       } , (error)=>{console.log(error)});
     } else {
-    url = '/universities/edit-university/' + this.university.id;
+    url = '/universities/edit-university';
     this.ds.put(url, this.university).subscribe((res) => {
       console.log(res);
     }, (error) => { console.log(error) });

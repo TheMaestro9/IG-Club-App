@@ -28,7 +28,7 @@
       <ion-card>
         <div class="layer">
           <img [src]="university.imgUrl" (click)="openPage(university)"/>
-          <div class="card-title">{{university.name}}</div>
+          <div class="card-title" (click)="openPage(university)">{{university.name}}</div>
         </div>
         <div *ngIf='admin'>
           <div class="icon-wrapper" text-right>

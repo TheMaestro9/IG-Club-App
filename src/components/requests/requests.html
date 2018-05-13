@@ -1,0 +1,51 @@
+<!-- Generated template for the RequestsComponent component -->
+<ion-card *ngFor='let request of requests'>
+    <div class='request-title'>
+      <p style="font-weight: bold">
+        {{request.title}}
+      </p>
+    </div>
+  <ion-row [class.last-row]="!request.moreDetails">
+    <ion-col col-6>
+      <p class="p-margin">{{request.username}}</p>
+      <p>{{request.mobile}}</p>
+      <p>{{request.email}}</p>
+    </ion-col>
+    <ion-col col-6 >
+      <p class="right-col">{{request.requestDate}}</p>
+      <ion-icon *ngIf='!moreDetails' name='trash' class="delete-icon right-col"
+      (click)="deleteRequest(request)"> </ion-icon>
+    </ion-col>
+  </ion-row>
+
+  <div *ngIf="moreDetails">
+
+    <ion-row>
+      <ion-col col-11>
+
+        <p>
+          Prefered Areas:
+        </p>
+        <p class='more-details'>
+          {{request.courseArea}}
+        </p>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="last-row">
+      <ion-col col-11>
+        <p>
+          Contact Hours:
+        </p>
+        <p class='more-details'>
+          {{request.communicationTime}}
+        </p>
+      </ion-col>
+      <ion-col col-1>
+        <ion-icon name='trash' class="delete-icon right-col" (click)="deleteRequest(request)"> </ion-icon>
+      </ion-col>
+    </ion-row>
+
+  </div>
+
+</ion-card>

@@ -1,0 +1,31 @@
+requests {
+    ion-row{
+        padding-top:0.5rem ;
+        padding-left: 1rem;
+        padding-right: 1rem; 
+    }
+    .last-row{
+        padding-bottom:1rem; 
+    }
+    .p-margin{
+        margin-bottom: 0.5rem ; 
+    }
+    .more-details{
+        padding-left: 1rem; 
+        color: #404040; 
+    }
+    .delete-icon{
+        color: red ; 
+        padding:0.5rem; 
+        font-size: 2rem ; 
+    }
+    .request-title{
+        color:#303030; 
+        text-align: center; 
+        padding-top: 1.5rem; 
+        font-weight: bold;
+    }
+    .right-col{
+        float: right;
+    }
+}

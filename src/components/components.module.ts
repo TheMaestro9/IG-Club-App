@@ -4,11 +4,13 @@ import { IonicModule } from 'ionic-angular';
 import { PostsComponent } from './posts/posts';
 import { BooksComponent } from './books/books';
 import { IonicImageLoader } from 'ionic-image-loader';
+import { RequestsComponent } from './requests/requests';
 @NgModule({
 	declarations: [
         HeaderComponent,
         PostsComponent,
-        BooksComponent
+        BooksComponent,
+    RequestsComponent
     ],
 	imports: [
         IonicModule,
@@ -17,7 +19,8 @@ import { IonicImageLoader } from 'ionic-image-loader';
 	exports: [
         HeaderComponent,
         PostsComponent,
-        BooksComponent
+        BooksComponent,
+    RequestsComponent
     ]
 })
 export class ComponentsModule {}

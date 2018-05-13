@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { Nav, Platform } from 'ionic-angular';
+import { Nav, Platform , Events } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import {Storage} from '@ionic/storage'; 
@@ -15,18 +15,31 @@ export class MyApp {
 
   rootPage: any = "LoginPage";
   showSubmenu = [false , false , false , false , false] ; 
-  
+  admin :boolean ; 
   pages: Array<{title: string, component: any }>;
 
 
   constructor(public platform: Platform, public statusBar: StatusBar,
-     public splashScreen: SplashScreen , public store:Storage , public DS :DataServiceProvider) {
+     public splashScreen: SplashScreen , public store:Storage ,
+     public DS :DataServiceProvider , public events: Events)  {
        // we are making object form DataServiceProvider to initialize the token in it 
     this.initializeApp();
     this.routeUser() ; 
     splashScreen.show() 
+    this.checkAdmin(); 
+    this.events.subscribe("login:admin" , (admin)=>{
+     // console.log("got an event: " , data)
+      this.admin = admin
+    })
   }
 
+  
+  checkAdmin(){ 
+    this.store.get("admin").then(admin=>{
+      this.admin = admin ; 
+      console.log('the admin is ',admin)
+    })
+  } 
   routeUser(){
     this.store.get('token').then(token=>{
       console.log('welcome in app.component, the token:' , token)

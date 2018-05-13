@@ -15,7 +15,7 @@
           <p>{{book.category}}</p>
         </div>
 
-        <div *ngIf="adminBtn" class="owner-info">
+        <div *ngIf="!book.byAdmin" class="owner-info">
           <h3>owner</h3>
           <p>{{book.User.username}}</p>
           <p>{{book.User.mobile}}</p>
@@ -28,17 +28,17 @@
         <p>{{book.price}}$ - {{book.paymentMethod}}</p>
       </ion-col>
 
-      <ion-col col-3 class="btn-col" *ngIf="cartBtn">
-        <button ion-button clear (click)="addToCart()" [class.highlighted]="isSelected">
+      <ion-col col-3 class="btn-col" *ngIf="!admin">
+        <button ion-button clear (click)="addToCart()" class="button-cart" [class.highlighted]="isSelected">
           <ion-icon [name]="(iconName) ? 'remove' : 'add'"></ion-icon>
         </button>
       </ion-col>
 
-      <ion-col col-3 class="btn-col" *ngIf="adminBtn">
-        <button ion-button clear class="icon-btn" (click)="editBook(book)">
+      <ion-col col-3 class="btn-col" *ngIf="admin">
+        <button ion-button clear class="icon-btn button-admin" (click)="editBook(book)">
           <ion-icon class="edit-icon" name="create"></ion-icon>
         </button>
-        <button ion-button clear class="icon-btn" (click)="deleteBook(post.id)">
+        <button ion-button clear class="icon-btn button-admin" (click)="deleteBook(post.id)">
           <ion-icon class="delete-icon" name="trash"></ion-icon>
         </button>
       </ion-col>

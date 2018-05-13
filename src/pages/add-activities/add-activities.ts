@@ -41,7 +41,7 @@ export class AddActivitiesPage {
       console.log('there')
       var post_info = this.post
       console.log(post_info);
-      var url = '/activeties';
+      var url = '/activities';
       this.ds.post(url, post_info).subscribe((res) => {
         console.log(res);
         if (res) {
@@ -49,7 +49,7 @@ export class AddActivitiesPage {
         }
       }, (error) => { console.log(error) });
     } else {
-      url = '/activeties/' + this.post.id;
+      url = '/activities/' + this.post.id;
       this.ds.put(url, this.post).subscribe((res) => {
         console.log(res);
       }, (error) => { console.log(error) });

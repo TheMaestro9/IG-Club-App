@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { IonicPage, NavController, NavParams, IonicTapInput } from 'ionic-angular';
 import { ActivitiesPage } from '../activities/activities';
+import { DataServiceProvider } from '../../providers/data-service/data-service';
 
 /**
  * Generated class for the ManageActiviteisPage page.
@@ -16,16 +17,47 @@ import { ActivitiesPage } from '../activities/activities';
 })
 export class ManageActiviteisPage {
 
-  title
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-    
+  allUserInterests = []
+  specificUserInterests = []
+  deleteUrl = "/activities/remove-interest/"
+  constructor(public navCtrl: NavController, public navParams: NavParams,
+    public Ds: DataServiceProvider) {
+    this.getRequests();
   }
 
-  openActivities (title) {
-    var adminBtn = true;
-    var manageBtn = true;
-    this.navCtrl.push("ActivitiesPage", {title, adminBtn, manageBtn});
-    }
+  filter(value) {
 
+    var url = "/activities/user-interests"
+    this.Ds.get(url).subscribe(res => {
+      if (res.success) {
+        this.allUserInterests = res.userInterests
+        this.specificUserInterests = res.userInterests
+
+
+        this.specificUserInterests = []
+        if (value == "All") {
+          this.specificUserInterests = this.allUserInterests;
+        } else {
+          this.allUserInterests.forEach(interest => {
+            if (interest.type == value)
+              this.specificUserInterests.push(interest)
+          });
+        }
+      }
+      console.log(res)
+    })
   }
+
+  getRequests() {
+
+    var url = "/activities/user-interests"
+    this.Ds.get(url).subscribe(res => {
+      if (res.success) {
+        this.allUserInterests = res.userInterests
+        this.specificUserInterests = res.userInterests
+      }
+      console.log(res)
+    })
+  }
+
+}

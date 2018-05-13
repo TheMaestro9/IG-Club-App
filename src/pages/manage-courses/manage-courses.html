@@ -1,0 +1,18 @@
+<ion-header>
+    <main-header title="Manage Courses"> </main-header>
+  </ion-header>
+  
+  <ion-content class="cards-bg separated-cards">
+  
+      <ion-item class="filter">
+          <ion-label>Filter</ion-label>
+          <ion-select #C (ionChange)="filter(C.value)" multiple="false">
+            <ion-option value="ESL" >ESL</ion-option>
+            <ion-option value="IELTS">IELTS</ion-option>
+            <ion-option value="IELTS Preparation">IELTS Preparation</ion-option>
+            <ion-option value="Admission">Admission</ion-option>
+            <ion-option value="All" selected>All</ion-option>
+          </ion-select>
+        </ion-item>
+    <requests [requests]='specificUserRequests' [moreDetails]='true' [deleteUrl]="deleteUrl"></requests>
+  </ion-content>

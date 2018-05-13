@@ -2,12 +2,16 @@
   <main-header title="Manage Activities"> </main-header>
 </ion-header>
 
-<ion-content padding>
+<ion-content class="cards-bg separated-cards">
 
-    <button ion-button color="primary" outline block (click)="openActivities('International Trips')">International Trips</button>
-
-    <button ion-button color="secondary" outline block (click)="openActivities('Domestic Trips')">Domistic Trips</button>
-
-    <button ion-button color="dark" outline block (click)="openActivities('Events')">Events</button>
-
+    <ion-item class="filter">
+        <ion-label>Filter</ion-label>
+        <ion-select #C (ionChange)="filter(C.value)" multiple="false">
+          <ion-option value="International Trips" >International Trips</ion-option>
+          <ion-option value="Domestic Trips">Domestic Trips</ion-option>
+          <ion-option value="Events">Events</ion-option>
+          <ion-option value="All" selected>All</ion-option>
+        </ion-select>
+      </ion-item>
+  <requests [requests]='specificUserInterests' [deleteUrl]='deleteUrl'></requests>
 </ion-content>

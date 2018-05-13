@@ -18,7 +18,7 @@ export class BooksComponent {
 
   @Input('books') books;
   @Input('cartBtn') cartBtn;
-  @Input('adminBtn') adminBtn;
+  admin = false ; 
 
   user_info;
   items;
@@ -29,8 +29,16 @@ export class BooksComponent {
       user_email: "",
       phone_no: "",
     }
+    this.checkAdmin() ;
     //console.log("hello iam here ")
     //this.getUserInfo();
+  }
+
+  checkAdmin(){ 
+    this.storage.get("admin").then(admin=>{
+      this.admin = admin; 
+      console.log("in books the admin is", admin)
+    })
   }
 
   /* getUserInfo() {
@@ -63,14 +71,10 @@ export class BooksComponent {
   // }
 
   editBook(book) {
-    console.log(book);
     this.navCtrl.push(EditBooksPage, book);
   }
 
   deleteBook(id) {
-    var book = {
-      id: id
-    }
-    console.log(id);
+   
   }
 }

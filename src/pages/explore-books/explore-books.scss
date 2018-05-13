@@ -21,7 +21,7 @@ page-explore-books {
     .btn-col {
       padding-left: 31px;
     }
-    .button {
+    .button-cart {
       margin: 0;
       margin-top: 3px;
       padding: 0;
@@ -33,6 +33,24 @@ page-explore-books {
         color: red;
         border-color: red;
       }
+    }
+
+    .button-admin {
+      margin: 0;
+      margin-top: 3px;
+      padding: 0;
+      font-size: 20px;
+    }
+
+    .edit-icon,
+    .delete-icon {
+      font-size: 2rem;
+      padding-top: 1rem;
+      padding-right: 0.5rem;
+    }
+    .delete-icon {
+      color: #f53d3d;
+      margin-left: 10px;
     }
   }
 }
