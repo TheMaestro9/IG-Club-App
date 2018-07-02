@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { DataServiceProvider } from '../../providers/data-service/data-service';
+import { AlertController } from 'ionic-angular';
 
 /**
  * Generated class for the RequestsComponent component.
@@ -18,8 +19,26 @@ export class RequestsComponent {
   @Input('moreDetails') moreDetails;
   @Input('deleteUrl') deleteUrl;
 
-  constructor(public Ds: DataServiceProvider) {
+  constructor(public Ds: DataServiceProvider,public alertController: AlertController) {
     console.log('Hello RequestsComponent Component');
+  }
+
+
+   
+  createComfirmationAlert(request) {
+    let confirm = this.alertController.create({
+      title: 'Confirm',
+      message: "Are You Sure You Want to delete this Post",
+      buttons: [
+        { text: 'Cancel', role: 'cancel', },
+        {
+          text: 'Delete' , handler: () => {
+            this.deleteRequest(request)
+          } 
+        }
+      ]
+    });
+    confirm.present();
   }
 
   deleteRequest(request) {

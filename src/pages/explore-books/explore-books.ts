@@ -60,17 +60,5 @@ export class ExploreBooksPage {
     })
   }
 
-  /* addToCart () {
-    this.iconName = !this.iconName;
-    this.isSelected = !this.isSelected;
-    this.itemCount += (this.isSelected) ? 1 : -1;
-    /* if (this.iconName && book) {
-      console.log('book added');
-      this.itemCount++;
-    } else {
-      console.log('book removed');
-      this.itemCount--;   
-    } 
-  } */
 
 }

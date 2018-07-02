@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, MenuController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, MenuController, AlertController } from 'ionic-angular';
 import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 import { DataServiceProvider } from '../../providers/data-service/data-service';
 import { Storage } from '@ionic/storage'
@@ -17,64 +17,77 @@ import { Storage } from '@ionic/storage'
 })
 export class RegisterPage {
 
-  Selection; 
+  Selection;
   Increase;
-  userName ; 
-  password ; 
-  email; 
+  userName;
+  password;
+  email;
   mobile;
-  school ; 
-  grade =null;  
-  children:any=[];
-  
-  constructor(public navCtrl: NavController ,public ds:DataServiceProvider ,
-              public storage: Storage , public menuCtrl :MenuController ) {
-    this.children.push({ 'name': ''  , 'age':''});
+  school;
+  grade = null;
+  children: any = [];
+
+  constructor(public navCtrl: NavController, public ds: DataServiceProvider,
+    public storage: Storage, public menuCtrl: MenuController,
+    public alertController: AlertController) {
+    this.children.push({ 'name': '', 'age': '' });
 
   }
 
-  indexToWord (index) {
-    var Word = ["First" , "Sencond" , "Third" ,"Forth", "Fifth"]
-    return Word[index] ;  
+  indexToWord(index) {
+    var Word = ["First", "Sencond", "Third", "Forth", "Fifth"]
+    return Word[index];
   }
   addInputs() {
-    this.children.push({ 'name': ''  , 'age':''});
+    this.children.push({ 'name': '', 'age': '' });
   }
 
-  register() { 
+  register() {
 
-    if(this.children!=null &&this.children[0].name=='')
-      this.children=null ;
-    
-    var user_info = { 
-      'username':this.userName, 
-      'email':this.email,
-      'password':this.password,
-      'mobile':this.mobile, 
-      'grade':this.grade, 
-      'school':this.school, 
-      'children':this.children
+    if (this.children != null && this.children[0].name == '')
+      this.children = null;
+
+    var user_info = {
+      'username': this.userName,
+      'email': this.email,
+      'password': this.password,
+      'mobile': this.mobile,
+      'grade': this.grade,
+      'school': this.school,
+      'children': this.children
     }
 
     console.log(user_info);
-    var url = '/signup' ; 
-    this.ds.post(url, user_info).subscribe((res)=>{
+    var url = '/signup';
+    this.ds.post(url, user_info).subscribe((res) => {
       console.log(res);
-      this.navCtrl.push('LoginPage' , {cameFromRegPage:true})
-      if(res.success){ 
-        this.navCtrl.push('LoginPage' , {cameFromRegPage:true})
+      if (res.success) {
+        this.navCtrl.push('HomePage')
       }
-    } , (error)=>{console.log(error)})
+    }, (err) => {
+      console.log(err)
+      this.createErrorAlert(JSON.parse(err._body).err.message)
+    })
 
-    
+
   }
 
+  createErrorAlert(msg) {
+    let confirm = this.alertController.create({
+      title: 'Error',
+      message: msg,
+      buttons: [
+        { text: 'OK', role: 'cancel', },
+      ]
+    });
+    confirm.present();
+  }
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoginPage');
-    this.menuCtrl.enable(false); 
+    this.menuCtrl.enable(false);
   }
   ionViewWillLeave() {
     // enable the root left menu when leaving this page
     this.menuCtrl.enable(true);
-    }
+  }
 }
