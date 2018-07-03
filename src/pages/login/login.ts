@@ -70,24 +70,23 @@ export class LoginPage {
           });
         })
       }
-      else
-        alert(res.err)
-
     }, err => {
       console.log(err)
-      // if (err._body.message) {
-      //   alert(err._body.message)
-      // }else if(err._body.err.message)
-      //   alert(err._body.err.message)
-      
-      // if(err._body.message == "Verify your email")
-      //   alert ('please verify your email first')
-      // else 
-      //   alert("couldn't connect to server") ; 
-      //         console.log(err) }
-
+      console.log(JSON.parse(err._body).err.message)
+      this.createErrorAlert(JSON.parse(err._body).err.message)
     })
   }
+  createErrorAlert(msg) {
+    let confirm = this.alertController.create({
+      title: 'Error',
+      message: msg,
+      buttons: [
+        { text: 'OK', role: 'cancel', },
+      ]
+    });
+    confirm.present();
+  }
+
   signUpButtonClicked() {
     console.log("wow ")
     this.navCtrl.push('RegisterPage')

@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import { EditPostsPage } from '../../pages/edit-posts/edit-posts';
 import { DataServiceProvider } from '../../providers/data-service/data-service';
 import { Storage } from '@ionic/storage';
@@ -23,7 +23,7 @@ export class PostsComponent {
   @Input('adminBtn') adminBtn;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public storage: Storage,
-    public ds: DataServiceProvider) {
+    public ds: DataServiceProvider,public alertController: AlertController) {
     this.likeIconColor = "danger";
   }
 
@@ -47,6 +47,23 @@ export class PostsComponent {
         console.log(res);
       });
     }
+  }
+
+  
+  createComfirmationAlert(post) {
+    let confirm = this.alertController.create({
+      title: 'Confirm',
+      message: "Are You Sure You Want to delete this Post",
+      buttons: [
+        { text: 'Cancel', role: 'cancel', },
+        {
+          text: 'Delete' , handler: () => {
+            this.deletePost(post)
+          } 
+        }
+      ]
+    });
+    confirm.present();
   }
 
   editPost(post) {

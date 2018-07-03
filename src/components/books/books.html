@@ -24,17 +24,19 @@
     </ion-row>
 
     <ion-row class="cash-footer">
-      <ion-col col-9>
-        <p>{{book.price}}$ - {{book.paymentMethod}}</p>
+      <ion-col col-8>
+        <p>{{book.price}}EGP - {{book.paymentMethod}}</p>
       </ion-col>
 
-      <ion-col col-3 class="btn-col" *ngIf="!admin">
-        <button ion-button clear (click)="addToCart()" class="button-cart" [class.highlighted]="isSelected">
-          <ion-icon [name]="(iconName) ? 'remove' : 'add'"></ion-icon>
+      <ion-col col-4 class="btn-col" *ngIf="!admin">
+        <button ion-button clear (click)="addToCart(book)" class="button-cart" [class.highlighted]="book.requested">
+          <ion-icon [name]="book.requested? 'remove' : 'add'"></ion-icon>
         </button>
       </ion-col>
 
-      <ion-col col-3 class="btn-col" *ngIf="admin">
+      <ion-col col-4 class="btn-col" *ngIf="admin">
+          <!-- <ion-icon class="edit-icon" name="create"></ion-icon>
+          <ion-icon class="delete-icon" name="trash"></ion-icon> -->
         <button ion-button clear class="icon-btn button-admin" (click)="editBook(book)">
           <ion-icon class="edit-icon" name="create"></ion-icon>
         </button>

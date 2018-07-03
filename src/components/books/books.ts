@@ -18,7 +18,7 @@ export class BooksComponent {
 
   @Input('books') books;
   @Input('cartBtn') cartBtn;
-  admin = false ; 
+  admin = false;
 
   user_info;
   items;
@@ -29,17 +29,22 @@ export class BooksComponent {
       user_email: "",
       phone_no: "",
     }
-    this.checkAdmin() ;
+    this.checkAdmin();
     //console.log("hello iam here ")
     //this.getUserInfo();
   }
 
-  checkAdmin(){ 
-    this.storage.get("admin").then(admin=>{
-      this.admin = admin; 
+  checkAdmin() {
+    this.storage.get("admin").then(admin => {
+      this.admin = admin;
       console.log("in books the admin is", admin)
     })
   }
+
+  addToCart(book) {
+    book.requested = !book.requested
+  }
+
 
   /* getUserInfo() {
    var url = '/user/user-info'
@@ -62,7 +67,7 @@ export class BooksComponent {
   //   console.log(this.books)
   //   console.log("iam listening")
   //   for (var i ; i < this.books.length ; i++){ 
- 
+
   //     if (this.books[i].imgUrl == null || this.books[i].imgUrl =='null'){ 
   //       console.log("found a funcken bug")
   //       this.books[i].imgUrl = 'assets/imgs/default-book.jpg';
@@ -75,6 +80,6 @@ export class BooksComponent {
   }
 
   deleteBook(id) {
-   
+
   }
 }

@@ -28,7 +28,7 @@
       <ion-item (click)="menuItemHandler(0)">Student Resourses</ion-item>
       <ion-item-group submenu [class.visible]="showSubmenu[0]">
         <ion-item submenu-item menuClose class="sub-menu-item" (click)="openPage('UniversitiesPage')">Universities</ion-item>
-        <ion-item submenu-item menuClose class="sub-menu-item">Score Calculator</ion-item>
+        <ion-item submenu-item menuClose class="sub-menu-item" (click)="openPage('ScoreCalculatorPage')">Score Calculator</ion-item>
         <ion-item submenu-item menuClose class="sub-menu-item">Time Table Generator</ion-item>
       </ion-item-group>
 
@@ -49,11 +49,11 @@
 
 
       
-      <ion-item (click)="menuItemHandler(4)">Book Store</ion-item>
+      <!-- <ion-item (click)="menuItemHandler(4)">Book Store</ion-item>
       <ion-item-group submenu2 [class.visible]="showSubmenu[4]">
         <ion-item submenu-item menuClose class="sub-menu-item"(click)="openPage('ExploreBooksPage')">Explore Books</ion-item>
         <ion-item submenu-item menuClose class="sub-menu-item" (click)="openPage('AddBooksPage')">Sell Book</ion-item>
-      </ion-item-group>
+      </ion-item-group> -->
 
       
       <ion-item menuClose ion-item (click)="openPage('ProfilePage')">
@@ -63,7 +63,7 @@
       <ion-item *ngIf='admin' (click)="menuItemHandler(3)">Admin Panel</ion-item>
       <ion-item-group submenu [class.visible]="showSubmenu[3]">
         <ion-item submenu-item menuClose class="sub-menu-item" (click)="openPage('ManageCoursesPage')">Manage Courses</ion-item>
-        <ion-item submenu-item menuClose class="sub-menu-item" (click)="openPage('ManageBooksPage',{title:'Manage Books'})">Manage Books</ion-item>
+        <!-- <ion-item submenu-item menuClose class="sub-menu-item" (click)="openPage('ManageBooksPage',{title:'Manage Books'})">Manage Books</ion-item> -->
         <ion-item submenu-item menuClose class="sub-menu-item" (click)="openPage('ManageActiviteisPage')"> Manage Activities</ion-item>
       </ion-item-group>
 

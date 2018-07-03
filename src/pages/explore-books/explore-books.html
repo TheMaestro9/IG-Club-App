@@ -1,16 +1,16 @@
 <ion-header>
   <main-header title="Explore Books"> </main-header>
-  <button ion-button clear class="cart" (click)="openCart()">
+  <!-- <button ion-button clear class="cart" (click)="openCart()">
     <ion-icon ios="ios-cart" md="md-cart"></ion-icon>
   </button>
-  <span class="quantity"> {{itemCount}} </span>
+  <span class="quantity"> {{itemCount}} </span> -->
 </ion-header>
 
 <ion-content class="cards-bg separated-cards">
 
   <ion-item class="filter">
     <ion-label>Filter</ion-label>
-    <ion-select [(ngModel)]="toppings" multiple="true">
+    <ion-select [(ngModel)]="toppings" >
       <ion-option>IGCSEs</ion-option>
       <ion-option>AS or ALs</ion-option>
       <ion-option>Edexcel</ion-option>
