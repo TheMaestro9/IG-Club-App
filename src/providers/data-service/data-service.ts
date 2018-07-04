@@ -14,8 +14,8 @@ export class DataServiceProvider {
 
   token: string;
   Ds
-  // host="http://ig-club.eu-gb.mybluemix.net";
-  host = "http://localhost:6001";
+  host="http://ig-club.eu-gb.mybluemix.net";
+  // host = "http://localhost:6001";
   constructor(public http: Http, public storage: Storage,
     public alertController: AlertController) {
 
