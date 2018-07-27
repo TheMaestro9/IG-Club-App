@@ -17,25 +17,25 @@
         <button ion-button color="primary" outline (click)="openManagePage()" class="addBtn">Add New</button>
       </ion-col>
       <ion-col col-6>
-        <button ion-button color="danger" outline (click)="deleteAllPosts(university)" class="deleteBtn">Delete All</button>
+        <button ion-button color="danger" outline class="deleteBtn">Delete All</button>
       </ion-col>
     </ion-row>
   </div>
 
-  <p *ngIf="universities.length == 0" class="empty-list"> Nothing to show here </p> 
+  <p *ngIf="universities.length == 0" class="empty-list"> Nothing to show here </p>
   <ion-row>
     <ion-col col-6 *ngFor="let university of universities">
       <ion-card>
         <div class="layer">
           <img [src]="university.imgUrl" (click)="openPage(university)"/>
-          <div class="card-title" (click)="openPage(university)">{{university.name}}</div>
+          <div class="card-title" (click)="openPage(university)">{{ (university.name.length>20)? ( university.name | slice:0:20)+'...':(university.name) }}</div>
         </div>
         <div *ngIf='admin'>
           <div class="icon-wrapper" text-right>
             <button ion-button clear class="icon-btn" (click)="editUniversity(university)">
               <ion-icon class="edit-icon" name="create"></ion-icon>
             </button>
-            <button ion-button clear class="icon-btn" (click)="deleteUniversity(university)">
+            <button ion-button clear class="icon-btn" (click)="createComfirmationAlert(university)">
               <ion-icon class="delete-icon" name="trash"></ion-icon>
             </button>
           </div>

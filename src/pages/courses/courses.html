@@ -6,7 +6,7 @@
 
   <button ion-button color="secondry" outline *ngIf="admin" (click)="openEditCourse(courseData)" class="addBtn">Edit Course</button>
 
-  <p> {{courseData.description}}</p>
+  <p [innerHTML]="courseData.description" > </p>
   <div>
     <p>This course will start on
       <span class="info">{{courseData.currentPeriod}}</span>
@@ -23,20 +23,20 @@
       <input type="checkbox" [(ngModel)]="checked[i]"> {{checkBox}}
     </label>
     <br>
-    <br> 
+    <br>
   </div>
 
   <label class="checkbox">
     <input [(ngModel)]="otherCheckBox" type="checkbox">other :
     <input class="other" [(ngModel)]="otherText" type="text">
   </label>
- 
+
   <!--
   <label class="checkbox">
     <input type="checkbox" [(ngModel)]="boolArr[0]"> Zayed
   </label>
   <br>
-  <br> 
+  <br>
   <label class="checkbox">
     <input type="checkbox" [(ngModel)]="boolArr[0]"> Zayed
   </label>

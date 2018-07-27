@@ -1,4 +1,7 @@
 page-university-profile {
+  main-header {
+    text-transform: capitalize;
+  }
     .card-background-page {
 
         ion-card {
@@ -7,11 +10,9 @@ page-university-profile {
           .layer {
             background-color: rgba(0, 0, 0, 0.9)
           }
-          img {
-        //    opacity: 0.5;
-          }
+
         }
-      
+
         .card-title {
           position: absolute;
           top: 36%;
@@ -21,7 +22,7 @@ page-university-profile {
           color: #fff;
           text-transform: capitalize
         }
-      
+
         .card-subtitle {
           font-size: 1.0em;
           position: absolute;
@@ -29,7 +30,7 @@ page-university-profile {
           width: 100%;
           color: #fff;
         }
-      
+
       }
       .caption-wrapper {
         padding: 1px 21px;

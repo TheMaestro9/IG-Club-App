@@ -21,6 +21,7 @@ export class AddPostPage {
 
   post;
   btnTitle;
+  myPost;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public storage: Storage, public ds:DataServiceProvider) {
     this.post = this.navParams.get('post');
@@ -36,10 +37,11 @@ export class AddPostPage {
 
   submit () {
     if (this.post.id == '') {
+      var content = JSON.stringify(this.post.content);
       var post_info = {
         'title': this.post.title,
         'imageUrl': this.post.imageUrl,
-        'content': this.post.content
+        'content': content
       }
       console.log(post_info);
       var url = '/home/posts';

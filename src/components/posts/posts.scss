@@ -5,8 +5,9 @@ posts {
     color: $textColor;
     text-transform: capitalize;
   }
-  p {
+  .post-content {
     text-transform: capitalize;
+    display: inline;
   }
   .post-text {
     text-align: left;
@@ -30,7 +31,7 @@ posts {
   }
   .edit-icon,
   .delete-icon {
-    color: $textColor;
+    color: #4483f2;
   }
   .delete-icon {
       color: #f53d3d;
@@ -41,5 +42,9 @@ posts {
   color: #606060;
   padding: 1rem;
   font-size: 1.65rem;
+  }
+  span {
+    color: rgb(131, 131, 131);
+    text-transform: capitalize;
   }
 }

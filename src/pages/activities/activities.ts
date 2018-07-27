@@ -21,9 +21,9 @@ export class ActivitiesPage {
 
   pageTitle
   posts = []
-  admin :boolean = true; 
+  admin :boolean = true;
   editPageName ='AddActivitiesPage';
-  deleteUrl = '/activities/'; 
+  deleteUrl = '/activities/';
   /* adminBtn
   manageBtn; */
 
@@ -41,7 +41,7 @@ export class ActivitiesPage {
 
   }
 
-  
+
   ionViewDidLeave(){
     this.sp.posts=[];
    }
@@ -52,13 +52,13 @@ export class ActivitiesPage {
        console.log('the admin is', admin)
      })
    }
- 
+
   getActivities() {
-    this.posts=[] 
-    var url = '/activities?type='+ this.pageTitle 
+    this.posts=[]
+    var url = '/activities?type='+ this.pageTitle
     this.Ds.get(url).subscribe(res=>{
       console.log(res)
-      this.posts=res.activeties ; 
+      this.posts=res.activeties ;
     })
     // if (this.pageTitle == 'International Trips') {
     //   this.posts = [{
@@ -66,13 +66,13 @@ export class ActivitiesPage {
     //     "url": "https://media-cdn.tripadvisor.com/media/photo-s/0d/f5/7c/f2/eiffel-tower-priority.jpg",
     //     "content": "visiting paris for 5 days, the trip includes lots of activities such as " +
     //       " visiting the eviel tower. it will cost around 230$ per person all inclusive ",
-    //     "interested": true 
+    //     "interested": true
     //   },
     //   {
     //     "title": "Second Activity",
     //     "content": "the unicorn",
     //     "url": "https://vyrez.com/wp-content/uploads/2012/12/unicorn-wallpaper.jpg",
-    //     "interested": false 
+    //     "interested": false
     //   }
     //   ]
     // }
@@ -81,13 +81,13 @@ export class ActivitiesPage {
     //     "title": "Gamasa ",
     //     "url": "http://mw2.google.com/mw-panoramio/photos/medium/37541012.jpg",
     //     "content": "For Gamsa Lovers only",
-    //     "interested": false 
+    //     "interested": false
 
     //   }]
 
     // }
     // else
-    //   this.posts = [] 
+    //   this.posts = []
   }
 
   search (event) {
@@ -99,7 +99,13 @@ export class ActivitiesPage {
    }
 
    deleteAll (posts) {
-     console.log(posts);
+    var url = this.deleteUrl;
+    this.Ds.delete(url).subscribe((res) => {
+      console.log(res);
+      if (res.success)
+        this.posts.splice(this.posts.indexOf(posts), 1)
+
+    }, (error) => { console.log(error) })
    }
 
 }
