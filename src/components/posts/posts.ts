@@ -42,6 +42,7 @@ export class PostsComponent {
       });
     }
     else {
+      // tslint:disable-next-line:no-duplicate-variable
       var url = '/remove-interest/activities/' + post.id ;
       this.ds.delete(url).subscribe(res => {
         console.log(res);
@@ -49,7 +50,7 @@ export class PostsComponent {
     }
   }
 
-  
+
   createComfirmationAlert(post) {
     let confirm = this.alertController.create({
       title: 'Confirm',
@@ -59,7 +60,7 @@ export class PostsComponent {
         {
           text: 'Delete' , handler: () => {
             this.deletePost(post)
-          } 
+          }
         }
       ]
     });
@@ -81,6 +82,11 @@ export class PostsComponent {
 
     }, (error) => { console.log(error) })
 
+  }
+
+  openPostPage(post) {
+    console.log(post);
+    this.navCtrl.push('PostDetailsPage', {post});
   }
 
 }

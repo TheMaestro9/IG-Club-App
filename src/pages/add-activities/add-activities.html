@@ -20,7 +20,7 @@
 
       <ion-item>
         <ion-label floating>Content</ion-label>
-        <ion-textarea type="text" [(ngModel)]="post.content"></ion-textarea>
+        <ion-textarea type="text" [(ngModel)]="post.content" [maxlength]="30000"></ion-textarea>
       </ion-item>
 
       <!-- <ion-item class="condition">

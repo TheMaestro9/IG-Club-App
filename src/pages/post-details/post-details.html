@@ -1,0 +1,20 @@
+
+<ion-card>
+
+
+  <ion-item>
+    <h2 class="post-title">
+      <strong>{{post.title}}</strong>
+    </h2>
+
+  </ion-item>
+
+  <img *ngIf="post.imageUrl!=null" width="100%" height="auto" [attr.src]="post.imageUrl" class="embed-responsive-item" allowfullscreen>
+
+  <ion-card-content padding>
+
+    <p [innerHTML]="post.content">
+    </p>
+
+  </ion-card-content>
+</ion-card>

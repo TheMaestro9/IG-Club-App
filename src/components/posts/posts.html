@@ -1,6 +1,6 @@
 <!-- Generated template for the PostsComponent component -->
 
-<p *ngIf="posts.length == 0" class="empty-list"> Nothing to show here </p> 
+<p *ngIf="posts.length == 0" class="empty-list"> Nothing to show here </p>
 <ion-card *ngFor="let post of posts">
 
 
@@ -15,12 +15,12 @@
 
   <ion-card-content padding>
 
-    <p [innerHtml]="post.content">
-    
+    <p>
+{{post.content | slice:0:40}}.... <span (click)="openPostPage(post)">See More</span>
     </p>
 
     <div *ngIf='showButton' text-right>
-      <ion-icon class='love-icon' [color]="post.interested?'danger':'text'" 
+      <ion-icon class='love-icon' [color]="post.interested?'danger':'text'"
       name="heart-outline" (click)="showInterest(post)"></ion-icon>
       <!--
       <button  ion-button block color="dark">

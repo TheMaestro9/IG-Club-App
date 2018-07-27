@@ -33,7 +33,7 @@ export class CoursesPage {
       cost: '2000'
     }
     this.courseName = this.navParams.get('courseName');
-    this.pageTitle = this.courseName + " Course"
+    this.pageTitle = this.courseName;
     this.getCourseData();
     this.checkAdmin()
   }
@@ -84,7 +84,7 @@ export class CoursesPage {
     this.ds.post(url, courseRequest).subscribe(res => {
       console.log(res)
       if(res.success){
-        this.navCtrl.setRoot('HomePage') ; 
+        this.navCtrl.setRoot('HomePage') ;
       }
     })
   }

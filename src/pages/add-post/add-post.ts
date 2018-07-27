@@ -37,42 +37,42 @@ export class AddPostPage {
   submit () {
     if (this.post.id == '') {
       var post_info = {
-        'title': this.post.title, 
+        'title': this.post.title,
         'imageUrl': this.post.imageUrl,
         'content': this.post.content
       }
       console.log(post_info);
-      var url = '/home/posts'; 
+      var url = '/home/posts';
       this.ds.post(url, post_info).subscribe((res)=>{
         console.log(res);
         if(res) {
-          this.navCtrl.pop(); 
+          this.navCtrl.pop();
         }
       } , (error)=>{console.log(error)});
     } else {
     url = '/home/posts/' + this.post.id;
     this.ds.put(url, this.post).subscribe((res) => {
       console.log(res);
+      this.navCtrl.pop();
     }, (error) => { console.log(error) });
-    this.navCtrl.pop();
       }
   }
 
 
   /* addPost () {
     var post_info = {
-      'title': this.title, 
+      'title': this.title,
       'url': this.url,
       'content': this.content
     }
     console.log(post_info);
-    var url = '/home/posts'; 
+    var url = '/home/posts';
     this.ds.post(url, post_info).subscribe((res)=>{
       console.log(res);
       if(res) {
-        this.navCtrl.pop(); 
+        this.navCtrl.pop();
       }
     } , (error)=>{console.log(error)});
   } */
 
-} 
+}

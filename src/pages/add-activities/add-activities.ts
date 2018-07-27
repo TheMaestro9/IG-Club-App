@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { DataServiceProvider } from '../../providers/data-service/data-service';
+import { ManagePostsPage } from '../manage-posts/manage-posts';
 
 /**
  * Generated class for the AddActivitiesPage page.
@@ -25,11 +26,11 @@ export class AddActivitiesPage {
       this.post['type'] = this.navParams.get('pageTitle');
     console.log(this.post)
 
-    if (this.post.type != null) {
+    if (this.post.id == null) {
       this.btnTitle = "Add";
-      console.log('I know its empty');
+      console.log('I know its add new');
     } else {
-      this.btnTitle = "Update";
+      this.btnTitle = "update";
       console.log(this.post);
     }
   }
@@ -52,8 +53,8 @@ export class AddActivitiesPage {
       url = '/activities/' + this.post.id;
       this.ds.put(url, this.post).subscribe((res) => {
         console.log(res);
+        this.navCtrl.pop();
       }, (error) => { console.log(error) });
-      this.navCtrl.pop();
     }
   }
 
@@ -62,7 +63,7 @@ export class AddActivitiesPage {
 
   /* addTrip () {
     var trip_info = {
-      'title': this.title, 
+      'title': this.title,
       'url': this.url,
       'content': this.content,
       'type': this.type

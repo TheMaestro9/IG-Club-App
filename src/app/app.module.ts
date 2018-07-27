@@ -20,6 +20,7 @@ import { BooksCartPage } from '../pages/books-cart/books-cart';
 import { AddActivitiesPage } from '../pages/add-activities/add-activities';
 import { IonicImageLoader } from 'ionic-image-loader';
 import { EditBooksPage } from '../pages/edit-books/edit-books';
+import { PostDetailsPage } from '../pages/post-details/post-details';
 
 @NgModule({
   declarations: [

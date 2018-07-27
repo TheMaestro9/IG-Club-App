@@ -24,7 +24,7 @@ export class ManagePostsPage {
   posts=[];
   searchQuery: string = '';
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,public storage: Storage, 
+  constructor(public navCtrl: NavController, public navParams: NavParams,public storage: Storage,
     public ds :DataServiceProvider , public sp:SearchProvider) {
     this.toolBarColor = 'dark';
     this.toolBartextColor='light';
@@ -52,15 +52,15 @@ export class ManagePostsPage {
     this.posts=this.sp.search(ev , this.posts)
   }
 
-  getPosts(){ 
+  getPosts(){
     var url = '/home/posts' ;
-      console.log(url);  
+      console.log(url);
       this.ds.get(url).subscribe(res=>{
         console.log(res)
         this.posts=res.posts ;
       },err=>(console.log(err)))
   }
 
-  
+
 
 }

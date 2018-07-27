@@ -24,7 +24,7 @@ export class ManageUniversitiesPage {
 
     if (this.university.id == '') {
       this.btnTitle = "Add";
-      console.log('I know its empty');        
+      console.log('I know its empty');
     } else {
       this.btnTitle = "Update";
       console.log(this.university);
@@ -33,25 +33,28 @@ export class ManageUniversitiesPage {
       /* this.university.forEach(university => {
         console.log(university.imgUrl)
         if(university.imgUrl == null)
-        university.imgUrl = 'assets/imgs/default-book.jpg'; 
+        university.imgUrl = 'assets/imgs/default-book.jpg';
       }); */
   }
+
   submit () {
     if (this.university.id == '') {
       console.log(this.university);
-      var url = '/universities/add-university/'; 
+      var url = '/universities/add-university/';
       this.ds.post(url, this.university).subscribe((res)=>{
         console.log(res);
         if(res) {
-          this.navCtrl.pop(); 
+          this.navCtrl.pop();
         }
       } , (error)=>{console.log(error)});
     } else {
     url = '/universities/edit-university';
     this.ds.put(url, this.university).subscribe((res) => {
       console.log(res);
-    }, (error) => { console.log(error) });
-    this.navCtrl.pop();
+      this.navCtrl.pop();
+    }, (error) => {
+      console.log(error)
+    });
       }
   }
 

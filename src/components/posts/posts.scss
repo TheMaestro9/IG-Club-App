@@ -2,11 +2,16 @@ posts {
   $textColor: #404040;
   .post-title {
     text-align: left;
-    color: $textColor
+    color: $textColor;
+    text-transform: capitalize;
+  }
+  p {
+    text-transform: capitalize;
   }
   .post-text {
     text-align: left;
-    color: $textColor
+    color: $textColor;
+    text-transform: capitalize;
   }
   .interest-button {
     height: 3rem;
@@ -16,7 +21,7 @@ posts {
     margin-right: 11px;
     padding: 0;
   }
-  .love-icon, 
+  .love-icon,
   .edit-icon,
   .delete-icon {
     font-size: 2rem;
@@ -24,14 +29,14 @@ posts {
     padding-right: 0.5rem;
   }
   .edit-icon,
-  .delete-icon { 
+  .delete-icon {
     color: $textColor;
   }
   .delete-icon {
       color: #f53d3d;
       margin-left: 10px;
   }
-  .empty-list{ 
+  .empty-list{
   text-align: center;
   color: #606060;
   padding: 1rem;
