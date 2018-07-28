@@ -1,8 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams ,Checkbox, AlertController} from 'ionic-angular';
-import { UniversityProfilePage } from '../university-profile/university-profile';
 import { Storage } from '@ionic/storage';
-import { ManageUniversitiesPage } from '../manage-universities/manage-universities';
 import { DataServiceProvider } from '../../providers/data-service/data-service';
 
 @IonicPage()

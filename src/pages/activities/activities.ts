@@ -1,7 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { SearchProvider } from '../../providers/search/search';
-import { AddActivitiesPage } from '../add-activities/add-activities';
 import { Storage } from '@ionic/storage';
 import { DataServiceProvider } from '../../providers/data-service/data-service';
 

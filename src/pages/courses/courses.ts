@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { NavController, IonicPage, NavParams, Checkbox } from 'ionic-angular';
 import { DataServiceProvider } from '../../providers/data-service/data-service';
 import { Storage } from '@ionic/storage';
-import { EditCoursePage } from '../edit-course/edit-course';
 
 
 @IonicPage()

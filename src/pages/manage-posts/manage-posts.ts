@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { AddPostPage } from '../add-post/add-post';
 import {Storage} from '@ionic/storage';
 import {DataServiceProvider} from '../../providers/data-service/data-service';
 import { SearchProvider } from '../../providers/search/search';

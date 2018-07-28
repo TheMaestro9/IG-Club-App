@@ -1,6 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { IonicPage, NavController, NavParams, IonicTapInput } from 'ionic-angular';
-import { ActivitiesPage } from '../activities/activities';
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { DataServiceProvider } from '../../providers/data-service/data-service';
 
 /**

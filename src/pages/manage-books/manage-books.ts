@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { AddBooksPage } from '../add-books/add-books';
 import { Storage } from '@ionic/storage';
 import { DataServiceProvider } from '../../providers/data-service/data-service';
 
@@ -41,23 +40,23 @@ export class ManageBooksPage {
     }
   ];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public storage: Storage, 
+  constructor(public navCtrl: NavController, public navParams: NavParams, public storage: Storage,
     public ds :DataServiceProvider) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ManageBooksPage');
-    this.getUserBooks() ;  
+    this.getUserBooks() ;
   }
 
   getUserBooks(){
-    var url = '/books/books-for-admin' 
+    var url = '/books/books-for-admin'
     this.ds.get(url).subscribe(res=>{
       if(res.success){
-        this.books = res.books; 
+        this.books = res.books;
         console.log(res.books)
       }
-      else 
+      else
         console.log(res.error)
     })
   }

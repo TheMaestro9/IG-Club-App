@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 import { DataServiceProvider } from '../../providers/data-service/data-service';
 import {Storage} from '@ionic/storage';
 
