@@ -9,7 +9,7 @@
 
 
   <ion-item>
-    <h2 class="post-title">
+    <h2 [ngStyle]="{'text-align':titleAlign}">
       <strong>{{post.title}}</strong>
     </h2>
 
@@ -19,7 +19,7 @@
 
   <ion-card-content padding>
 
-    <p [innerHTML]="post.content">
+    <p [ngStyle]="{'text-align':contentAlign}" [innerHTML]="post.content">
     </p>
 
   </ion-card-content>

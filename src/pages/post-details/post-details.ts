@@ -17,9 +17,20 @@ export class PostDetailsPage {
 
   posts;
   post;
-
+  contentAlign;
+  titleAlign;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.post = this.navParams.get('post');
+    if (this.post.title.search('ت') != -1) {
+      this.titleAlign = 'right';
+    } else {
+      this.titleAlign = 'left';
+    }
+    if (this.post.content.search('ت') != -1) {
+      this.contentAlign = 'right';
+    } else {
+      this.contentAlign = 'left';
+    }
   }
 
   ionViewDidLoad() {

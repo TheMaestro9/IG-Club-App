@@ -2,7 +2,7 @@
 
 page-login {
     .login-wrapper {
-    padding-top: 46px;
+    padding-top: 86px;
     height: 100%;
     ion-list {
         &.form {
@@ -11,11 +11,11 @@ page-login {
             }
         }
     }
-    .logo {
-        padding-bottom: 33px;
-        img {
-            height: 110px;
-        }
+    ion-img {
+      min-width: 180px;
+      min-height: 177px;
+      background: transparent;
+      margin-bottom: 30px;
     }
 
     h6.forget-pass {
@@ -23,7 +23,7 @@ page-login {
         font-size: 14px;
         margin-top: 38px;
         margin-bottom: 38px;
-        a { 
+        a {
             color: #648aff;
             text-decoration: none;
         }
@@ -39,7 +39,7 @@ page-login {
             &:hover {
                 background-color: #fff;
             }
-        }    
+        }
         h6 {
             text-transform: uppercase;
             color: #888;

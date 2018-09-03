@@ -3,14 +3,6 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { DataServiceProvider } from '../../providers/data-service/data-service';
 import {Storage} from '@ionic/storage';
 
-
-/**
- * Generated class for the AddPostPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-
 @IonicPage()
 @Component({
   selector: 'page-add-post',
@@ -21,6 +13,8 @@ export class AddPostPage {
   post;
   btnTitle;
   myPost;
+  /* lang;
+  align; */
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public storage: Storage, public ds:DataServiceProvider) {
     this.post = this.navParams.get('post');
@@ -44,9 +38,17 @@ export class AddPostPage {
       }
       console.log(post_info);
       var url = '/home/posts';
+
+      /* if (this.lang == 'en') {
+        this.align = 'left';
+      } else {
+        this.align = 'right';
+      } */
+
       this.ds.post(url, post_info).subscribe((res)=>{
         console.log(res);
         if(res) {
+          //this.navParams.get(this.align);
           this.navCtrl.pop();
         }
       } , (error)=>{console.log(error)});

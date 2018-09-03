@@ -20,7 +20,7 @@
       height: 0;
       transition: height .3s linear;
       &.visible {
-          height: 13.5rem;
+          height: 17.5rem;
       }
     }
 
@@ -60,4 +60,8 @@
   $font-family-base: "lato", sans-serif !default;
 h1, h2, h3, h4, h5, h6, p, label, input, textarea, button, span, a, .alert-title, .card-content, .button, .title, .label{
 font-family: "lato" !important;
+}
+
+.list-ios {
+  margin: 27px 0 32px;
 }

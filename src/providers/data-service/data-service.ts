@@ -3,17 +3,12 @@ import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
 import { Storage } from '@ionic/storage'
 import { AlertController } from 'ionic-angular';
-/*
-  Generated class for the DataService provider.
 
-  See https://angular.io/docs/ts/latest/guide/dependency-injection.html
-  for more info on providers and Angular DI.
-*/
 @Injectable()
 export class DataServiceProvider {
 
   token: string;
-  Ds
+  Ds;
   host="http://ig-club.eu-gb.mybluemix.net";
   // host = "http://localhost:6001";
   constructor(public http: Http, public storage: Storage,
@@ -27,14 +22,14 @@ export class DataServiceProvider {
   handleResponse(res) {
     var response = res.json();
     console.log("in handle response", response)
-    if (!response.success) {
+    /* if (!response.success) {
       this.createErrorAlert(res.message)
-    }
+    } */
     return response;
   }
 
 
-  createErrorAlert(msg) {
+  /* createErrorAlert(msg) {
     let confirm = this.alertController.create({
       title: 'Something went Wrong',
       message: msg,
@@ -43,7 +38,7 @@ export class DataServiceProvider {
       ]
     });
     confirm.present();
-  }
+  } */
 
   getToken() {
     return this.storage.get('token').then(token => {

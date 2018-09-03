@@ -14,15 +14,15 @@ export class HomePage {
   posts = [];
   toolBarColor;
   toolBartextColor;
-  admin :boolean = true; 
+  admin :boolean = true;
   editPageName ='AddPostPage';
-  deleteUrl = '/home/posts/'; 
+  deleteUrl = '/home/posts/';
   constructor(public navCtrl: NavController , public store: Storage,
               public ds :DataServiceProvider, public sp: SearchProvider) {
 
     this.toolBarColor = 'dark';
     this.toolBartextColor='light';
-    this.checkAdmin() ; 
+    this.checkAdmin() ;
   }
 
   ionViewDidEnter(){
@@ -30,17 +30,17 @@ export class HomePage {
 
   }
 
-  checkAdmin(){ 
+  checkAdmin(){
     this.store.get("admin").then(admin=>{
-      this.admin = admin ; 
+      this.admin = admin ;
       console.log('the admin is ',admin)
     })
-  } 
+  }
   ionViewDidLeave(){
     this.sp.posts=[];
    }
-  
-  getPosts(){ 
+
+  getPosts(){
       var url = '/home/posts' ;
       this.ds.get(url).subscribe(res=>{
         this.posts=res.posts ;
@@ -52,17 +52,17 @@ export class HomePage {
          console.log(post.id);
          var url = '/home/posts/'+post.id ;
          this.ds.delete(url).subscribe(res=>{
-          console.log(res) 
+          console.log(res)
         },err=>(console.log(err)));
       });
-    this.posts=[] 
+    this.posts=[]
   }
 
   openAddPage (){
-    this.navCtrl.push('AddPostPage', {post: {'id': ''}}) ; 
+    this.navCtrl.push('AddPostPage', {post: {'id': ''}}) ;
   }
   search (event) {
    this.posts= this.sp.search(event , this.posts);
   }
-  
+
 }

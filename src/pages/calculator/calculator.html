@@ -1,0 +1,468 @@
+<ion-header>
+    <main-header title="Score Calculator Algorithm"></main-header>
+  </ion-header>
+
+
+<ion-content padding>
+    <iframe style="width: 100%; height: 100%; overflow-y: auto; overflow-x: none;" src="https://minders-fcih.org/calculator-algorithm.html" frameborder="0"></iframe>
+  <!-- <ion-item class="item-leave-height">
+    <ion-label class="SignUpAs">O levels</ion-label>
+
+    <ion-select>
+      <ion-option value="Student">Student</ion-option>
+      <ion-option value="Parent">Parent</ion-option>
+    </ion-select>
+
+  </ion-item> -->
+
+
+  <!-- <ion-item class="item-leave-height">
+    <ion-label>O levels</ion-label>&nbsp;
+    <ion-select [(ngModel)]="oLevelS">
+      <ion-option value="0" selected="selected">0 A*</ion-option>
+      <ion-option value="1">1 A*</ion-option>
+      <ion-option value="2">2 A*</ion-option>
+      <ion-option value="3">3 A*</ion-option>
+      <ion-option value="4">4 A*</ion-option>
+      <ion-option value="5">5 A*</ion-option>
+      <ion-option value="6">6 A*</ion-option>
+      <ion-option value="7">7 A*</ion-option>
+      <ion-option value="8">8 A*</ion-option>
+    </ion-select>
+    <ion-select [(ngModel)]="oLevelA">
+      <ion-option value="0" selected="selected">0 A</ion-option>
+      <ion-option value="1">1 A</ion-option>
+      <ion-option value="2">2 A</ion-option>
+      <ion-option value="3">3 A</ion-option>
+      <ion-option value="4">4 A</ion-option>
+      <ion-option value="5">5 A</ion-option>
+      <ion-option value="6">6 A</ion-option>
+      <ion-option value="7">7 A</ion-option>
+      <ion-option value="8">8 A</ion-option>
+    </ion-select>
+    <ion-select [(ngModel)]="oLevelB">
+      <ion-option value="0" selected="selected">0 B</ion-option>
+      <ion-option value="1">1 B</ion-option>
+      <ion-option value="2">2 B</ion-option>
+      <ion-option value="3">3 B</ion-option>
+      <ion-option value="4">4 B</ion-option>
+      <ion-option value="5">5 B</ion-option>
+      <ion-option value="6">6 B</ion-option>
+      <ion-option value="7">7 B</ion-option>
+      <ion-option value="800">8 B</ion-option>
+    </ion-select>
+    <ion-select [(ngModel)]="oLevelC">
+      <ion-option value="0" selected="selected">0 C</ion-option>
+      <ion-option value="1">1 C</ion-option>
+      <ion-option value="2">2 C</ion-option>
+      <ion-option value="3">3 C</ion-option>
+      <ion-option value="4">4 C</ion-option>
+      <ion-option value="5">5 C</ion-option>
+      <ion-option value="6">6 C</ion-option>
+      <ion-option value="7">7 C</ion-option>
+      <ion-option value="8">8 C</ion-option>
+    </ion-select>
+    <ion-select [(ngModel)]="oLevelD">
+        <ion-option value="0" selected="selected">0 C</ion-option>
+        <ion-option value="1">1 C</ion-option>
+        <ion-option value="2">2 C</ion-option>
+        <ion-option value="3">3 C</ion-option>
+        <ion-option value="4">4 C</ion-option>
+        <ion-option value="5">5 C</ion-option>
+        <ion-option value="6">6 C</ion-option>
+        <ion-option value="7">7 C</ion-option>
+        <ion-option value="8">8 C</ion-option>
+      </ion-select>
+  </ion-item>
+
+
+  &nbsp; &nbsp;&nbsp;
+  <br>
+  <br> -->
+
+ <!--  <ion-item class="item-leave-height">
+    <ion-label>AS levels</ion-label>&nbsp;
+    <ion-select id="aslevelA" name="aslevelA">
+      <ion-option value="0" selected="selected">0 A</ion-option>
+      <ion-option value="1">1 A</ion-option>
+      <ion-option value="2">2 A</ion-option>
+      <ion-option value="3">3 A</ion-option>
+      <ion-option value="4">4 A</ion-option>
+    </ion-select>
+    <ion-select id="aslevelB" name="aslevelB">
+      <ion-option value="0" selected="selected">0 B</ion-option>
+      <ion-option value="1">1 B</ion-option>
+      <ion-option value="2">2 B</ion-option>
+      <ion-option value="3">3 B</ion-option>
+      <ion-option value="4">4 B</ion-option>
+    </ion-select>
+    <ion-select id="aslevelC" name="aslevelC">
+      <ion-option value="0" selected="selected">0 C</ion-option>
+      <ion-option value="1">1 C</ion-option>
+      <ion-option value="2">2 C</ion-option>
+      <ion-option value="3">3 C</ion-option>
+      <ion-option value="4">4 C</ion-option>
+    </ion-select>
+    <ion-select id="aslevelD" name="aslevelD">
+      <ion-option value="0" selected="selected">0 D</ion-option>
+      <ion-option value="1">1 D</ion-option>
+      <ion-option value="2">2 D</ion-option>
+      <ion-option value="3">3 D</ion-option>
+      <ion-option value="4">4 D</ion-option>
+    </ion-select>
+  </ion-item>
+
+  &nbsp;&nbsp;&nbsp;
+  <br>
+  <br>
+
+  <ion-item class="item-leave-height">
+    <ion-label>Alevels</ion-label>&nbsp;
+    <ion-select id="alevelS" name="alevelS">
+      <ion-option value="0" selected="selected">0 A*</ion-option>
+      <ion-option value="1">1 A*</ion-option>
+      <ion-option value="2">2 A*</ion-option>
+      <ion-option value="3">3 A*</ion-option>
+    </ion-select>
+    <ion-select id="alevelA" name=" alevela=">
+      <ion-option value="0" selected="selected">0 A</ion-option>
+      <ion-option value="1">1 A</ion-option>
+      <ion-option value="2">2 A</ion-option>
+      <ion-option value="3">3 A</ion-option>
+    </ion-select>
+    <ion-select id="alevelB" name="alevelB">
+      <ion-option value="0" selected="selected">0 B</ion-option>
+      <ion-option value="1">1 B</ion-option>
+      <ion-option value="2">2 B</ion-option>
+      <ion-option value="3">3 B</ion-option>
+    </ion-select>
+    <ion-select id="alevelC" name="alevelC">
+      <ion-option value="0" selected="selected">0 C</ion-option>
+      <ion-option value="1">1 C</ion-option>
+      <ion-option value="2">2 C</ion-option>
+      <ion-option value="3">3 C</ion-option>
+    </ion-select>
+    <ion-select id="alevelD" name="alevelD">
+      <ion-option value="0" selected="selected" 0>D</ion-option>
+      <ion-option value="1">1 D</ion-option>
+      <ion-option value="2">2 D</ion-option>
+      <ion-option value="3">3 D</ion-option>
+    </ion-select>
+  </ion-item>
+ -->
+  <!-- <div style="margin-top:10px">
+    <div>
+      <ion-label for="factor">
+        <input style="display:inline;" id="factor" value="1" type="checkbox">
+        <span style="display:inline;"> With Factor? </span>
+      </ion-label>
+    </div>
+    <div>
+      <ion-label style="display:inline;" for="bonus">Sports Bonus
+        <input style="display:inline;" id="bonus" type="text" placeholder="Perecentage only..">
+      </ion-label>
+    </div>
+  </div>
+
+  Score percentage:
+  <span id="scorepercentage">&nbsp;&nbsp;</span>% Government Score:
+  <span id="govscore"></span> / 410
+  <br>
+  <br>
+  <a href="#" onclick="olevels()">Calculate!</a>
+  <button onclick="" type="reset">Reset</button>
+  <p> Please note that for AUC you should only enter the best 8 subjects INCLUDING A Levels </p>
+  <p>Disclaimer; you should calculate your score and review possible acceptances manually.</p>
+
+  <div>
+
+    <div style="max-width:500px; display: inline;">
+      <a>Possible Scholarships:
+        <span style="position: relative;
+bottom: 0.7em;
+font-size: 0.6em;">&nbsp;&nbsp;&nbsp;[BASED ON '13]</span>
+      </a>
+      <ul id="pvtunis">
+        <li>
+          <a href="#">AUC 70% OFF (BEING UPDATED)</a>
+        </li>
+        <li>
+          <a href="#">AUC 30% OFF (BEING UPDATED)</a>
+        </li>
+        <li>
+          <a href="#">GUC 1st tier (BEING UPDATED)</a>
+        </li>
+        <li>
+          <a href="#">GUC 2nd tier (BEING UPDATED)</a>
+        </li>
+        <li>
+          <a href="#">BUE (BEING UPDATED)</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <br> -->
+
+
+
+  <!-- <div style="max-width:500px; display: inline;">
+    <a>Universities You qualify for:
+      <span style="position: relative;
+bottom: 0.7em;
+font-size: 0.6em;">&nbsp;&nbsp;&nbsp;[According to Tansik'14]</span>
+    </a>
+    <ul id="govunis">
+      <li id="410">
+        <a href="#">Medicine - Cairo University 410</a>
+      </li>
+      <li id="410">
+        <a href="#">Medicine - Alexandria 410</a>
+      </li>
+      <li id="410">
+        <a href="#">Medicine - Ismailia 410</a>
+      </li>
+      <li id="410">
+        <a href="#">Dentistry - Cairo University 410</a>
+      </li>
+      <li id="410">
+        <a href="#">Dentistry - Alexandria University 410</a>
+      </li>
+      <li id="410">
+        <a href="#">Dentistery - Ein Shams 410</a>
+      </li>
+      <li id="410">
+        <a href="#">Faculty of Political Science and Economics 410</a>
+      </li>
+      <li id="407.95">
+        <a href="#">Medicine - Ein Shams 407.95</a>
+      </li>
+      <li id="407.72">
+        <a href="#">Medicine - El Fayoum 407.72</a>
+      </li>
+      <li id="407.43">
+        <a href="#">Mass Comm- Beni Sweef 407.43</a>
+      </li>
+      <li id="407.43">
+        <a href="#">Masscomm - Cairo 407.43</a>
+      </li>
+      <li id="407.43">
+        <a href="#">Masscomm - Ganoub El Wadi 407.43</a>
+      </li>
+      <li id="407.22">
+        <a href="#">Medicine - Tanta 407.22</a>
+      </li>
+      <li id="407.22">
+        <a href="#">Medicine - Benha 407.22</a>
+      </li>
+      <li id="407.22">
+        <a href="#">Medicine - Kafr El Sheikh 407.22</a>
+      </li>
+      <li id="407.22">
+        <a href="#">Dentistery - Damanhour 407.22</a>
+      </li>
+      <li id="407.22">
+        <a href="#">Dentistery - Fayoum 407.22</a>
+      </li>
+      <li id="407.22">
+        <a href="#">Engineering - Cairo 407.22</a>
+      </li>
+      <li id="405.44">
+        <a href="#">Medicine - Portsaid 405.44</a>
+      </li>
+      <li id="405.44">
+        <a href="#">Medicine - Mansoura 405.44</a>
+      </li>
+      <li id="405.44">
+        <a href="#">Medicine - Zagazig 405.44</a>
+      </li>
+      <li id="405.44">
+        <a href="#">Medicine - Shebin El koom 405.44</a>
+      </li>
+      <li id="405.44">
+        <a href="#">Medicine - Beni Sweef 405.44</a>
+      </li>
+      <li id="405.44">
+        <a href="#">Dentistery Kafr El Sheikh 405.44</a>
+      </li>
+      <li id="405.44">
+        <a href="#">Dentistery - Ismailia 405.44</a>
+      </li>
+      <li id="405.44">
+        <a href="#">Engineering - Ain Shams 405.44</a>
+      </li>
+      <li id="404.87">
+        <a href="#">Faculty of Political Science and Economics - Alexandria 404.87</a>
+      </li>
+      <li id="404.87">
+        <a href="#">Faculty of Political Science and Economics -Beni Sweef 404.87</a>
+      </li>
+      <li id="403.85">
+        <a href="#">Medicine - Assuit 403.85</a>
+      </li>
+      <li id="403.16">
+        <a href="#">Medicine - Menya 403.16</a>
+      </li>
+      <li id="403.16">
+        <a href="#">Medicine - Aswan 403.16</a>
+      </li>
+      <li id="403.16">
+        <a href="#">Dentistery - Tanta 403.16</a>
+      </li>
+      <li id="403.16">
+        <a href="#">AEngineering - Alexandria 403.16</a>
+      </li>
+      <li id="402.5">
+        <a href="#">Engineering - Helwan 402.5</a>
+      </li>
+      <li id="401.8">
+        <a href="#">Medicine - Sohag 401.8</a>
+      </li>
+      <li id="400.94">
+        <a href="#">Dentistery Mansoura 400.94</a>
+      </li>
+      <li id="400.88">
+        <a href="#">Medicine - Qena 400.88</a>
+      </li>
+      <li id="400.88">
+        <a href="#">Dentistery - Beni Sweef 400.88</a>
+      </li>
+      <li id="400.88">
+        <a href="#">Engineering - Mattareya 400.88</a>
+      </li>
+      <li id="400.88">
+        <a href="#">Engineering - Petrol EL Suez 400.88</a>
+      </li>
+      <li id="400.88">
+        <a href="#">Fine Arts architecture 400.88</a>
+      </li>
+      <li id="400.22">
+        <a href="#">Dentistery - Ganoub El Wady 400.22</a>
+      </li>
+      <li id="399.75">
+        <a href="#">Dentistery - Menya 399.75</a>
+      </li>
+      <li id="398.61">
+        <a href="#">Dentistery - Assuit 398.61</a>
+      </li>
+      <li id="398.61">
+        <a href="#">Engineering - Tanta 398.61</a>
+      </li>
+      <li id="398.61">
+        <a href="#">Engineering - Shoubra 398.61</a>
+      </li>
+      <li id="396.33">
+        <a href="#">Pharmacy - Cairo University 396.33</a>
+      </li>
+      <li id="396.33">
+        <a href="#">Pharmacy - Alexandria 396.33</a>
+      </li>
+      <li id="396.33">
+        <a href="#">Pharmacy - Ain Shams 396.33</a>
+      </li>
+      <li id="396.33">
+        <a href="#">Engineering- Kafr El Sheikh 396.33</a>
+      </li>
+      <li id="396.33">
+        <a href="#">Engineering - Benha 396.33</a>
+      </li>
+      <li id="395.65">
+        <a href="#">Engineering - El Fayoum 395.65</a>
+      </li>
+      <li id="394.62">
+        <a href="#">Urban Planning - Cairo 394.62</a>
+      </li>
+      <li id="394.62">
+        <a href="#">Pharmacy - Helwan 394.62</a>
+      </li>
+      <li id="394.05">
+        <a href="#">Engineering - Aswan 394.05</a>
+      </li>
+      <li id="393.6">
+        <a href="#">Pharmacy - Portsaid 393.6</a>
+      </li>
+      <li id="392.91">
+        <a href="#">Pharmacy - Damanhour 392.91</a>
+      </li>
+      <li id="392.06">
+        <a href="#">Fine Arts 392.06</a>
+      </li>
+      <li id="391.77">
+        <a href="#">Engineering - Beni Sweef 391.77</a>
+      </li>
+      <li id="391.55">
+        <a href="#">Computer science - Cairo University 391.55</a>
+      </li>
+      <li id="389.5">
+        <a href="#">Pharmacy and Pharmaceutical science - Kafr El Sheikh 389.5</a>
+      </li>
+      <li id="387.22">
+        <a href="#">Pharmacy - Tanta 387.22</a>
+      </li>
+      <li id="387.22">
+        <a href="#">Engineering - Zagazig 387.22</a>
+      </li>
+      <li id="386.08">
+        <a href="#">Pharmacy - Ismailia ( Suez Canal University) 386.08</a>
+      </li>
+      <li id="385.4">
+        <a href="#">Engineering - Mansoura 385.4</a>
+      </li>
+      <li id="385.4">
+        <a href="#">Engineering - Shebeen El Koom 385.4</a>
+      </li>
+      <li id="384.94">
+        <a href="#">Pharmacy - Assuit 384.94</a>
+      </li>
+      <li id="384.94">
+        <a href="#">Engineering - Portsaid 384.94</a>
+      </li>
+      <li id="383.8">
+        <a href="#">Pharmacy - El Menya 383.8</a>
+      </li>
+      <li id="383.35">
+        <a href="#">Pharmacy - Beni Sweef 383.35</a>
+      </li>
+      <li id="383.35">
+        <a href="#">Pharmacy - Beni Sweef 383.35</a>
+      </li>
+      <li id="383.35">
+        <a href="#">Engineering - Assuit 383.35</a>
+      </li>
+      <li id="381.52">
+        <a href="#">Pharmacy - Sohag 381.52</a>
+      </li>
+      <li id="381.52">
+        <a href="#">Engineering - El Menya 381.52</a>
+      </li>
+      <li id="381.3">
+        <a href="#">Engineering - Sohag 381.3</a>
+      </li>
+      <li id="380.38">
+        <a href="#">Engineering - Qena 380.38</a>
+      </li>
+      <li id="379.25">
+        <a href="#">Pharmacy - Mansoura 379.25</a>
+      </li>
+      <li id="378.11">
+        <a href="#">Computer science - Ain Shams 378.11</a>
+      </li>
+      <li id="377.2">
+        <a href="#">Pharmacy - Zagazig 377.2</a>
+      </li>
+      <li id="375.4">
+        <a href="#">Fine Arts - Alexandria 375.4</a>
+      </li>
+      <li id="373.1">
+        <a href="#">Computer Science - Helwan 373.1</a>
+      </li>
+      <li id="340.81">
+        <a href="#">Faculty of Commerce - Cairo University 340.81</a>
+      </li>
+      <li id="299.81">
+        <a href="#">Faculty of commerce- Ain Shams University 299.81</a>
+      </li>
+    </ul>
+  </div>
+ -->
+</ion-content>
