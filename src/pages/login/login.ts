@@ -24,6 +24,7 @@ export class LoginPage {
     public alertController: AlertController, public events: Events , 
     public menuCtrl :MenuController ) {
 
+    this.email= "" ; 
     this.showRegistrationAlert();
 
   }
@@ -87,6 +88,17 @@ export class LoginPage {
     confirm.present();
   }
 
+  createInfoAlert(msg) {
+    let confirm = this.alertController.create({
+      title: 'Forget Password',
+      message: msg,
+      buttons: [
+        { text: 'OK', role: 'cancel', },
+      ]
+    });
+    confirm.present();
+  }
+
   signUpButtonClicked() {
     console.log("wow ")
     this.navCtrl.push('RegisterPage')
@@ -99,5 +111,18 @@ export class LoginPage {
     // enable the root left menu when leaving this page
     this.menuCtrl.enable(true);
     }
-
+    
+  forgotPass(){
+    console.log("in forg pass fn ") 
+    if(this.email == "")
+      this.createErrorAlert("please enter your email First")
+    else { 
+      var data = { 
+        email: this.email
+      }
+      this.ds.post("/user/forgot-password-check" , data).subscribe(res=> { 
+        this.createInfoAlert(res.message) 
+      }) 
+    }
+  }
 }
