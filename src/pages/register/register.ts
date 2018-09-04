@@ -47,7 +47,7 @@ export class RegisterPage {
       this.children = null;
 
     var user_info = {
-      'username': this.userName,
+      'username': this.userName,  
       'email': this.email,
       'password': this.password,
       'mobile': this.mobile,
@@ -61,7 +61,11 @@ export class RegisterPage {
     this.ds.post(url, user_info).subscribe((res) => {
       console.log(res);
       if (res.success) {
-        this.navCtrl.push('HomePage')
+        this.storage.set("token", res.token).then(res => {
+          this.ds.getToken().then(data => {
+            this.navCtrl.setRoot('HomePage')
+          });
+        })
       }
     }, (err) => {
       console.log(err)

@@ -25,7 +25,7 @@ export class LoginPage {
     public menuCtrl :MenuController ) {
 
     this.email= "" ; 
-    this.showRegistrationAlert();
+    // this.showRegistrationAlert();
 
   }
 
