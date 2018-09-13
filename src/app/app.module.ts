@@ -15,18 +15,18 @@ import { AddPostPage } from '../pages/add-post/add-post';
 import { EditPostsPage } from '../pages/edit-posts/edit-posts';
 import { SearchProvider } from '../providers/search/search';
 
-import { BooksCartPage } from '../pages/books-cart/books-cart';
+//import { BooksCartPage } from '../pages/books-cart/books-cart';
 //import { AddBooksPage } from '../pages/add-books/add-books';
 import { AddActivitiesPage } from '../pages/add-activities/add-activities';
 import { IonicImageLoader } from 'ionic-image-loader';
-import { EditBooksPage } from '../pages/edit-books/edit-books';
+// import { EditBooksPage } from '../pages/edit-books/edit-books';
 import { PostDetailsPage } from '../pages/post-details/post-details';
 
 @NgModule({
   declarations: [
     MyApp,
-    BooksCartPage,
-    EditBooksPage
+   // BooksCartPage,
+    // EditBooksPage
    // ListPage
   ],
   imports: [
@@ -40,8 +40,8 @@ import { PostDetailsPage } from '../pages/post-details/post-details';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    BooksCartPage,
-    EditBooksPage
+   // BooksCartPage,
+    // EditBooksPage
    // ListPage
   ],
   providers: [

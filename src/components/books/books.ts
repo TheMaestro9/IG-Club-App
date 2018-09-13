@@ -2,7 +2,7 @@ import { Component, Input } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { DataServiceProvider } from '../../providers/data-service/data-service';
 import { Storage } from '@ionic/storage';
-import { EditBooksPage } from '../../pages/edit-books/edit-books';
+// import { EditBooksPage } from '../../pages/edit-books/edit-books';
 
 /**
  * Generated class for the BooksComponent component.
@@ -57,18 +57,18 @@ export class BooksComponent {
  } */
 
   ngOnInit() {
-    // var bookModule = this ; 
+    // var bookModule = this ;
     // setTimeout(function() {
-    //   bookModule.handleImgUrl() ; 
+    //   bookModule.handleImgUrl() ;
     // }, 1000);
   }
 
   // handleImgUrl() {
   //   console.log(this.books)
   //   console.log("iam listening")
-  //   for (var i ; i < this.books.length ; i++){ 
+  //   for (var i ; i < this.books.length ; i++){
 
-  //     if (this.books[i].imgUrl == null || this.books[i].imgUrl =='null'){ 
+  //     if (this.books[i].imgUrl == null || this.books[i].imgUrl =='null'){
   //       console.log("found a funcken bug")
   //       this.books[i].imgUrl = 'assets/imgs/default-book.jpg';
   //     }
@@ -76,7 +76,7 @@ export class BooksComponent {
   // }
 
   editBook(book) {
-    this.navCtrl.push(EditBooksPage, book);
+    // this.navCtrl.push(EditBooksPage, book);
   }
 
   deleteBook(id) {
